@@ -46,6 +46,7 @@ Partial Class FrmRCargo
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -220,11 +221,11 @@ Partial Class FrmRCargo
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(486, 193)
+        Me.btnBuscar.Image = CType(resources.GetObject("btnBuscar.Image"), System.Drawing.Image)
+        Me.btnBuscar.Location = New System.Drawing.Point(475, 178)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(89, 35)
+        Me.btnBuscar.Size = New System.Drawing.Size(100, 43)
         Me.btnBuscar.TabIndex = 77
-        Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'txtDatos
@@ -238,11 +239,11 @@ Partial Class FrmRCargo
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Ebrima", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(39, 199)
+        Me.Label7.Location = New System.Drawing.Point(58, 199)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(151, 20)
+        Me.Label7.Size = New System.Drawing.Size(123, 20)
         Me.Label7.TabIndex = 75
-        Me.Label7.Text = "Escriba el Empleado:"
+        Me.Label7.Text = "Escriba el Cargo:"
         '
         'ckbActivo
         '
@@ -289,11 +290,21 @@ Partial Class FrmRCargo
         Me.DataGridView1.Size = New System.Drawing.Size(526, 232)
         Me.DataGridView1.TabIndex = 0
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(503, 224)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(52, 17)
+        Me.Label3.TabIndex = 79
+        Me.Label3.Text = "Buscar"
+        '
         'FrmRCargo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(587, 539)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtDatos)
@@ -351,4 +362,5 @@ Partial Class FrmRCargo
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Label3 As Label
 End Class

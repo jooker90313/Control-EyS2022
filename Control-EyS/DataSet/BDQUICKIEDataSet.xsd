@@ -63,11 +63,11 @@ SELECT idCargo, nombreCargo, descripcion, estadoCargo, idDepartamento FROM Cargo
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="idCargo" DataSetColumn="idCargo" />
-              <Mapping SourceColumn="nombreCargo" DataSetColumn="nombreCargo" />
-              <Mapping SourceColumn="descripcion" DataSetColumn="descripcion" />
-              <Mapping SourceColumn="estadoCargo" DataSetColumn="estadoCargo" />
-              <Mapping SourceColumn="idDepartamento" DataSetColumn="idDepartamento" />
+              <Mapping SourceColumn="idCargo" DataSetColumn="IdCargo" />
+              <Mapping SourceColumn="nombreCargo" DataSetColumn="Nombre del Cargo" />
+              <Mapping SourceColumn="descripcion" DataSetColumn="Descripción" />
+              <Mapping SourceColumn="estadoCargo" DataSetColumn="Estado Cargo" />
+              <Mapping SourceColumn="idDepartamento" DataSetColumn="ID Departamento" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -118,8 +118,8 @@ SELECT idDepartamento, nombreDepartamento, estadoDepartamento FROM Departamento 
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="idDepartamento" DataSetColumn="idDepartamento" />
-              <Mapping SourceColumn="nombreDepartamento" DataSetColumn="nombreDepartamento" />
-              <Mapping SourceColumn="estadoDepartamento" DataSetColumn="estadoDepartamento" />
+              <Mapping SourceColumn="nombreDepartamento" DataSetColumn="Nombre Departamento" />
+              <Mapping SourceColumn="estadoDepartamento" DataSetColumn="Estado Departamento" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="CsBDQUICKIE (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarDepa" Modifier="Public" Name="ActualizarDepa" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ActualizarDepa">
@@ -257,19 +257,19 @@ SELECT idEmp, numCedula, nombre, apellido, telefono, emailCorporativo, direccion
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="idEmp" DataSetColumn="idEmp" />
-              <Mapping SourceColumn="numCedula" DataSetColumn="numCedula" />
-              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
-              <Mapping SourceColumn="apellido" DataSetColumn="apellido" />
-              <Mapping SourceColumn="telefono" DataSetColumn="telefono" />
-              <Mapping SourceColumn="emailCorporativo" DataSetColumn="emailCorporativo" />
-              <Mapping SourceColumn="direccion" DataSetColumn="direccion" />
-              <Mapping SourceColumn="estadoEmpleado" DataSetColumn="estadoEmpleado" />
-              <Mapping SourceColumn="idCargo" DataSetColumn="idCargo" />
-              <Mapping SourceColumn="idDepartamento" DataSetColumn="idDepartamento" />
+              <Mapping SourceColumn="idEmp" DataSetColumn="idEmpleado" />
+              <Mapping SourceColumn="numCedula" DataSetColumn="Número de Cédula" />
+              <Mapping SourceColumn="nombre" DataSetColumn="Nombre" />
+              <Mapping SourceColumn="apellido" DataSetColumn="Apellido" />
+              <Mapping SourceColumn="telefono" DataSetColumn="Teléfono" />
+              <Mapping SourceColumn="emailCorporativo" DataSetColumn="Email Corporativo" />
+              <Mapping SourceColumn="direccion" DataSetColumn="Dirección" />
+              <Mapping SourceColumn="estadoEmpleado" DataSetColumn="Estado Empleado" />
+              <Mapping SourceColumn="idCargo" DataSetColumn="ID Cargo" />
+              <Mapping SourceColumn="idDepartamento" DataSetColumn="ID Departamento" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="CsBDQUICKIE (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarEmp" Modifier="Public" Name="ActualizarEmp" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="ActualizarEmp">
+              <DbSource ConnectionRef="CsBDQUICKIE (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ActualizarEmp" Modifier="Public" Name="ActualizarEmp" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ActualizarEmp">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE Empleado
@@ -291,7 +291,7 @@ WHERE  (idEmp = @Original_idEmp)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="CsBDQUICKIE (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EliminarEmpl" Modifier="Public" Name="EliminarEmpl" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="EliminarEmpl">
+              <DbSource ConnectionRef="CsBDQUICKIE (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="EliminarEmpl" Modifier="Public" Name="EliminarEmpl" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="EliminarEmpl">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM Empleado
@@ -302,7 +302,7 @@ WHERE  (idEmp = @Original_idEmp)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="CsBDQUICKIE (MySettings)" DbObjectName="BDQUICKIE.dbo.Empleado" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="CsBDQUICKIE (MySettings)" DbObjectName="BDQUICKIE.dbo.Empleado" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT idEmp, nombre + ' ' + apellido AS NombreCompleto
@@ -323,7 +323,7 @@ WHERE  (nombre LIKE @nombre)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="CsBDQUICKIE (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertarEmp" Modifier="Public" Name="InsertarEmp" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertarEmp">
+              <DbSource ConnectionRef="CsBDQUICKIE (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertarEmp" Modifier="Public" Name="InsertarEmp" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InsertarEmp">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO Empleado
@@ -438,8 +438,8 @@ FROM     Empleado</CommandText>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="idEmp" DataSetColumn="idEmp" />
-              <Mapping SourceColumn="NombreCompleto" DataSetColumn="NombreCompleto" />
+              <Mapping SourceColumn="idEmp" DataSetColumn="ID Empleado" />
+              <Mapping SourceColumn="NombreCompleto" DataSetColumn="Nombre Completo" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -448,116 +448,116 @@ FROM     Empleado</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="BDQUICKIEDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="BDQUICKIEDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BDQUICKIEDataSet">
+  <xs:element name="BDQUICKIEDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BDQUICKIEDataSet" msprop:Generator_UserDSName="BDQUICKIEDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Cargo" msprop:Generator_RowClassName="CargoRow" msprop:Generator_RowEvHandlerName="CargoRowChangeEventHandler" msprop:Generator_RowDeletedName="CargoRowDeleted" msprop:Generator_RowDeletingName="CargoRowDeleting" msprop:Generator_RowEvArgName="CargoRowChangeEvent" msprop:Generator_TablePropName="Cargo" msprop:Generator_RowChangedName="CargoRowChanged" msprop:Generator_UserTableName="Cargo" msprop:Generator_RowChangingName="CargoRowChanging" msprop:Generator_TableClassName="CargoDataTable" msprop:Generator_TableVarName="tableCargo">
+        <xs:element name="Cargo" msprop:Generator_UserTableName="Cargo" msprop:Generator_RowEvArgName="CargoRowChangeEvent" msprop:Generator_TableVarName="tableCargo" msprop:Generator_TablePropName="Cargo" msprop:Generator_RowDeletingName="CargoRowDeleting" msprop:Generator_RowChangingName="CargoRowChanging" msprop:Generator_RowEvHandlerName="CargoRowChangeEventHandler" msprop:Generator_RowDeletedName="CargoRowDeleted" msprop:Generator_TableClassName="CargoDataTable" msprop:Generator_RowChangedName="CargoRowChanged" msprop:Generator_RowClassName="CargoRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="idCargo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="idCargo" msprop:Generator_ColumnPropNameInTable="idCargoColumn" msprop:Generator_ColumnPropNameInRow="idCargo" msprop:Generator_ColumnVarNameInTable="columnidCargo" type="xs:int" />
-              <xs:element name="nombreCargo" msprop:Generator_UserColumnName="nombreCargo" msprop:Generator_ColumnPropNameInTable="nombreCargoColumn" msprop:Generator_ColumnPropNameInRow="nombreCargo" msprop:Generator_ColumnVarNameInTable="columnnombreCargo">
+              <xs:element name="IdCargo" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCargo" msprop:Generator_ColumnPropNameInRow="IdCargo" msprop:Generator_ColumnPropNameInTable="IdCargoColumn" msprop:Generator_UserColumnName="IdCargo" type="xs:int" />
+              <xs:element name="Nombre_x0020_del_x0020_Cargo" msprop:Generator_ColumnVarNameInTable="columnNombre_del_Cargo" msprop:Generator_ColumnPropNameInRow="Nombre_del_Cargo" msprop:Generator_ColumnPropNameInTable="Nombre_del_CargoColumn" msprop:Generator_UserColumnName="Nombre del Cargo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="descripcion" msprop:Generator_UserColumnName="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" minOccurs="0">
+              <xs:element name="Descripción" msprop:Generator_ColumnVarNameInTable="columnDescripción" msprop:Generator_ColumnPropNameInRow="Descripción" msprop:Generator_ColumnPropNameInTable="DescripciónColumn" msprop:Generator_UserColumnName="Descripción" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="estadoCargo" msprop:Generator_UserColumnName="estadoCargo" msprop:Generator_ColumnPropNameInTable="estadoCargoColumn" msprop:Generator_ColumnPropNameInRow="estadoCargo" msprop:Generator_ColumnVarNameInTable="columnestadoCargo" type="xs:boolean" />
-              <xs:element name="idDepartamento" msprop:Generator_UserColumnName="idDepartamento" msprop:Generator_ColumnPropNameInTable="idDepartamentoColumn" msprop:Generator_ColumnPropNameInRow="idDepartamento" msprop:Generator_ColumnVarNameInTable="columnidDepartamento" type="xs:int" />
+              <xs:element name="Estado_x0020_Cargo" msprop:Generator_ColumnVarNameInTable="columnEstado_Cargo" msprop:Generator_ColumnPropNameInRow="Estado_Cargo" msprop:Generator_ColumnPropNameInTable="Estado_CargoColumn" msprop:Generator_UserColumnName="Estado Cargo" type="xs:boolean" />
+              <xs:element name="ID_x0020_Departamento" msprop:Generator_ColumnVarNameInTable="columnID_Departamento" msprop:Generator_ColumnPropNameInRow="ID_Departamento" msprop:Generator_ColumnPropNameInTable="ID_DepartamentoColumn" msprop:Generator_UserColumnName="ID Departamento" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Departamento" msprop:Generator_RowClassName="DepartamentoRow" msprop:Generator_RowEvHandlerName="DepartamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartamentoRowDeleted" msprop:Generator_RowDeletingName="DepartamentoRowDeleting" msprop:Generator_RowEvArgName="DepartamentoRowChangeEvent" msprop:Generator_TablePropName="Departamento" msprop:Generator_RowChangedName="DepartamentoRowChanged" msprop:Generator_UserTableName="Departamento" msprop:Generator_RowChangingName="DepartamentoRowChanging" msprop:Generator_TableClassName="DepartamentoDataTable" msprop:Generator_TableVarName="tableDepartamento">
+        <xs:element name="Departamento" msprop:Generator_UserTableName="Departamento" msprop:Generator_RowEvArgName="DepartamentoRowChangeEvent" msprop:Generator_TableVarName="tableDepartamento" msprop:Generator_TablePropName="Departamento" msprop:Generator_RowDeletingName="DepartamentoRowDeleting" msprop:Generator_RowChangingName="DepartamentoRowChanging" msprop:Generator_RowEvHandlerName="DepartamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartamentoRowDeleted" msprop:Generator_TableClassName="DepartamentoDataTable" msprop:Generator_RowChangedName="DepartamentoRowChanged" msprop:Generator_RowClassName="DepartamentoRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="idDepartamento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="idDepartamento" msprop:Generator_ColumnPropNameInTable="idDepartamentoColumn" msprop:Generator_ColumnPropNameInRow="idDepartamento" msprop:Generator_ColumnVarNameInTable="columnidDepartamento" type="xs:int" />
-              <xs:element name="nombreDepartamento" msprop:Generator_UserColumnName="nombreDepartamento" msprop:Generator_ColumnPropNameInTable="nombreDepartamentoColumn" msprop:Generator_ColumnPropNameInRow="nombreDepartamento" msprop:Generator_ColumnVarNameInTable="columnnombreDepartamento">
+              <xs:element name="idDepartamento" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidDepartamento" msprop:Generator_ColumnPropNameInRow="idDepartamento" msprop:Generator_ColumnPropNameInTable="idDepartamentoColumn" msprop:Generator_UserColumnName="idDepartamento" type="xs:int" />
+              <xs:element name="Nombre_x0020_Departamento" msprop:Generator_ColumnVarNameInTable="columnNombre_Departamento" msprop:Generator_ColumnPropNameInRow="Nombre_Departamento" msprop:Generator_ColumnPropNameInTable="Nombre_DepartamentoColumn" msprop:Generator_UserColumnName="Nombre Departamento">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="estadoDepartamento" msprop:Generator_UserColumnName="estadoDepartamento" msprop:Generator_ColumnPropNameInTable="estadoDepartamentoColumn" msprop:Generator_ColumnPropNameInRow="estadoDepartamento" msprop:Generator_ColumnVarNameInTable="columnestadoDepartamento" type="xs:boolean" />
+              <xs:element name="Estado_x0020_Departamento" msprop:Generator_ColumnVarNameInTable="columnEstado_Departamento" msprop:Generator_ColumnPropNameInRow="Estado_Departamento" msprop:Generator_ColumnPropNameInTable="Estado_DepartamentoColumn" msprop:Generator_UserColumnName="Estado Departamento" type="xs:boolean" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Empleado" msprop:Generator_RowClassName="EmpleadoRow" msprop:Generator_RowEvHandlerName="EmpleadoRowChangeEventHandler" msprop:Generator_RowDeletedName="EmpleadoRowDeleted" msprop:Generator_RowDeletingName="EmpleadoRowDeleting" msprop:Generator_RowEvArgName="EmpleadoRowChangeEvent" msprop:Generator_TablePropName="Empleado" msprop:Generator_RowChangedName="EmpleadoRowChanged" msprop:Generator_UserTableName="Empleado" msprop:Generator_RowChangingName="EmpleadoRowChanging" msprop:Generator_TableClassName="EmpleadoDataTable" msprop:Generator_TableVarName="tableEmpleado">
+        <xs:element name="Empleado" msprop:Generator_UserTableName="Empleado" msprop:Generator_RowEvArgName="EmpleadoRowChangeEvent" msprop:Generator_TableVarName="tableEmpleado" msprop:Generator_TablePropName="Empleado" msprop:Generator_RowDeletingName="EmpleadoRowDeleting" msprop:Generator_RowChangingName="EmpleadoRowChanging" msprop:Generator_RowEvHandlerName="EmpleadoRowChangeEventHandler" msprop:Generator_RowDeletedName="EmpleadoRowDeleted" msprop:Generator_TableClassName="EmpleadoDataTable" msprop:Generator_RowChangedName="EmpleadoRowChanged" msprop:Generator_RowClassName="EmpleadoRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="idEmp" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="idEmp" msprop:Generator_ColumnPropNameInTable="idEmpColumn" msprop:Generator_ColumnPropNameInRow="idEmp" msprop:Generator_ColumnVarNameInTable="columnidEmp" type="xs:int" />
-              <xs:element name="numCedula" msprop:Generator_UserColumnName="numCedula" msprop:Generator_ColumnPropNameInTable="numCedulaColumn" msprop:Generator_ColumnPropNameInRow="numCedula" msprop:Generator_ColumnVarNameInTable="columnnumCedula">
+              <xs:element name="idEmpleado" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidEmpleado" msprop:Generator_ColumnPropNameInRow="idEmpleado" msprop:Generator_ColumnPropNameInTable="idEmpleadoColumn" msprop:Generator_UserColumnName="idEmpleado" type="xs:int" />
+              <xs:element name="Número_x0020_de_x0020_Cédula" msprop:Generator_ColumnVarNameInTable="columnNúmero_de_Cédula" msprop:Generator_ColumnPropNameInRow="Número_de_Cédula" msprop:Generator_ColumnPropNameInTable="Número_de_CédulaColumn" msprop:Generator_UserColumnName="Número de Cédula">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="16" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="nombre" msprop:Generator_UserColumnName="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre">
+              <xs:element name="Nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="Nombre">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="apellido" msprop:Generator_UserColumnName="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" minOccurs="0">
+              <xs:element name="Apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_UserColumnName="Apellido" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="telefono" msprop:Generator_UserColumnName="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" minOccurs="0">
+              <xs:element name="Teléfono" msprop:Generator_ColumnVarNameInTable="columnTeléfono" msprop:Generator_ColumnPropNameInRow="Teléfono" msprop:Generator_ColumnPropNameInTable="TeléfonoColumn" msprop:Generator_UserColumnName="Teléfono" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="13" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="emailCorporativo" msprop:Generator_UserColumnName="emailCorporativo" msprop:Generator_ColumnPropNameInTable="emailCorporativoColumn" msprop:Generator_ColumnPropNameInRow="emailCorporativo" msprop:Generator_ColumnVarNameInTable="columnemailCorporativo" minOccurs="0">
+              <xs:element name="Email_x0020_Corporativo" msprop:Generator_ColumnVarNameInTable="columnEmail_Corporativo" msprop:Generator_ColumnPropNameInRow="Email_Corporativo" msprop:Generator_ColumnPropNameInTable="Email_CorporativoColumn" msprop:Generator_UserColumnName="Email Corporativo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="direccion" msprop:Generator_UserColumnName="direccion" msprop:Generator_ColumnPropNameInTable="direccionColumn" msprop:Generator_ColumnPropNameInRow="direccion" msprop:Generator_ColumnVarNameInTable="columndireccion" minOccurs="0">
+              <xs:element name="Dirección" msprop:Generator_ColumnVarNameInTable="columnDirección" msprop:Generator_ColumnPropNameInRow="Dirección" msprop:Generator_ColumnPropNameInTable="DirecciónColumn" msprop:Generator_UserColumnName="Dirección" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="estadoEmpleado" msprop:Generator_UserColumnName="estadoEmpleado" msprop:Generator_ColumnPropNameInTable="estadoEmpleadoColumn" msprop:Generator_ColumnPropNameInRow="estadoEmpleado" msprop:Generator_ColumnVarNameInTable="columnestadoEmpleado" type="xs:boolean" />
-              <xs:element name="idCargo" msprop:Generator_UserColumnName="idCargo" msprop:Generator_ColumnPropNameInTable="idCargoColumn" msprop:Generator_ColumnPropNameInRow="idCargo" msprop:Generator_ColumnVarNameInTable="columnidCargo" type="xs:int" />
-              <xs:element name="idDepartamento" msprop:Generator_UserColumnName="idDepartamento" msprop:Generator_ColumnPropNameInTable="idDepartamentoColumn" msprop:Generator_ColumnPropNameInRow="idDepartamento" msprop:Generator_ColumnVarNameInTable="columnidDepartamento" type="xs:int" />
+              <xs:element name="Estado_x0020_Empleado" msprop:Generator_ColumnVarNameInTable="columnEstado_Empleado" msprop:Generator_ColumnPropNameInRow="Estado_Empleado" msprop:Generator_ColumnPropNameInTable="Estado_EmpleadoColumn" msprop:Generator_UserColumnName="Estado Empleado" type="xs:boolean" />
+              <xs:element name="ID_x0020_Cargo" msprop:Generator_ColumnVarNameInTable="columnID_Cargo" msprop:Generator_ColumnPropNameInRow="ID_Cargo" msprop:Generator_ColumnPropNameInTable="ID_CargoColumn" msprop:Generator_UserColumnName="ID Cargo" type="xs:int" />
+              <xs:element name="ID_x0020_Departamento" msprop:Generator_ColumnVarNameInTable="columnID_Departamento" msprop:Generator_ColumnPropNameInRow="ID_Departamento" msprop:Generator_ColumnPropNameInTable="ID_DepartamentoColumn" msprop:Generator_UserColumnName="ID Departamento" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Registro_de_asistencia" msprop:Generator_RowClassName="Registro_de_asistenciaRow" msprop:Generator_RowEvHandlerName="Registro_de_asistenciaRowChangeEventHandler" msprop:Generator_RowDeletedName="Registro_de_asistenciaRowDeleted" msprop:Generator_RowDeletingName="Registro_de_asistenciaRowDeleting" msprop:Generator_RowEvArgName="Registro_de_asistenciaRowChangeEvent" msprop:Generator_TablePropName="Registro_de_asistencia" msprop:Generator_RowChangedName="Registro_de_asistenciaRowChanged" msprop:Generator_UserTableName="Registro_de_asistencia" msprop:Generator_RowChangingName="Registro_de_asistenciaRowChanging" msprop:Generator_TableClassName="Registro_de_asistenciaDataTable" msprop:Generator_TableVarName="tableRegistro_de_asistencia">
+        <xs:element name="Registro_de_asistencia" msprop:Generator_UserTableName="Registro_de_asistencia" msprop:Generator_RowEvArgName="Registro_de_asistenciaRowChangeEvent" msprop:Generator_TableVarName="tableRegistro_de_asistencia" msprop:Generator_TablePropName="Registro_de_asistencia" msprop:Generator_RowDeletingName="Registro_de_asistenciaRowDeleting" msprop:Generator_RowChangingName="Registro_de_asistenciaRowChanging" msprop:Generator_RowEvHandlerName="Registro_de_asistenciaRowChangeEventHandler" msprop:Generator_RowDeletedName="Registro_de_asistenciaRowDeleted" msprop:Generator_TableClassName="Registro_de_asistenciaDataTable" msprop:Generator_RowChangedName="Registro_de_asistenciaRowChanged" msprop:Generator_RowClassName="Registro_de_asistenciaRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="idRegistro" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="idRegistro" msprop:Generator_ColumnPropNameInTable="idRegistroColumn" msprop:Generator_ColumnPropNameInRow="idRegistro" msprop:Generator_ColumnVarNameInTable="columnidRegistro" type="xs:int" />
-              <xs:element name="totalHoras" msprop:Generator_UserColumnName="totalHoras" msprop:Generator_ColumnPropNameInTable="totalHorasColumn" msprop:Generator_ColumnPropNameInRow="totalHoras" msprop:Generator_ColumnVarNameInTable="columntotalHoras" type="xs:int" minOccurs="0" />
-              <xs:element name="horaEntrada" msprop:Generator_UserColumnName="horaEntrada" msprop:Generator_ColumnPropNameInTable="horaEntradaColumn" msprop:Generator_ColumnPropNameInRow="horaEntrada" msprop:Generator_ColumnVarNameInTable="columnhoraEntrada" type="xs:dateTime" />
-              <xs:element name="horaSalida" msprop:Generator_UserColumnName="horaSalida" msprop:Generator_ColumnPropNameInTable="horaSalidaColumn" msprop:Generator_ColumnPropNameInRow="horaSalida" msprop:Generator_ColumnVarNameInTable="columnhoraSalida" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="fecha" msprop:Generator_UserColumnName="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" type="xs:dateTime" />
-              <xs:element name="idEmp" msprop:Generator_UserColumnName="idEmp" msprop:Generator_ColumnPropNameInTable="idEmpColumn" msprop:Generator_ColumnPropNameInRow="idEmp" msprop:Generator_ColumnVarNameInTable="columnidEmp" type="xs:int" />
+              <xs:element name="idRegistro" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidRegistro" msprop:Generator_ColumnPropNameInRow="idRegistro" msprop:Generator_ColumnPropNameInTable="idRegistroColumn" msprop:Generator_UserColumnName="idRegistro" type="xs:int" />
+              <xs:element name="totalHoras" msprop:Generator_ColumnVarNameInTable="columntotalHoras" msprop:Generator_ColumnPropNameInRow="totalHoras" msprop:Generator_ColumnPropNameInTable="totalHorasColumn" msprop:Generator_UserColumnName="totalHoras" type="xs:int" minOccurs="0" />
+              <xs:element name="horaEntrada" msprop:Generator_ColumnVarNameInTable="columnhoraEntrada" msprop:Generator_ColumnPropNameInRow="horaEntrada" msprop:Generator_ColumnPropNameInTable="horaEntradaColumn" msprop:Generator_UserColumnName="horaEntrada" type="xs:dateTime" />
+              <xs:element name="horaSalida" msprop:Generator_ColumnVarNameInTable="columnhoraSalida" msprop:Generator_ColumnPropNameInRow="horaSalida" msprop:Generator_ColumnPropNameInTable="horaSalidaColumn" msprop:Generator_UserColumnName="horaSalida" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+              <xs:element name="idEmp" msprop:Generator_ColumnVarNameInTable="columnidEmp" msprop:Generator_ColumnPropNameInRow="idEmp" msprop:Generator_ColumnPropNameInTable="idEmpColumn" msprop:Generator_UserColumnName="idEmp" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ConsultaEMP" msprop:Generator_RowEvHandlerName="ConsultaEMPRowChangeEventHandler" msprop:Generator_RowDeletedName="ConsultaEMPRowDeleted" msprop:Generator_RowDeletingName="ConsultaEMPRowDeleting" msprop:Generator_RowEvArgName="ConsultaEMPRowChangeEvent" msprop:Generator_TablePropName="ConsultaEMP" msprop:Generator_RowChangedName="ConsultaEMPRowChanged" msprop:Generator_RowChangingName="ConsultaEMPRowChanging" msprop:Generator_TableClassName="ConsultaEMPDataTable" msprop:Generator_RowClassName="ConsultaEMPRow" msprop:Generator_TableVarName="tableConsultaEMP" msprop:Generator_UserTableName="ConsultaEMP">
+        <xs:element name="ConsultaEMP" msprop:Generator_TableClassName="ConsultaEMPDataTable" msprop:Generator_RowEvArgName="ConsultaEMPRowChangeEvent" msprop:Generator_TableVarName="tableConsultaEMP" msprop:Generator_TablePropName="ConsultaEMP" msprop:Generator_RowDeletingName="ConsultaEMPRowDeleting" msprop:Generator_RowChangingName="ConsultaEMPRowChanging" msprop:Generator_RowDeletedName="ConsultaEMPRowDeleted" msprop:Generator_RowEvHandlerName="ConsultaEMPRowChangeEventHandler" msprop:Generator_UserTableName="ConsultaEMP" msprop:Generator_RowChangedName="ConsultaEMPRowChanged" msprop:Generator_RowClassName="ConsultaEMPRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="idEmp" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="idEmp" msprop:Generator_ColumnPropNameInTable="idEmpColumn" msprop:Generator_ColumnVarNameInTable="columnidEmp" msprop:Generator_UserColumnName="idEmp" type="xs:int" />
-              <xs:element name="NombreCompleto" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="NombreCompleto" msprop:Generator_ColumnPropNameInTable="NombreCompletoColumn" msprop:Generator_ColumnVarNameInTable="columnNombreCompleto" msprop:Generator_UserColumnName="NombreCompleto" minOccurs="0">
+              <xs:element name="ID_x0020_Empleado" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_Empleado" msprop:Generator_ColumnPropNameInRow="ID_Empleado" msprop:Generator_ColumnPropNameInTable="ID_EmpleadoColumn" msprop:Generator_UserColumnName="ID Empleado" type="xs:int" />
+              <xs:element name="Nombre_x0020_Completo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNombre_Completo" msprop:Generator_ColumnPropNameInRow="Nombre_Completo" msprop:Generator_ColumnPropNameInTable="Nombre_CompletoColumn" msprop:Generator_UserColumnName="Nombre Completo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="61" />
@@ -571,7 +571,7 @@ FROM     Empleado</CommandText>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Cargo" />
-      <xs:field xpath="mstns:idCargo" />
+      <xs:field xpath="mstns:IdCargo" />
     </xs:unique>
     <xs:unique name="Departamento_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Departamento" />
@@ -579,7 +579,7 @@ FROM     Empleado</CommandText>
     </xs:unique>
     <xs:unique name="Empleado_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Empleado" />
-      <xs:field xpath="mstns:idEmp" />
+      <xs:field xpath="mstns:idEmpleado" />
     </xs:unique>
     <xs:unique name="Registro_de_asistencia_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Registro_de_asistencia" />
@@ -587,16 +587,16 @@ FROM     Empleado</CommandText>
     </xs:unique>
     <xs:unique name="ConsultaEMP_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:ConsultaEMP" />
-      <xs:field xpath="mstns:idEmp" />
+      <xs:field xpath="mstns:ID_x0020_Empleado" />
     </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="RefDepartamento1" msdata:parent="Departamento" msdata:child="Cargo" msdata:parentkey="idDepartamento" msdata:childkey="idDepartamento" msprop:Generator_UserParentTable="Departamento" msprop:Generator_UserChildTable="Cargo" msprop:Generator_RelationVarName="relationRefDepartamento1" msprop:Generator_ChildPropName="GetCargoRows" msprop:Generator_ParentPropName="DepartamentoRow" msprop:Generator_UserRelationName="RefDepartamento1" />
-      <msdata:Relationship name="RefCargo13" msdata:parent="Cargo" msdata:child="Empleado" msdata:parentkey="idCargo" msdata:childkey="idCargo" msprop:Generator_UserParentTable="Cargo" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationRefCargo13" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_UserRelationName="RefCargo13" msprop:Generator_ParentPropName="CargoRow" />
-      <msdata:Relationship name="RefDepartamento14" msdata:parent="Departamento" msdata:child="Empleado" msdata:parentkey="idDepartamento" msdata:childkey="idDepartamento" msprop:Generator_UserParentTable="Departamento" msprop:Generator_UserChildTable="Empleado" msprop:Generator_RelationVarName="relationRefDepartamento14" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_UserRelationName="RefDepartamento14" msprop:Generator_ParentPropName="DepartamentoRow" />
-      <msdata:Relationship name="RefEmpleado15" msdata:parent="Empleado" msdata:child="Registro_de_asistencia" msdata:parentkey="idEmp" msdata:childkey="idEmp" msprop:Generator_UserParentTable="Empleado" msprop:Generator_UserChildTable="Registro_de_asistencia" msprop:Generator_RelationVarName="relationRefEmpleado15" msprop:Generator_ChildPropName="GetRegistro_de_asistenciaRows" msprop:Generator_UserRelationName="RefEmpleado15" msprop:Generator_ParentPropName="EmpleadoRow" />
-      <msdata:Relationship name="RefEmpleado151" msdata:parent="ConsultaEMP" msdata:child="Registro_de_asistencia" msdata:parentkey="idEmp" msdata:childkey="idEmp" msprop:Generator_UserParentTable="ConsultaEMP" msprop:Generator_UserChildTable="Registro_de_asistencia" msprop:Generator_RelationVarName="relationRefEmpleado151" msprop:Generator_UserRelationName="RefEmpleado151" msprop:Generator_ChildPropName="GetRegistro_de_asistenciaRows" msprop:Generator_ParentPropName="ConsultaEMPRow" />
+      <msdata:Relationship name="RefDepartamento1" msdata:parent="Departamento" msdata:child="Cargo" msdata:parentkey="idDepartamento" msdata:childkey="ID_x0020_Departamento" msprop:Generator_UserChildTable="Cargo" msprop:Generator_ChildPropName="GetCargoRows" msprop:Generator_UserRelationName="RefDepartamento1" msprop:Generator_RelationVarName="relationRefDepartamento1" msprop:Generator_UserParentTable="Departamento" msprop:Generator_ParentPropName="DepartamentoRow" />
+      <msdata:Relationship name="RefCargo13" msdata:parent="Cargo" msdata:child="Empleado" msdata:parentkey="IdCargo" msdata:childkey="ID_x0020_Cargo" msprop:Generator_UserChildTable="Empleado" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_UserRelationName="RefCargo13" msprop:Generator_ParentPropName="CargoRow" msprop:Generator_RelationVarName="relationRefCargo13" msprop:Generator_UserParentTable="Cargo" />
+      <msdata:Relationship name="RefDepartamento14" msdata:parent="Departamento" msdata:child="Empleado" msdata:parentkey="idDepartamento" msdata:childkey="ID_x0020_Departamento" msprop:Generator_UserChildTable="Empleado" msprop:Generator_ChildPropName="GetEmpleadoRows" msprop:Generator_UserRelationName="RefDepartamento14" msprop:Generator_ParentPropName="DepartamentoRow" msprop:Generator_RelationVarName="relationRefDepartamento14" msprop:Generator_UserParentTable="Departamento" />
+      <msdata:Relationship name="RefEmpleado15" msdata:parent="Empleado" msdata:child="Registro_de_asistencia" msdata:parentkey="idEmpleado" msdata:childkey="idEmp" msprop:Generator_UserChildTable="Registro_de_asistencia" msprop:Generator_ChildPropName="GetRegistro_de_asistenciaRows" msprop:Generator_UserRelationName="RefEmpleado15" msprop:Generator_ParentPropName="EmpleadoRow" msprop:Generator_RelationVarName="relationRefEmpleado15" msprop:Generator_UserParentTable="Empleado" />
+      <msdata:Relationship name="RefEmpleado151" msdata:parent="ConsultaEMP" msdata:child="Registro_de_asistencia" msdata:parentkey="ID_x0020_Empleado" msdata:childkey="idEmp" msprop:Generator_UserChildTable="Registro_de_asistencia" msprop:Generator_ChildPropName="GetRegistro_de_asistenciaRows" msprop:Generator_UserRelationName="RefEmpleado151" msprop:Generator_ParentPropName="ConsultaEMPRow" msprop:Generator_RelationVarName="relationRefEmpleado151" msprop:Generator_UserParentTable="ConsultaEMP" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

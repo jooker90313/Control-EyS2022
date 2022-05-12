@@ -43,6 +43,7 @@ Partial Class FrmRDepartamento
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtDatos = New System.Windows.Forms.TextBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -120,7 +121,7 @@ Partial Class FrmRDepartamento
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(226, 73)
+        Me.txtNombre.Location = New System.Drawing.Point(226, 77)
         Me.txtNombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(256, 22)
@@ -130,7 +131,7 @@ Partial Class FrmRDepartamento
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombre.Location = New System.Drawing.Point(130, 70)
+        Me.lblNombre.Location = New System.Drawing.Point(133, 77)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(81, 23)
         Me.lblNombre.TabIndex = 16
@@ -165,7 +166,7 @@ Partial Class FrmRDepartamento
         Me.btnGuardar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnNuevo, Me.btnGuar, Me.btnEditar, Me.btnEliminar})
         Me.btnGuardar.Location = New System.Drawing.Point(0, 0)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(40, 462)
+        Me.btnGuardar.Size = New System.Drawing.Size(30, 462)
         Me.btnGuardar.TabIndex = 30
         Me.btnGuardar.Text = "Guardar"
         '
@@ -175,7 +176,7 @@ Partial Class FrmRDepartamento
         Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
         Me.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(37, 24)
+        Me.btnNuevo.Size = New System.Drawing.Size(27, 24)
         Me.btnNuevo.Text = "Nuevo"
         '
         'btnGuar
@@ -184,7 +185,7 @@ Partial Class FrmRDepartamento
         Me.btnGuar.Image = CType(resources.GetObject("btnGuar.Image"), System.Drawing.Image)
         Me.btnGuar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnGuar.Name = "btnGuar"
-        Me.btnGuar.Size = New System.Drawing.Size(37, 24)
+        Me.btnGuar.Size = New System.Drawing.Size(27, 24)
         Me.btnGuar.Text = "Guardar"
         '
         'btnEditar
@@ -193,7 +194,7 @@ Partial Class FrmRDepartamento
         Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
         Me.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(37, 24)
+        Me.btnEditar.Size = New System.Drawing.Size(27, 24)
         Me.btnEditar.Text = "Editar"
         '
         'btnEliminar
@@ -202,7 +203,7 @@ Partial Class FrmRDepartamento
         Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
         Me.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(37, 24)
+        Me.btnEliminar.Size = New System.Drawing.Size(27, 24)
         Me.btnEliminar.Text = "Eliminar"
         '
         'gbDepartamento
@@ -250,18 +251,28 @@ Partial Class FrmRDepartamento
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(485, 203)
+        Me.btnBuscar.Image = CType(resources.GetObject("btnBuscar.Image"), System.Drawing.Image)
+        Me.btnBuscar.Location = New System.Drawing.Point(498, 183)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(89, 35)
+        Me.btnBuscar.Size = New System.Drawing.Size(86, 39)
         Me.btnBuscar.TabIndex = 34
-        Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(515, 225)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(52, 17)
+        Me.Label3.TabIndex = 80
+        Me.Label3.Text = "Buscar"
         '
         'FrmRDepartamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(619, 462)
+        Me.ClientSize = New System.Drawing.Size(618, 462)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtDatos)
         Me.Controls.Add(Me.Label1)
@@ -313,4 +324,5 @@ Partial Class FrmRDepartamento
     Friend WithEvents txtDatos As TextBox
     Friend WithEvents btnBuscar As Button
     Friend WithEvents DgvDepartamento As DataGridView
+    Friend WithEvents Label3 As Label
 End Class

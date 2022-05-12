@@ -25,6 +25,7 @@ Partial Class FrmInicioAdmin
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmInicioAdmin))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblFe = New System.Windows.Forms.Label()
         Me.lblHora = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -43,7 +44,6 @@ Partial Class FrmInicioAdmin
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.LblFecha = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,14 +54,25 @@ Partial Class FrmInicioAdmin
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.lblFe)
         Me.Panel1.Controls.Add(Me.lblHora)
         Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.MenuStrip1)
-        Me.Panel1.Location = New System.Drawing.Point(-4, 0)
+        Me.Panel1.Location = New System.Drawing.Point(-5, -1)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1168, 44)
         Me.Panel1.TabIndex = 0
+        '
+        'lblFe
+        '
+        Me.lblFe.AutoSize = True
+        Me.lblFe.Font = New System.Drawing.Font("Ebrima", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFe.ForeColor = System.Drawing.Color.Silver
+        Me.lblFe.Location = New System.Drawing.Point(794, 9)
+        Me.lblFe.Name = "lblFe"
+        Me.lblFe.Size = New System.Drawing.Size(0, 28)
+        Me.lblFe.TabIndex = 6
         '
         'lblHora
         '
@@ -211,15 +222,6 @@ Partial Class FrmInicioAdmin
         '
         Me.Timer1.Enabled = True
         '
-        'LblFecha
-        '
-        Me.LblFecha.AutoSize = True
-        Me.LblFecha.Font = New System.Drawing.Font("Ebrima", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblFecha.Location = New System.Drawing.Point(896, 52)
-        Me.LblFecha.Name = "LblFecha"
-        Me.LblFecha.Size = New System.Drawing.Size(0, 28)
-        Me.LblFecha.TabIndex = 7
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -236,7 +238,6 @@ Partial Class FrmInicioAdmin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 28.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1163, 539)
-        Me.Controls.Add(Me.LblFecha)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -278,6 +279,6 @@ Partial Class FrmInicioAdmin
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lblHora As Label
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents LblFecha As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents lblFe As Label
 End Class

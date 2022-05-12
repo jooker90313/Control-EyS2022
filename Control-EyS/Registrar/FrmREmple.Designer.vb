@@ -58,6 +58,7 @@ Partial Class FrmREmple
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.txtApellido = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -291,11 +292,11 @@ Partial Class FrmREmple
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(477, 384)
+        Me.btnBuscar.Image = CType(resources.GetObject("btnBuscar.Image"), System.Drawing.Image)
+        Me.btnBuscar.Location = New System.Drawing.Point(488, 368)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(89, 35)
+        Me.btnBuscar.Size = New System.Drawing.Size(92, 42)
         Me.btnBuscar.TabIndex = 72
-        Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'txtDatos
@@ -409,11 +410,21 @@ Partial Class FrmREmple
         Me.txtApellido.Size = New System.Drawing.Size(256, 22)
         Me.txtApellido.TabIndex = 81
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(506, 413)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(52, 17)
+        Me.Label9.TabIndex = 82
+        Me.Label9.Text = "Buscar"
+        '
         'FrmREmple
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(592, 746)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtApellido)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Label1)
@@ -493,4 +504,5 @@ Partial Class FrmREmple
     Friend WithEvents Label1 As Label
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents txtApellido As TextBox
+    Friend WithEvents Label9 As Label
 End Class

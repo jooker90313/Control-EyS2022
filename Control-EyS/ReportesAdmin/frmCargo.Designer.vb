@@ -22,9 +22,33 @@ Partial Class frmCargo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.DgvCargo = New System.Windows.Forms.DataGridView()
+        CType(Me.DgvCargo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'DgvCargo
+        '
+        Me.DgvCargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvCargo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvCargo.Location = New System.Drawing.Point(0, 0)
+        Me.DgvCargo.Name = "DgvCargo"
+        Me.DgvCargo.RowHeadersWidth = 51
+        Me.DgvCargo.RowTemplate.Height = 24
+        Me.DgvCargo.Size = New System.Drawing.Size(800, 450)
+        Me.DgvCargo.TabIndex = 0
+        '
+        'frmCargo
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(640, 360)
+        Me.Controls.Add(Me.DgvCargo)
+        Me.Name = "frmCargo"
         Me.Text = "frmCargo"
+        CType(Me.DgvCargo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
     End Sub
+
+    Friend WithEvents DgvCargo As DataGridView
 End Class
