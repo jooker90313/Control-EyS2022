@@ -28,11 +28,27 @@ Partial Class FrmExportar
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.btnExcel = New System.Windows.Forms.Button()
-        Me.btnPdf = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.EXCELToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteDeDepartamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteDeEmpleadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteDeCargoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteDeHoraEntradaYSalidaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.MenuStrip2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -89,43 +105,137 @@ Partial Class FrmExportar
         Me.Panel2.Size = New System.Drawing.Size(647, 42)
         Me.Panel2.TabIndex = 2
         '
-        'btnExcel
+        'GroupBox1
         '
-        Me.btnExcel.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.btnExcel.FlatAppearance.BorderSize = 0
-        Me.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnExcel.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExcel.ForeColor = System.Drawing.Color.White
-        Me.btnExcel.Location = New System.Drawing.Point(403, 158)
-        Me.btnExcel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnExcel.Name = "btnExcel"
-        Me.btnExcel.Size = New System.Drawing.Size(125, 68)
-        Me.btnExcel.TabIndex = 6
-        Me.btnExcel.Text = "EXCEL"
-        Me.btnExcel.UseVisualStyleBackColor = False
+        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.MenuStrip1)
+        Me.GroupBox1.Location = New System.Drawing.Point(383, 154)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(84, 72)
+        Me.GroupBox1.TabIndex = 8
+        Me.GroupBox1.TabStop = False
         '
-        'btnPdf
+        'MenuStrip1
         '
-        Me.btnPdf.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.btnPdf.FlatAppearance.BorderSize = 0
-        Me.btnPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPdf.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPdf.ForeColor = System.Drawing.Color.White
-        Me.btnPdf.Location = New System.Drawing.Point(79, 158)
-        Me.btnPdf.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnPdf.Name = "btnPdf"
-        Me.btnPdf.Size = New System.Drawing.Size(125, 68)
-        Me.btnPdf.TabIndex = 5
-        Me.btnPdf.Text = "PDF"
-        Me.btnPdf.UseVisualStyleBackColor = False
+        Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EXCELToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(3, 18)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(78, 28)
+        Me.MenuStrip1.TabIndex = 0
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'EXCELToolStripMenuItem
+        '
+        Me.EXCELToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReporteDeDepartamentoToolStripMenuItem, Me.ReporteDeEmpleadoToolStripMenuItem, Me.ReporteDeCargoToolStripMenuItem, Me.ReporteDeHoraEntradaYSalidaToolStripMenuItem})
+        Me.EXCELToolStripMenuItem.Font = New System.Drawing.Font("Ebrima", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EXCELToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.EXCELToolStripMenuItem.Name = "EXCELToolStripMenuItem"
+        Me.EXCELToolStripMenuItem.Size = New System.Drawing.Size(66, 24)
+        Me.EXCELToolStripMenuItem.Text = "EXCEL"
+        '
+        'ReporteDeDepartamentoToolStripMenuItem
+        '
+        Me.ReporteDeDepartamentoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.ReporteDeDepartamentoToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.ReporteDeDepartamentoToolStripMenuItem.Name = "ReporteDeDepartamentoToolStripMenuItem"
+        Me.ReporteDeDepartamentoToolStripMenuItem.Size = New System.Drawing.Size(322, 26)
+        Me.ReporteDeDepartamentoToolStripMenuItem.Text = "Reporte de Departamento"
+        '
+        'ReporteDeEmpleadoToolStripMenuItem
+        '
+        Me.ReporteDeEmpleadoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.ReporteDeEmpleadoToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.ReporteDeEmpleadoToolStripMenuItem.Name = "ReporteDeEmpleadoToolStripMenuItem"
+        Me.ReporteDeEmpleadoToolStripMenuItem.Size = New System.Drawing.Size(322, 26)
+        Me.ReporteDeEmpleadoToolStripMenuItem.Text = "Reporte de Empleado"
+        '
+        'ReporteDeCargoToolStripMenuItem
+        '
+        Me.ReporteDeCargoToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.ReporteDeCargoToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.ReporteDeCargoToolStripMenuItem.Name = "ReporteDeCargoToolStripMenuItem"
+        Me.ReporteDeCargoToolStripMenuItem.Size = New System.Drawing.Size(322, 26)
+        Me.ReporteDeCargoToolStripMenuItem.Text = "Reporte de Cargo"
+        '
+        'ReporteDeHoraEntradaYSalidaToolStripMenuItem
+        '
+        Me.ReporteDeHoraEntradaYSalidaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.ReporteDeHoraEntradaYSalidaToolStripMenuItem.ForeColor = System.Drawing.Color.White
+        Me.ReporteDeHoraEntradaYSalidaToolStripMenuItem.Name = "ReporteDeHoraEntradaYSalidaToolStripMenuItem"
+        Me.ReporteDeHoraEntradaYSalidaToolStripMenuItem.Size = New System.Drawing.Size(322, 26)
+        Me.ReporteDeHoraEntradaYSalidaToolStripMenuItem.Text = "Reporte de Hora Entrada y Salida"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.GroupBox2.Controls.Add(Me.MenuStrip2)
+        Me.GroupBox2.Location = New System.Drawing.Point(128, 154)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(84, 72)
+        Me.GroupBox2.TabIndex = 9
+        Me.GroupBox2.TabStop = False
+        '
+        'MenuStrip2
+        '
+        Me.MenuStrip2.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.MenuStrip2.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1})
+        Me.MenuStrip2.Location = New System.Drawing.Point(3, 18)
+        Me.MenuStrip2.Name = "MenuStrip2"
+        Me.MenuStrip2.Size = New System.Drawing.Size(78, 28)
+        Me.MenuStrip2.TabIndex = 0
+        Me.MenuStrip2.Text = "MenuStrip2"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.ToolStripMenuItem5})
+        Me.ToolStripMenuItem1.Font = New System.Drawing.Font("Ebrima", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripMenuItem1.ForeColor = System.Drawing.Color.White
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(51, 24)
+        Me.ToolStripMenuItem1.Text = "PDF"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.ToolStripMenuItem2.ForeColor = System.Drawing.Color.White
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(322, 26)
+        Me.ToolStripMenuItem2.Text = "Reporte de Departamento"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.ToolStripMenuItem3.ForeColor = System.Drawing.Color.White
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(322, 26)
+        Me.ToolStripMenuItem3.Text = "Reporte de Empleado"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.ToolStripMenuItem4.ForeColor = System.Drawing.Color.White
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(322, 26)
+        Me.ToolStripMenuItem4.Text = "Reporte de Cargo"
+        '
+        'ToolStripMenuItem5
+        '
+        Me.ToolStripMenuItem5.BackColor = System.Drawing.Color.FromArgb(CType(CType(16, Byte), Integer), CType(CType(103, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.ToolStripMenuItem5.ForeColor = System.Drawing.Color.White
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(322, 26)
+        Me.ToolStripMenuItem5.Text = "Reporte de Hora Entrada y Salida"
         '
         'FrmExportar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(640, 399)
-        Me.Controls.Add(Me.btnExcel)
-        Me.Controls.Add(Me.btnPdf)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -138,6 +248,14 @@ Partial Class FrmExportar
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.MenuStrip2.ResumeLayout(False)
+        Me.MenuStrip2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -147,6 +265,18 @@ Partial Class FrmExportar
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents btnExcel As Button
-    Friend WithEvents btnPdf As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents EXCELToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteDeDepartamentoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteDeEmpleadoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteDeCargoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReporteDeHoraEntradaYSalidaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents MenuStrip2 As MenuStrip
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem4 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
 End Class

@@ -33,4 +33,8 @@
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub txtId_TextChanged(sender As Object, e As EventArgs) Handles txtId.TextChanged
+
+    End Sub
 End Class

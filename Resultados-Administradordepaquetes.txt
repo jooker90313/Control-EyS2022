@@ -1,20 +1,14 @@
 ﻿
 
-Intentando recopilar información sobre la dependencia para el paquete 'ClosedXML.0.95.4' respecto al proyecto 'Control-EyS', con el destino '.NETFramework,Version=v4.7.2'
-La recopilación de información de dependencia tardó 8.51 sec
-Intentando resolver las dependencias para el paquete 'ClosedXML.0.95.4' con DependencyBehavior 'Lowest'
+Intentando recopilar información sobre la dependencia para el paquete 'iTextSharp.5.5.13.3' respecto al proyecto 'Control-EyS', con el destino '.NETFramework,Version=v4.7.2'
+La recopilación de información de dependencia tardó 837 ms
+Intentando resolver las dependencias para el paquete 'iTextSharp.5.5.13.3' con DependencyBehavior 'Lowest'
 La resolución de información de dependencia tardó 0 ms
-Resolviendo acciones para instalar el paquete 'ClosedXML.0.95.4'
-Se resolvieron las acciones para instalar el paquete 'ClosedXML.0.95.4'
-  GET https://api.nuget.org/v3-flatcontainer/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg
-  GET https://api.nuget.org/v3-flatcontainer/documentformat.openxml/2.7.2/documentformat.openxml.2.7.2.nupkg
-  GET https://api.nuget.org/v3-flatcontainer/system.io.filesystem.primitives/4.0.1/system.io.filesystem.primitives.4.0.1.nupkg
-  GET https://api.nuget.org/v3-flatcontainer/closedxml/0.95.4/closedxml.0.95.4.nupkg
-  GET https://api.nuget.org/v3-flatcontainer/system.io.packaging/4.0.0/system.io.packaging.4.0.0.nupkg
-  GET https://api.nuget.org/v3-flatcontainer/excelnumberformat/1.0.10/excelnumberformat.1.0.10.nupkg
-  OK https://api.nuget.org/v3-flatcontainer/documentformat.openxml/2.7.2/documentformat.openxml.2.7.2.nupkg 57 ms 
-  OK https://api.nuget.org/v3-flatcontainer/system.io.filesystem.primitives/4.0.1/system.io.filesystem.primitives.4.0.1.nupkg 59 ms 
-Instalando DocumentFormat.OpenXml 2.7.2.
-Instalando System.IO.FileSystem.Primitives 4.0.1.
-  OK https://api.nuget.org/v3-flatcontainer/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg 529 ms 
-Instalando Microsoft.CSharp 4.7.0.
+Resolviendo acciones para instalar el paquete 'iTextSharp.5.5.13.3'
+Se resolvieron las acciones para instalar el paquete 'iTextSharp.5.5.13.3'
+  GET https://api.nuget.org/v3-flatcontainer/bouncycastle/1.8.9/bouncycastle.1.8.9.nupkg
+  GET https://api.nuget.org/v3-flatcontainer/itextsharp/5.5.13.3/itextsharp.5.5.13.3.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/itextsharp/5.5.13.3/itextsharp.5.5.13.3.nupkg 64 ms 
+  OK https://api.nuget.org/v3-flatcontainer/bouncycastle/1.8.9/bouncycastle.1.8.9.nupkg 72 ms 
+Instalando BouncyCastle 1.8.9.
+Instalando iTextSharp 5.5.13.3.
