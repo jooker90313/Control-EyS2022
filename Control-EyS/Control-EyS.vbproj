@@ -103,9 +103,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BDQUICKIEDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSet\BDQUICKIEDataSet.vb">
-      <DependentUpon>BDQUICKIEDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Inicio Desde Admin\FrmInicioAdmin.Designer.vb">
       <DependentUpon>FrmInicioAdmin.vb</DependentUpon>
     </Compile>
@@ -247,22 +244,6 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SqlServerTypes\Loader.cs" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

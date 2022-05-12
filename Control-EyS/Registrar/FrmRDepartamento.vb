@@ -24,7 +24,7 @@
             txtNombre.Focus()
             Exit Sub
         End If
-        depa.InsertarDepartamento(nombre, True)
+        depa.InsertarDepa(nombre, True)
         llenardepa()
     End Sub
 
@@ -60,7 +60,7 @@
             txtNombre.Focus()
             Exit Sub
         End If
-        depa.ActualizarDepartamento(nombre, estado, idDep)
+        depa.ActualizarDepa(nombre, estado, idDep)
 
         llenardepa()
     End Sub
@@ -70,7 +70,7 @@
             Dim resp As VariantType
             resp = (MsgBox("Desea eliminar el registro?", vbQuestion + vbYesNo, "Eliminar"))
             If (resp = vbYes) Then
-                depa.EliminarDepartamento(idDep)
+                depa.EliminarDepa(idDep)
                 llenardepa()
                 btnNuevo.PerformClick()
 

@@ -35,15 +35,9 @@ Partial Class FrmREmple
         Me.btnEditar = New System.Windows.Forms.ToolStripButton()
         Me.btnEliminar = New System.Windows.Forms.ToolStripButton()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.txtDepartamento = New System.Windows.Forms.TextBox()
         Me.lblDepartamrnto = New System.Windows.Forms.Label()
-        Me.lblestado = New System.Windows.Forms.Label()
-        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.ckbActivo = New System.Windows.Forms.CheckBox()
-        Me.txtApellido = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtCargo = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -58,6 +52,12 @@ Partial Class FrmREmple
         Me.DgvEmpleado = New System.Windows.Forms.DataGridView()
         Me.txtCedula = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblestado = New System.Windows.Forms.Label()
+        Me.cbCargo = New System.Windows.Forms.ComboBox()
+        Me.cbDep = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
+        Me.txtApellido = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -194,94 +194,42 @@ Partial Class FrmREmple
         Me.Panel2.Size = New System.Drawing.Size(593, 38)
         Me.Panel2.TabIndex = 32
         '
-        'txtDepartamento
-        '
-        Me.txtDepartamento.Location = New System.Drawing.Point(213, 208)
-        Me.txtDepartamento.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtDepartamento.Name = "txtDepartamento"
-        Me.txtDepartamento.Size = New System.Drawing.Size(256, 22)
-        Me.txtDepartamento.TabIndex = 58
-        '
         'lblDepartamrnto
         '
         Me.lblDepartamrnto.AutoSize = True
         Me.lblDepartamrnto.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDepartamrnto.Location = New System.Drawing.Point(60, 208)
+        Me.lblDepartamrnto.Location = New System.Drawing.Point(60, 199)
         Me.lblDepartamrnto.Name = "lblDepartamrnto"
         Me.lblDepartamrnto.Size = New System.Drawing.Size(132, 23)
         Me.lblDepartamrnto.TabIndex = 57
         Me.lblDepartamrnto.Text = "Departamento:"
         '
-        'lblestado
-        '
-        Me.lblestado.AutoSize = True
-        Me.lblestado.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblestado.Location = New System.Drawing.Point(108, 361)
-        Me.lblestado.Name = "lblestado"
-        Me.lblestado.Size = New System.Drawing.Size(68, 23)
-        Me.lblestado.TabIndex = 55
-        Me.lblestado.Text = "Estado:"
-        '
-        'txtNombre
-        '
-        Me.txtNombre.Location = New System.Drawing.Point(213, 93)
-        Me.txtNombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(256, 22)
-        Me.txtNombre.TabIndex = 54
-        '
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombre.Location = New System.Drawing.Point(102, 93)
+        Me.lblNombre.Location = New System.Drawing.Point(99, 81)
         Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(81, 23)
+        Me.lblNombre.Size = New System.Drawing.Size(88, 23)
         Me.lblNombre.TabIndex = 52
-        Me.lblNombre.Text = "Nombre:"
+        Me.lblNombre.Text = "Nombres:"
         '
         'ckbActivo
         '
         Me.ckbActivo.AutoSize = True
         Me.ckbActivo.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ckbActivo.Location = New System.Drawing.Point(213, 361)
+        Me.ckbActivo.Location = New System.Drawing.Point(213, 355)
         Me.ckbActivo.Name = "ckbActivo"
         Me.ckbActivo.Size = New System.Drawing.Size(90, 23)
         Me.ckbActivo.TabIndex = 59
         Me.ckbActivo.Text = "ACTIVO"
         Me.ckbActivo.UseVisualStyleBackColor = True
         '
-        'txtApellido
-        '
-        Me.txtApellido.Location = New System.Drawing.Point(213, 130)
-        Me.txtApellido.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtApellido.Name = "txtApellido"
-        Me.txtApellido.Size = New System.Drawing.Size(256, 22)
-        Me.txtApellido.TabIndex = 61
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(100, 130)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(83, 23)
-        Me.Label1.TabIndex = 60
-        Me.Label1.Text = "Apellido:"
-        '
-        'txtCargo
-        '
-        Me.txtCargo.Location = New System.Drawing.Point(213, 166)
-        Me.txtCargo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtCargo.Name = "txtCargo"
-        Me.txtCargo.Size = New System.Drawing.Size(256, 22)
-        Me.txtCargo.TabIndex = 63
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(113, 166)
+        Me.Label3.Location = New System.Drawing.Point(113, 156)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 23)
         Me.Label3.TabIndex = 62
@@ -289,7 +237,7 @@ Partial Class FrmREmple
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(213, 246)
+        Me.txtEmail.Location = New System.Drawing.Point(213, 237)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(256, 22)
@@ -299,7 +247,7 @@ Partial Class FrmREmple
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(124, 246)
+        Me.Label4.Location = New System.Drawing.Point(124, 237)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(59, 23)
         Me.Label4.TabIndex = 64
@@ -307,7 +255,7 @@ Partial Class FrmREmple
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(213, 285)
+        Me.txtTelefono.Location = New System.Drawing.Point(213, 276)
         Me.txtTelefono.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(256, 22)
@@ -317,7 +265,7 @@ Partial Class FrmREmple
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(99, 283)
+        Me.Label5.Location = New System.Drawing.Point(99, 274)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(84, 23)
         Me.Label5.TabIndex = 66
@@ -325,7 +273,7 @@ Partial Class FrmREmple
         '
         'txtDireccion
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(213, 326)
+        Me.txtDireccion.Location = New System.Drawing.Point(213, 317)
         Me.txtDireccion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(256, 22)
@@ -335,7 +283,7 @@ Partial Class FrmREmple
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(93, 324)
+        Me.Label6.Location = New System.Drawing.Point(93, 315)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(90, 23)
         Me.Label6.TabIndex = 68
@@ -393,7 +341,7 @@ Partial Class FrmREmple
         '
         'txtCedula
         '
-        Me.txtCedula.Location = New System.Drawing.Point(213, 58)
+        Me.txtCedula.Location = New System.Drawing.Point(213, 48)
         Me.txtCedula.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtCedula.Name = "txtCedula"
         Me.txtCedula.Size = New System.Drawing.Size(256, 22)
@@ -403,17 +351,74 @@ Partial Class FrmREmple
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(102, 56)
+        Me.Label8.Location = New System.Drawing.Point(102, 46)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(88, 29)
+        Me.Label8.Size = New System.Drawing.Size(70, 23)
         Me.Label8.TabIndex = 74
         Me.Label8.Text = "Cédula:"
+        '
+        'lblestado
+        '
+        Me.lblestado.AutoSize = True
+        Me.lblestado.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblestado.Location = New System.Drawing.Point(108, 355)
+        Me.lblestado.Name = "lblestado"
+        Me.lblestado.Size = New System.Drawing.Size(68, 23)
+        Me.lblestado.TabIndex = 55
+        Me.lblestado.Text = "Estado:"
+        '
+        'cbCargo
+        '
+        Me.cbCargo.FormattingEnabled = True
+        Me.cbCargo.Location = New System.Drawing.Point(213, 158)
+        Me.cbCargo.Name = "cbCargo"
+        Me.cbCargo.Size = New System.Drawing.Size(256, 24)
+        Me.cbCargo.TabIndex = 77
+        '
+        'cbDep
+        '
+        Me.cbDep.FormattingEnabled = True
+        Me.cbDep.Location = New System.Drawing.Point(213, 198)
+        Me.cbDep.Name = "cbDep"
+        Me.cbDep.Size = New System.Drawing.Size(256, 24)
+        Me.cbDep.TabIndex = 78
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(102, 118)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(85, 23)
+        Me.Label1.TabIndex = 79
+        Me.Label1.Text = "Apellidos"
+        '
+        'txtNombre
+        '
+        Me.txtNombre.Location = New System.Drawing.Point(213, 83)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(256, 22)
+        Me.txtNombre.TabIndex = 80
+        '
+        'txtApellido
+        '
+        Me.txtApellido.Location = New System.Drawing.Point(213, 120)
+        Me.txtApellido.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtApellido.Name = "txtApellido"
+        Me.txtApellido.Size = New System.Drawing.Size(256, 22)
+        Me.txtApellido.TabIndex = 81
         '
         'FrmREmple
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(592, 746)
+        Me.Controls.Add(Me.txtApellido)
+        Me.Controls.Add(Me.txtNombre)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.cbDep)
+        Me.Controls.Add(Me.cbCargo)
         Me.Controls.Add(Me.txtCedula)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.gbEmpleado)
@@ -426,15 +431,10 @@ Partial Class FrmREmple
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtEmail)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtCargo)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtApellido)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ckbActivo)
-        Me.Controls.Add(Me.txtDepartamento)
         Me.Controls.Add(Me.lblDepartamrnto)
         Me.Controls.Add(Me.lblestado)
-        Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.btnGuardar)
@@ -470,15 +470,9 @@ Partial Class FrmREmple
     Friend WithEvents btnEditar As ToolStripButton
     Friend WithEvents btnEliminar As ToolStripButton
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents txtDepartamento As TextBox
     Friend WithEvents lblDepartamrnto As Label
-    Friend WithEvents lblestado As Label
-    Friend WithEvents txtNombre As TextBox
     Friend WithEvents lblNombre As Label
     Friend WithEvents ckbActivo As CheckBox
-    Friend WithEvents txtApellido As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents txtCargo As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents Label4 As Label
@@ -493,4 +487,10 @@ Partial Class FrmREmple
     Friend WithEvents DgvEmpleado As DataGridView
     Friend WithEvents txtCedula As TextBox
     Friend WithEvents Label8 As Label
+    Friend WithEvents lblestado As Label
+    Friend WithEvents cbCargo As ComboBox
+    Friend WithEvents cbDep As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtNombre As TextBox
+    Friend WithEvents txtApellido As TextBox
 End Class
