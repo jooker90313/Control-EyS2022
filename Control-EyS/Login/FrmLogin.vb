@@ -1,7 +1,11 @@
-﻿Public Class FrmLogin
+﻿
+
+
+Public Class FrmLogin
+
+
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Application.Exit()
-
 
     End Sub
 
@@ -23,6 +27,7 @@
             FrmInicioAdmin.Show()
             Me.Hide()
         Else
+
             FrmRegistrarEyN.Show()
             Me.Hide()
         End If
@@ -34,7 +39,8 @@
 
     End Sub
 
-    Private Sub txtId_TextChanged(sender As Object, e As EventArgs) Handles txtId.TextChanged
+    Public Function Login(usu As String) As DataTable
 
-    End Sub
+    End Function
+
 End Class

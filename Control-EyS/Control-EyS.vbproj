@@ -126,12 +126,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archivo\Conexion.vb" />
+    <Compile Include="Archivo\Datos.vb" />
     <Compile Include="Archivo\FrmExportar.Designer.vb">
       <DependentUpon>FrmExportar.vb</DependentUpon>
     </Compile>
     <Compile Include="Archivo\FrmExportar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Archivo\Funcion.vb" />
     <Compile Include="DataSet\BDQUICKIEDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -259,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesAdmin\frmDepartamento.resx">
       <DependentUpon>frmDepartamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAdmin\frmEmpleado.resx">
+      <DependentUpon>frmEmpleado.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

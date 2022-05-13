@@ -110,4 +110,8 @@ Public Class FrmExportar
         Dim data As DataTable = carg.GetData
         GeneratePdf(data)
     End Sub
+
+    Private Sub FrmExportar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

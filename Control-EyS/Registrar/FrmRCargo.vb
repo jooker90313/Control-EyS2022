@@ -48,7 +48,7 @@
     Sub llenarDep()
         cbDepartamento.DataSource = depa.GetData
         cbDepartamento.DisplayMember = "Nombre Departamento"
-        cbDepartamento.ValueMember = "idDepartamento"
+        cbDepartamento.ValueMember = "ID Departamento"
         cbDepartamento.Refresh()
     End Sub
 
