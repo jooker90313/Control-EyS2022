@@ -30,9 +30,8 @@ Partial Class FrmRCargo
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.lblNombre = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.lblDepartamrnto = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.ToolStrip()
         Me.btnNuevo = New System.Windows.Forms.ToolStripButton()
@@ -44,17 +43,20 @@ Partial Class FrmRCargo
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ckbActivo = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.gbCargo = New System.Windows.Forms.GroupBox()
+        Me.DgvCargo = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.cbDepartamento = New System.Windows.Forms.ComboBox()
+        Me.txtDescripcion = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.btnGuardar.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbCargo.SuspendLayout()
+        CType(Me.DgvCargo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -135,37 +137,29 @@ Partial Class FrmRCargo
         Me.Panel2.Size = New System.Drawing.Size(589, 38)
         Me.Panel2.TabIndex = 6
         '
-        'TextBox2
+        'txtNombre
         '
-        Me.TextBox2.Location = New System.Drawing.Point(227, 75)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(256, 22)
-        Me.TextBox2.TabIndex = 40
+        Me.txtNombre.Location = New System.Drawing.Point(227, 56)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(256, 22)
+        Me.txtNombre.TabIndex = 40
         '
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombre.Location = New System.Drawing.Point(131, 73)
+        Me.lblNombre.Location = New System.Drawing.Point(131, 54)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(81, 23)
         Me.lblNombre.TabIndex = 38
         Me.lblNombre.Text = "Nombre:"
         '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(227, 108)
-        Me.TextBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(256, 22)
-        Me.TextBox5.TabIndex = 50
-        '
         'lblDepartamrnto
         '
         Me.lblDepartamrnto.AutoSize = True
         Me.lblDepartamrnto.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDepartamrnto.Location = New System.Drawing.Point(80, 106)
+        Me.lblDepartamrnto.Location = New System.Drawing.Point(80, 163)
         Me.lblDepartamrnto.Name = "lblDepartamrnto"
         Me.lblDepartamrnto.Size = New System.Drawing.Size(132, 23)
         Me.lblDepartamrnto.TabIndex = 49
@@ -222,7 +216,7 @@ Partial Class FrmRCargo
         'btnBuscar
         '
         Me.btnBuscar.Image = CType(resources.GetObject("btnBuscar.Image"), System.Drawing.Image)
-        Me.btnBuscar.Location = New System.Drawing.Point(475, 178)
+        Me.btnBuscar.Location = New System.Drawing.Point(475, 226)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(100, 43)
         Me.btnBuscar.TabIndex = 77
@@ -230,7 +224,7 @@ Partial Class FrmRCargo
         '
         'txtDatos
         '
-        Me.txtDatos.Location = New System.Drawing.Point(224, 199)
+        Me.txtDatos.Location = New System.Drawing.Point(224, 247)
         Me.txtDatos.Name = "txtDatos"
         Me.txtDatos.Size = New System.Drawing.Size(234, 22)
         Me.txtDatos.TabIndex = 76
@@ -239,7 +233,7 @@ Partial Class FrmRCargo
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Ebrima", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(58, 199)
+        Me.Label7.Location = New System.Drawing.Point(58, 247)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(123, 20)
         Me.Label7.TabIndex = 75
@@ -249,7 +243,7 @@ Partial Class FrmRCargo
         '
         Me.ckbActivo.AutoSize = True
         Me.ckbActivo.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ckbActivo.Location = New System.Drawing.Point(227, 144)
+        Me.ckbActivo.Location = New System.Drawing.Point(227, 204)
         Me.ckbActivo.Name = "ckbActivo"
         Me.ckbActivo.Size = New System.Drawing.Size(90, 23)
         Me.ckbActivo.TabIndex = 74
@@ -260,61 +254,90 @@ Partial Class FrmRCargo
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(144, 144)
+        Me.Label1.Location = New System.Drawing.Point(144, 204)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 23)
         Me.Label1.TabIndex = 73
         Me.Label1.Text = "Estado:"
         '
-        'GroupBox1
+        'gbCargo
         '
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
-        Me.GroupBox1.Location = New System.Drawing.Point(43, 245)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(532, 253)
-        Me.GroupBox1.TabIndex = 78
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Registro Guardado: 0"
+        Me.gbCargo.Controls.Add(Me.DgvCargo)
+        Me.gbCargo.Location = New System.Drawing.Point(43, 284)
+        Me.gbCargo.Name = "gbCargo"
+        Me.gbCargo.Size = New System.Drawing.Size(532, 214)
+        Me.gbCargo.TabIndex = 78
+        Me.gbCargo.TabStop = False
+        Me.gbCargo.Text = "Registro Guardado: 0"
         '
-        'DataGridView1
+        'DgvCargo
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 18)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(526, 232)
-        Me.DataGridView1.TabIndex = 0
+        Me.DgvCargo.AllowUserToAddRows = False
+        Me.DgvCargo.AllowUserToDeleteRows = False
+        Me.DgvCargo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvCargo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvCargo.Location = New System.Drawing.Point(3, 18)
+        Me.DgvCargo.Name = "DgvCargo"
+        Me.DgvCargo.ReadOnly = True
+        Me.DgvCargo.RowHeadersWidth = 51
+        Me.DgvCargo.RowTemplate.Height = 24
+        Me.DgvCargo.Size = New System.Drawing.Size(526, 193)
+        Me.DgvCargo.TabIndex = 0
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(503, 224)
+        Me.Label3.Location = New System.Drawing.Point(503, 272)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(52, 17)
         Me.Label3.TabIndex = 79
         Me.Label3.Text = "Buscar"
+        '
+        'cbDepartamento
+        '
+        Me.cbDepartamento.FormattingEnabled = True
+        Me.cbDepartamento.Location = New System.Drawing.Point(227, 163)
+        Me.cbDepartamento.Name = "cbDepartamento"
+        Me.cbDepartamento.Size = New System.Drawing.Size(265, 24)
+        Me.cbDepartamento.TabIndex = 81
+        '
+        'txtDescripcion
+        '
+        Me.txtDescripcion.Location = New System.Drawing.Point(227, 97)
+        Me.txtDescripcion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtDescripcion.Multiline = True
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(256, 51)
+        Me.txtDescripcion.TabIndex = 84
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(104, 113)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(108, 23)
+        Me.Label4.TabIndex = 83
+        Me.Label4.Text = "Descripción:"
         '
         'FrmRCargo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(587, 539)
+        Me.Controls.Add(Me.txtDescripcion)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.cbDepartamento)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.gbCargo)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtDatos)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.ckbActivo)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnGuardar)
-        Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.lblDepartamrnto)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -332,8 +355,8 @@ Partial Class FrmRCargo
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.btnGuardar.ResumeLayout(False)
         Me.btnGuardar.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbCargo.ResumeLayout(False)
+        CType(Me.DgvCargo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -346,9 +369,8 @@ Partial Class FrmRCargo
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtNombre As TextBox
     Friend WithEvents lblNombre As Label
-    Friend WithEvents TextBox5 As TextBox
     Friend WithEvents lblDepartamrnto As Label
     Friend WithEvents btnGuardar As ToolStrip
     Friend WithEvents btnNuevo As ToolStripButton
@@ -360,7 +382,10 @@ Partial Class FrmRCargo
     Friend WithEvents Label7 As Label
     Friend WithEvents ckbActivo As CheckBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents gbCargo As GroupBox
+    Friend WithEvents DgvCargo As DataGridView
     Friend WithEvents Label3 As Label
+    Friend WithEvents cbDepartamento As ComboBox
+    Friend WithEvents txtDescripcion As TextBox
+    Friend WithEvents Label4 As Label
 End Class
