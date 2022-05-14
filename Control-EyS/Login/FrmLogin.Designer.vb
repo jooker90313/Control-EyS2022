@@ -24,9 +24,7 @@ Partial Class FrmLogin
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmLogin))
         Me.txtId = New System.Windows.Forms.TextBox()
-        Me.txtContraseña = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -48,44 +46,21 @@ Partial Class FrmLogin
         Me.txtId.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtId.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtId.ForeColor = System.Drawing.Color.Silver
-        Me.txtId.Location = New System.Drawing.Point(25, 323)
+        Me.txtId.Location = New System.Drawing.Point(25, 378)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(351, 28)
         Me.txtId.TabIndex = 0
-        '
-        'txtContraseña
-        '
-        Me.txtContraseña.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(96, Byte), Integer), CType(CType(130, Byte), Integer))
-        Me.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtContraseña.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContraseña.ForeColor = System.Drawing.Color.Silver
-        Me.txtContraseña.Location = New System.Drawing.Point(25, 419)
-        Me.txtContraseña.Name = "txtContraseña"
-        Me.txtContraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContraseña.Size = New System.Drawing.Size(351, 28)
-        Me.txtContraseña.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Silver
-        Me.Label1.Location = New System.Drawing.Point(54, 286)
+        Me.Label1.Location = New System.Drawing.Point(79, 347)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(33, 28)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Id:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Silver
-        Me.Label2.Location = New System.Drawing.Point(30, 388)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(114, 28)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Contraseña:"
         '
         'btnLogin
         '
@@ -94,7 +69,7 @@ Partial Class FrmLogin
         Me.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogin.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.ForeColor = System.Drawing.Color.White
-        Me.btnLogin.Location = New System.Drawing.Point(35, 501)
+        Me.btnLogin.Location = New System.Drawing.Point(25, 459)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(351, 48)
         Me.btnLogin.TabIndex = 4
@@ -164,7 +139,7 @@ Partial Class FrmLogin
         'PictureBox4
         '
         Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(12, 271)
+        Me.PictureBox4.Location = New System.Drawing.Point(25, 329)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(38, 43)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -182,9 +157,7 @@ Partial Class FrmLogin
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnLogin)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtContraseña)
         Me.Controls.Add(Me.txtId)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -204,9 +177,7 @@ Partial Class FrmLogin
     End Sub
 
     Friend WithEvents txtId As TextBox
-    Friend WithEvents txtContraseña As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents btnLogin As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel

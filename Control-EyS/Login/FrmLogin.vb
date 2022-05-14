@@ -2,7 +2,7 @@
 
 
 Public Class FrmLogin
-    Dim regEmpl As New BDQUICKIEDataSetTableAdapters.EmpleadoTableAdapter
+
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Application.Exit()
@@ -23,21 +23,26 @@ Public Class FrmLogin
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-        'Dim Id As String = CedulaRegistrado(txtId.Text)
 
-        If CedulaRegistrado(txtId.Text) Then
-            FrmRegistrarEyN.Show()
+        Try
+            If usuarioRegistrado(txtId.Text) = True Then
+                Me.Hide()
+                If ConsultarTipoUsuario(txtId.Text) = 1 Then
+                    FrmInicioAdmin.ShowDialog()
+                Else
+                    FrmRegistrarEyN.ShowDialog()
+                End If
+            Else
 
-        Else txtId.Text = "admin"
-            FrmInicioAdmin.Show()
-            Me.Hide()
-
-
-            'txtId.Text = Id
-
-        End If
-        'CedulaRegistrado(txtId.Text)
+                MsgBox("El Usuario: " + txtId.Text + " no se encuentra registrado")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
     End Sub
+
+
+
 
     Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         abrir()

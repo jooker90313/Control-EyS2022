@@ -48,7 +48,7 @@
     Sub llenarDep()
         cbDepartamento.DataSource = depa.GetData
         cbDepartamento.DisplayMember = "Nombre Departamento"
-        cbDepartamento.ValueMember = "ID Departamento"
+        cbDepartamento.ValueMember = "idDepartamento"
         cbDepartamento.Refresh()
     End Sub
 
@@ -112,5 +112,11 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+
+
+    Private Sub lblDepartamrnto_Click(sender As Object, e As EventArgs) Handles lblDepartamrnto.Click
+
     End Sub
 End Class
