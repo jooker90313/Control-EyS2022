@@ -17,15 +17,15 @@
 
     Sub llenarCarg()
         cbCargo.DataSource = carg.GetData
-        cbCargo.DisplayMember = "nombreCargo"
-        cbCargo.ValueMember = "IdCargo"
+        cbCargo.DisplayMember = "Nombre del Cargo"
+        cbCargo.ValueMember = "idCargo"
         cbCargo.Refresh()
     End Sub
 
     Sub llenarDep()
         cbDep.DataSource = depa.GetData
-        cbDep.DisplayMember = "nombreDepartamento"
-        cbDep.ValueMember = "IdDepartamento"
+        cbDep.DisplayMember = "Nombre Departamento"
+        cbDep.ValueMember = "idDepartamento"
         cbDep.Refresh()
     End Sub
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click

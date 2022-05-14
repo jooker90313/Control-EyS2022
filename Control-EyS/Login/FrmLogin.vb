@@ -28,13 +28,13 @@ Public Class FrmLogin
             If usuarioRegistrado(txtId.Text) = True Then
                 Me.Hide()
                 If ConsultarTipoUsuario(txtId.Text) = 1 Then
-                    FrmInicioAdmin.ShowDialog()
+                    frmPass.ShowDialog()
                 Else
                     FrmRegistrarEyN.ShowDialog()
                 End If
             Else
 
-                MsgBox("El Usuario: " + txtId.Text + " no se encuentra registrado")
+                MsgBox("El Usuario: " + txtId.Text + "No se encuentra registrado")
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
@@ -48,7 +48,6 @@ Public Class FrmLogin
         abrir()
 
     End Sub
-
 
 
 End Class

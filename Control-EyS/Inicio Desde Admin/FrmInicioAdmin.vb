@@ -1,12 +1,11 @@
 ﻿Public Class FrmInicioAdmin
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Dim Salir
-        Salir = MsgBox("¿Desea cerrar la aplicación?", vbYesNo, "Notificación")
-        If Salir = vbYes Then
-            Application.Exit()
-        Else
-            DialogResult = vbNo
-            Return
+        Dim response
+        response = MsgBox("¿Desea cerrar sessión? ", vbOKCancel, "Notificacion")
+        If response = vbOK Then
+            FrmLogin.Show()
+            Me.Hide()
+
         End If
 
 
@@ -20,14 +19,10 @@
 
     Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
         Dim response
-        response = MsgBox("¿Desea cerrar sessión? ", vbYesNo, "Notificacion")
-        If response = vbYes Then
+        response = MsgBox("¿Desea cerrar sessión? ", vbOKCancel, "Notificacion")
+        If response = vbOK Then
             FrmLogin.Show()
             Me.Hide()
-
-        Else
-            DialogResult = vbNo
-            Return
 
         End If
 
