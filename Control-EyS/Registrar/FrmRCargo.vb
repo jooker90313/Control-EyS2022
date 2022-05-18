@@ -116,7 +116,5 @@
 
 
 
-    Private Sub lblDepartamrnto_Click(sender As Object, e As EventArgs) Handles lblDepartamrnto.Click
 
-    End Sub
 End Class

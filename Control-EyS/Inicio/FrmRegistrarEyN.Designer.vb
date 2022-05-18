@@ -29,15 +29,22 @@ Partial Class FrmRegistrarEyN
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.txtIDC = New System.Windows.Forms.TextBox()
+        Me.lblIdC = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnEntrada = New System.Windows.Forms.Button()
         Me.btnSalida = New System.Windows.Forms.Button()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.lblHora = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.lblSalida = New System.Windows.Forms.Label()
+        Me.lblInicio = New System.Windows.Forms.Label()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.lblTrabajadas = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -85,17 +92,36 @@ Partial Class FrmRegistrarEyN
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.txtIDC)
+        Me.Panel2.Controls.Add(Me.lblIdC)
         Me.Panel2.Location = New System.Drawing.Point(0, 357)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(647, 42)
         Me.Panel2.TabIndex = 1
+        '
+        'txtIDC
+        '
+        Me.txtIDC.Location = New System.Drawing.Point(106, 13)
+        Me.txtIDC.Name = "txtIDC"
+        Me.txtIDC.Size = New System.Drawing.Size(173, 22)
+        Me.txtIDC.TabIndex = 1
+        '
+        'lblIdC
+        '
+        Me.lblIdC.AutoSize = True
+        Me.lblIdC.ForeColor = System.Drawing.Color.Silver
+        Me.lblIdC.Location = New System.Drawing.Point(5, 16)
+        Me.lblIdC.Name = "lblIdC"
+        Me.lblIdC.Size = New System.Drawing.Size(95, 17)
+        Me.lblIdC.TabIndex = 0
+        Me.lblIdC.Text = "Id Conectado:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Silver
         Me.Label1.Font = New System.Drawing.Font("Ebrima", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(167, 74)
+        Me.Label1.Location = New System.Drawing.Point(187, 53)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(279, 32)
         Me.Label1.TabIndex = 2
@@ -108,7 +134,7 @@ Partial Class FrmRegistrarEyN
         Me.btnEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEntrada.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEntrada.ForeColor = System.Drawing.Color.White
-        Me.btnEntrada.Location = New System.Drawing.Point(100, 257)
+        Me.btnEntrada.Location = New System.Drawing.Point(117, 208)
         Me.btnEntrada.Name = "btnEntrada"
         Me.btnEntrada.Size = New System.Drawing.Size(126, 68)
         Me.btnEntrada.TabIndex = 3
@@ -122,7 +148,7 @@ Partial Class FrmRegistrarEyN
         Me.btnSalida.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalida.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalida.ForeColor = System.Drawing.Color.White
-        Me.btnSalida.Location = New System.Drawing.Point(382, 257)
+        Me.btnSalida.Location = New System.Drawing.Point(395, 208)
         Me.btnSalida.Name = "btnSalida"
         Me.btnSalida.Size = New System.Drawing.Size(126, 68)
         Me.btnSalida.TabIndex = 4
@@ -134,7 +160,7 @@ Partial Class FrmRegistrarEyN
         Me.lblFecha.AutoSize = True
         Me.lblFecha.Font = New System.Drawing.Font("Ebrima", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFecha.ForeColor = System.Drawing.Color.Black
-        Me.lblFecha.Location = New System.Drawing.Point(168, 171)
+        Me.lblFecha.Location = New System.Drawing.Point(107, 109)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(0, 28)
         Me.lblFecha.TabIndex = 5
@@ -144,7 +170,7 @@ Partial Class FrmRegistrarEyN
         Me.lblHora.AutoSize = True
         Me.lblHora.Font = New System.Drawing.Font("Ebrima", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHora.ForeColor = System.Drawing.Color.Black
-        Me.lblHora.Location = New System.Drawing.Point(277, 199)
+        Me.lblHora.Location = New System.Drawing.Point(216, 137)
         Me.lblHora.Name = "lblHora"
         Me.lblHora.Size = New System.Drawing.Size(0, 28)
         Me.lblHora.TabIndex = 6
@@ -153,11 +179,53 @@ Partial Class FrmRegistrarEyN
         '
         Me.Timer1.Enabled = True
         '
+        'lblSalida
+        '
+        Me.lblSalida.AutoSize = True
+        Me.lblSalida.Font = New System.Drawing.Font("Arial Rounded MT Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSalida.ForeColor = System.Drawing.Color.Red
+        Me.lblSalida.Location = New System.Drawing.Point(389, 294)
+        Me.lblSalida.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblSalida.Name = "lblSalida"
+        Me.lblSalida.Size = New System.Drawing.Size(149, 32)
+        Me.lblSalida.TabIndex = 8
+        Me.lblSalida.Text = "Hora Final"
+        '
+        'lblInicio
+        '
+        Me.lblInicio.AutoSize = True
+        Me.lblInicio.Font = New System.Drawing.Font("Arial Rounded MT Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblInicio.ForeColor = System.Drawing.Color.DarkGreen
+        Me.lblInicio.Location = New System.Drawing.Point(100, 294)
+        Me.lblInicio.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblInicio.Name = "lblInicio"
+        Me.lblInicio.Size = New System.Drawing.Size(157, 32)
+        Me.lblInicio.TabIndex = 7
+        Me.lblInicio.Text = "Hora Inicio"
+        '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
+        '
+        'lblTrabajadas
+        '
+        Me.lblTrabajadas.AutoSize = True
+        Me.lblTrabajadas.BackColor = System.Drawing.SystemColors.Control
+        Me.lblTrabajadas.Cursor = System.Windows.Forms.Cursors.No
+        Me.lblTrabajadas.Font = New System.Drawing.Font("Ebrima", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTrabajadas.Location = New System.Drawing.Point(490, 127)
+        Me.lblTrabajadas.Name = "lblTrabajadas"
+        Me.lblTrabajadas.Size = New System.Drawing.Size(0, 19)
+        Me.lblTrabajadas.TabIndex = 9
+        '
         'FrmRegistrarEyN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(640, 399)
+        Me.ClientSize = New System.Drawing.Size(642, 397)
+        Me.Controls.Add(Me.lblTrabajadas)
+        Me.Controls.Add(Me.lblSalida)
+        Me.Controls.Add(Me.lblInicio)
         Me.Controls.Add(Me.lblHora)
         Me.Controls.Add(Me.lblFecha)
         Me.Controls.Add(Me.btnSalida)
@@ -174,6 +242,8 @@ Partial Class FrmRegistrarEyN
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -190,4 +260,10 @@ Partial Class FrmRegistrarEyN
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents lblSalida As Label
+    Friend WithEvents lblInicio As Label
+    Friend WithEvents Timer2 As Timer
+    Friend WithEvents lblTrabajadas As Label
+    Friend WithEvents lblIdC As Label
+    Friend WithEvents txtIDC As TextBox
 End Class

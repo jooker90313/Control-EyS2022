@@ -46,7 +46,7 @@ Partial Class frmCargo
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(714, 44)
+        Me.Panel1.Size = New System.Drawing.Size(1119, 44)
         Me.Panel1.TabIndex = 6
         '
         'PictureBox3
@@ -104,14 +104,14 @@ Partial Class frmCargo
         Me.DgvCargo.ReadOnly = True
         Me.DgvCargo.RowHeadersWidth = 51
         Me.DgvCargo.RowTemplate.Height = 24
-        Me.DgvCargo.Size = New System.Drawing.Size(1350, 850)
+        Me.DgvCargo.Size = New System.Drawing.Size(1080, 680)
         Me.DgvCargo.TabIndex = 0
         '
         'frmCargo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(714, 513)
+        Me.ClientSize = New System.Drawing.Size(1119, 741)
         Me.Controls.Add(Me.gbCargo)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

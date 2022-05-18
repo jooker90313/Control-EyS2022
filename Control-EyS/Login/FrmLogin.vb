@@ -1,8 +1,6 @@
-﻿
+﻿Public Class FrmLogin
 
-
-Public Class FrmLogin
-
+    Public UserName As String
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Application.Exit()
@@ -23,15 +21,22 @@ Public Class FrmLogin
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-
         Try
-            If usuarioRegistrado(txtId.Text) = True Then
+
+            Dim user As String = txtId.Text
+
+            If UsuarioRegistrado(user) Then
+
+                UserName = GetIdEmpleado(user)
+
                 Me.Hide()
-                If ConsultarTipoUsuario(txtId.Text) = 1 Then
+
+                If ConsultarTipoUsuario(user) = 1 Then 'TODO: Modificar inicia se sesión.
                     frmPass.ShowDialog()
                 Else
-                    FrmRegistrarEyN.ShowDialog()
+                    Call TxId()
                 End If
+
             Else
 
                 MsgBox("El Usuario: " + txtId.Text + "No se encuentra registrado")
@@ -41,13 +46,14 @@ Public Class FrmLogin
         End Try
     End Sub
 
+    Private Sub TxId()
 
-
-
-    Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        abrir()
+        FrmRegistrarEyN.ShowDialog()
+        Me.Hide()
 
     End Sub
 
-
+    Private Sub FrmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Abrir()
+    End Sub
 End Class
