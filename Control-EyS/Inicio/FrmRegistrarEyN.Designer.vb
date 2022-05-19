@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmRegistrarEyN
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrmRegistrarEyN
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRegistrarEyN))
@@ -29,8 +29,6 @@ Partial Class FrmRegistrarEyN
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.txtIDC = New System.Windows.Forms.TextBox()
-        Me.lblIdC = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnEntrada = New System.Windows.Forms.Button()
         Me.btnSalida = New System.Windows.Forms.Button()
@@ -41,6 +39,7 @@ Partial Class FrmRegistrarEyN
         Me.lblInicio = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.lblTrabajadas = New System.Windows.Forms.Label()
+        Me.BtnVerEyS = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,29 +91,11 @@ Partial Class FrmRegistrarEyN
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(73, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.txtIDC)
-        Me.Panel2.Controls.Add(Me.lblIdC)
+        Me.Panel2.Controls.Add(Me.BtnVerEyS)
         Me.Panel2.Location = New System.Drawing.Point(0, 357)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(647, 42)
         Me.Panel2.TabIndex = 1
-        '
-        'txtIDC
-        '
-        Me.txtIDC.Location = New System.Drawing.Point(106, 13)
-        Me.txtIDC.Name = "txtIDC"
-        Me.txtIDC.Size = New System.Drawing.Size(173, 22)
-        Me.txtIDC.TabIndex = 1
-        '
-        'lblIdC
-        '
-        Me.lblIdC.AutoSize = True
-        Me.lblIdC.ForeColor = System.Drawing.Color.Silver
-        Me.lblIdC.Location = New System.Drawing.Point(5, 16)
-        Me.lblIdC.Name = "lblIdC"
-        Me.lblIdC.Size = New System.Drawing.Size(95, 17)
-        Me.lblIdC.TabIndex = 0
-        Me.lblIdC.Text = "Id Conectado:"
         '
         'Label1
         '
@@ -160,7 +141,7 @@ Partial Class FrmRegistrarEyN
         Me.lblFecha.AutoSize = True
         Me.lblFecha.Font = New System.Drawing.Font("Ebrima", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFecha.ForeColor = System.Drawing.Color.Black
-        Me.lblFecha.Location = New System.Drawing.Point(107, 109)
+        Me.lblFecha.Location = New System.Drawing.Point(170, 99)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(0, 28)
         Me.lblFecha.TabIndex = 5
@@ -170,7 +151,7 @@ Partial Class FrmRegistrarEyN
         Me.lblHora.AutoSize = True
         Me.lblHora.Font = New System.Drawing.Font("Ebrima", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHora.ForeColor = System.Drawing.Color.Black
-        Me.lblHora.Location = New System.Drawing.Point(216, 137)
+        Me.lblHora.Location = New System.Drawing.Point(279, 127)
         Me.lblHora.Name = "lblHora"
         Me.lblHora.Size = New System.Drawing.Size(0, 28)
         Me.lblHora.TabIndex = 6
@@ -218,11 +199,20 @@ Partial Class FrmRegistrarEyN
         Me.lblTrabajadas.Size = New System.Drawing.Size(0, 19)
         Me.lblTrabajadas.TabIndex = 9
         '
+        'BtnVerEyS
+        '
+        Me.BtnVerEyS.Location = New System.Drawing.Point(510, 6)
+        Me.BtnVerEyS.Name = "BtnVerEyS"
+        Me.BtnVerEyS.Size = New System.Drawing.Size(120, 24)
+        Me.BtnVerEyS.TabIndex = 0
+        Me.BtnVerEyS.Text = "Mostrar marca "
+        Me.BtnVerEyS.UseVisualStyleBackColor = True
+        '
         'FrmRegistrarEyN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(642, 397)
+        Me.ClientSize = New System.Drawing.Size(643, 399)
         Me.Controls.Add(Me.lblTrabajadas)
         Me.Controls.Add(Me.lblSalida)
         Me.Controls.Add(Me.lblInicio)
@@ -243,7 +233,6 @@ Partial Class FrmRegistrarEyN
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -264,6 +253,5 @@ Partial Class FrmRegistrarEyN
     Friend WithEvents lblInicio As Label
     Friend WithEvents Timer2 As Timer
     Friend WithEvents lblTrabajadas As Label
-    Friend WithEvents lblIdC As Label
-    Friend WithEvents txtIDC As TextBox
+    Friend WithEvents BtnVerEyS As Button
 End Class
