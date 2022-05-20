@@ -44,6 +44,7 @@ Partial Class FrmRDepartamento
         Me.txtDatos = New System.Windows.Forms.TextBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.BtnReporte = New System.Windows.Forms.ToolStripButton()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -163,10 +164,10 @@ Partial Class FrmRDepartamento
         Me.btnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(73, Byte), Integer))
         Me.btnGuardar.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnGuardar.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.btnGuardar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnNuevo, Me.btnGuar, Me.btnEditar, Me.btnEliminar})
+        Me.btnGuardar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnNuevo, Me.btnGuar, Me.btnEditar, Me.btnEliminar, Me.BtnReporte})
         Me.btnGuardar.Location = New System.Drawing.Point(0, 0)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(30, 462)
+        Me.btnGuardar.Size = New System.Drawing.Size(40, 462)
         Me.btnGuardar.TabIndex = 30
         Me.btnGuardar.Text = "Guardar"
         '
@@ -176,7 +177,7 @@ Partial Class FrmRDepartamento
         Me.btnNuevo.Image = CType(resources.GetObject("btnNuevo.Image"), System.Drawing.Image)
         Me.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(27, 24)
+        Me.btnNuevo.Size = New System.Drawing.Size(37, 24)
         Me.btnNuevo.Text = "Nuevo"
         '
         'btnGuar
@@ -185,7 +186,7 @@ Partial Class FrmRDepartamento
         Me.btnGuar.Image = CType(resources.GetObject("btnGuar.Image"), System.Drawing.Image)
         Me.btnGuar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnGuar.Name = "btnGuar"
-        Me.btnGuar.Size = New System.Drawing.Size(27, 24)
+        Me.btnGuar.Size = New System.Drawing.Size(37, 24)
         Me.btnGuar.Text = "Guardar"
         '
         'btnEditar
@@ -194,7 +195,7 @@ Partial Class FrmRDepartamento
         Me.btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), System.Drawing.Image)
         Me.btnEditar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(27, 24)
+        Me.btnEditar.Size = New System.Drawing.Size(37, 24)
         Me.btnEditar.Text = "Editar"
         '
         'btnEliminar
@@ -203,7 +204,7 @@ Partial Class FrmRDepartamento
         Me.btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), System.Drawing.Image)
         Me.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(27, 24)
+        Me.btnEliminar.Size = New System.Drawing.Size(37, 24)
         Me.btnEliminar.Text = "Eliminar"
         '
         'gbDepartamento
@@ -267,6 +268,15 @@ Partial Class FrmRDepartamento
         Me.Label3.TabIndex = 80
         Me.Label3.Text = "Buscar"
         '
+        'BtnReporte
+        '
+        Me.BtnReporte.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnReporte.Image = CType(resources.GetObject("BtnReporte.Image"), System.Drawing.Image)
+        Me.BtnReporte.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnReporte.Name = "BtnReporte"
+        Me.BtnReporte.Size = New System.Drawing.Size(37, 24)
+        Me.BtnReporte.Text = "Imprimir Reporte"
+        '
         'FrmRDepartamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -325,4 +335,5 @@ Partial Class FrmRDepartamento
     Friend WithEvents btnBuscar As Button
     Friend WithEvents DgvDepartamento As DataGridView
     Friend WithEvents Label3 As Label
+    Friend WithEvents BtnReporte As ToolStripButton
 End Class

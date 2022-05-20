@@ -4,6 +4,10 @@
     Dim regEmpl As New BDQUICKIEDataSetTableAdapters.EmpleadoTableAdapter
     Dim idEmp As Integer
     Dim estado As Boolean
+    Dim tblemp As New BDQUICKIEDataSet.EmpleadoDataTable
+    Dim taEmp As New BDQUICKIEDataSetTableAdapters.QEmpleadoTableAdapter
+    Dim dtEmp As New BDQUICKIEDataSet.QEmpleadoDataTable
+
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
@@ -17,14 +21,14 @@
 
     Sub llenarCarg()
         cbCargo.DataSource = carg.GetData
-        cbCargo.DisplayMember = "Nombre del Cargo"
+        cbCargo.DisplayMember = "nombreCargo"
         cbCargo.ValueMember = "idCargo"
         cbCargo.Refresh()
     End Sub
 
     Sub llenarDep()
         cbDep.DataSource = depa.GetData
-        cbDep.DisplayMember = "Nombre Departamento"
+        cbDep.DisplayMember = "nombreDepartamento"
         cbDep.ValueMember = "idDepartamento"
         cbDep.Refresh()
     End Sub
@@ -97,7 +101,8 @@
     End Sub
 
     Sub llenarGrid()
-        DgvEmpleado.DataSource = regEmpl.GetData
+        taEmp.Fill(dtEmp)
+        DgvEmpleado.DataSource = dtEmp
         DgvEmpleado.Refresh()
         gbEmpleado.Text = "Registros guardados: " & DgvEmpleado.Rows.Count.ToString
     End Sub
@@ -139,5 +144,10 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
+        regEmpl.Fill(tblemp)
+        VerReporte(tblemp, "DsEmpleado", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\Empleado.rdlc")
     End Sub
 End Class

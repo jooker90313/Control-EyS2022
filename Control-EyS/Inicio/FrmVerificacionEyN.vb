@@ -1,6 +1,9 @@
 ﻿Public Class FrmVerificacionEyS
+    Dim HoraEyS As New BDQUICKIEDataSetTableAdapters.Registro_de_asistenciaTableAdapter
+
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        Application.Exit()
+        FrmLogin.Show()
+        Me.Close()
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -15,7 +18,7 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnCerrarSesion.Click
         FrmLogin.Show()
-        Me.Hide()
+        Me.Close()
 
 
     End Sub
@@ -27,4 +30,17 @@
         buttonPath.AddEllipse(myRectangle)
         btnCerrarSesion.Region = New Region(buttonPath)
     End Sub
+
+    Private Sub FrmVerificacionEyS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        llenarGrid()
+    End Sub
+
+    Sub llenarGrid()
+        DgvVerificacionEmpleado.DataSource = HoraEyS.MostrarData
+        DgvVerificacionEmpleado.Refresh()
+        gbRegistroMostrado.Text = "Registros guardados: " & DgvVerificacionEmpleado.Rows.Count.ToString
+        DgvVerificacionEmpleado.Refresh()
+    End Sub
+
+
 End Class

@@ -3,6 +3,8 @@
     Dim depa As New BDQUICKIEDataSetTableAdapters.DepartamentoTableAdapter
     Dim idCar As Integer
     Dim estado As Boolean
+    Dim tblCarg As New BDQUICKIEDataSet.CargoDataTable
+
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         Me.WindowState = FormWindowState.Minimized
 
@@ -47,7 +49,7 @@
 
     Sub llenarDep()
         cbDepartamento.DataSource = depa.GetData
-        cbDepartamento.DisplayMember = "Nombre Departamento"
+        cbDepartamento.DisplayMember = "nombreDepartamento"
         cbDepartamento.ValueMember = "idDepartamento"
         cbDepartamento.Refresh()
     End Sub
@@ -114,7 +116,8 @@
         End Try
     End Sub
 
-
-
-
+    Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
+        carg.Fill(tblCarg)
+        VerReporte(tblCarg, "DsCargo", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\Cargo.rdlc")
+    End Sub
 End Class

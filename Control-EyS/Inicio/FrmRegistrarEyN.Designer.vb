@@ -29,6 +29,7 @@ Partial Class FrmRegistrarEyN
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.BtnVerEyS = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnEntrada = New System.Windows.Forms.Button()
         Me.btnSalida = New System.Windows.Forms.Button()
@@ -39,7 +40,6 @@ Partial Class FrmRegistrarEyN
         Me.lblInicio = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.lblTrabajadas = New System.Windows.Forms.Label()
-        Me.BtnVerEyS = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,6 +96,15 @@ Partial Class FrmRegistrarEyN
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(647, 42)
         Me.Panel2.TabIndex = 1
+        '
+        'BtnVerEyS
+        '
+        Me.BtnVerEyS.Location = New System.Drawing.Point(510, 6)
+        Me.BtnVerEyS.Name = "BtnVerEyS"
+        Me.BtnVerEyS.Size = New System.Drawing.Size(120, 24)
+        Me.BtnVerEyS.TabIndex = 0
+        Me.BtnVerEyS.Text = "Mostrar marca "
+        Me.BtnVerEyS.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -198,15 +207,6 @@ Partial Class FrmRegistrarEyN
         Me.lblTrabajadas.Name = "lblTrabajadas"
         Me.lblTrabajadas.Size = New System.Drawing.Size(0, 19)
         Me.lblTrabajadas.TabIndex = 9
-        '
-        'BtnVerEyS
-        '
-        Me.BtnVerEyS.Location = New System.Drawing.Point(510, 6)
-        Me.BtnVerEyS.Name = "BtnVerEyS"
-        Me.BtnVerEyS.Size = New System.Drawing.Size(120, 24)
-        Me.BtnVerEyS.TabIndex = 0
-        Me.BtnVerEyS.Text = "Mostrar marca "
-        Me.BtnVerEyS.UseVisualStyleBackColor = True
         '
         'FrmRegistrarEyN
         '

@@ -2,7 +2,7 @@
     Dim depa As New BDQUICKIEDataSetTableAdapters.DepartamentoTableAdapter
     Dim idDep As Integer
     Dim estado As Boolean
-
+    Dim tblDepa As New BDQUICKIEDataSet.DepartamentoDataTable
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         FrmInicioAdmin.Show()
@@ -96,5 +96,10 @@
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
+        depa.Fill(tblDepa)
+        VerReporte(tblDepa, "DsDepartamento", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\Departamento.rdlc")
     End Sub
 End Class

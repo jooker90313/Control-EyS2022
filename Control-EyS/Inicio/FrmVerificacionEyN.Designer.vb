@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FrmVerificacionEyS
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FrmVerificacionEyS
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmVerificacionEyS))
@@ -29,15 +29,19 @@ Partial Class FrmVerificacionEyS
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.btnCerrarSesion = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblHora = New System.Windows.Forms.Label()
         Me.LblFecha = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.btnCerrarSesion = New System.Windows.Forms.Button()
+        Me.gbRegistroMostrado = New System.Windows.Forms.GroupBox()
+        Me.DgvVerificacionEmpleado = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.gbRegistroMostrado.SuspendLayout()
+        CType(Me.DgvVerificacionEmpleado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -91,12 +95,23 @@ Partial Class FrmVerificacionEyS
         Me.Panel2.Size = New System.Drawing.Size(1051, 45)
         Me.Panel2.TabIndex = 1
         '
+        'btnCerrarSesion
+        '
+        Me.btnCerrarSesion.BackColor = System.Drawing.Color.Silver
+        Me.btnCerrarSesion.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(857, 3)
+        Me.btnCerrarSesion.Name = "btnCerrarSesion"
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(176, 36)
+        Me.btnCerrarSesion.TabIndex = 0
+        Me.btnCerrarSesion.Text = "Cerrar Sesión"
+        Me.btnCerrarSesion.UseVisualStyleBackColor = False
+        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Silver
         Me.Label2.Font = New System.Drawing.Font("Ebrima", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(350, 68)
+        Me.Label2.Location = New System.Drawing.Point(346, 55)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(279, 32)
         Me.Label2.TabIndex = 3
@@ -124,22 +139,37 @@ Partial Class FrmVerificacionEyS
         '
         Me.Timer1.Enabled = True
         '
-        'btnCerrarSesion
+        'gbRegistroMostrado
         '
-        Me.btnCerrarSesion.BackColor = System.Drawing.Color.Silver
-        Me.btnCerrarSesion.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(857, 3)
-        Me.btnCerrarSesion.Name = "btnCerrarSesion"
-        Me.btnCerrarSesion.Size = New System.Drawing.Size(176, 36)
-        Me.btnCerrarSesion.TabIndex = 0
-        Me.btnCerrarSesion.Text = "Cerrar Sesión"
-        Me.btnCerrarSesion.UseVisualStyleBackColor = False
+        Me.gbRegistroMostrado.Controls.Add(Me.DgvVerificacionEmpleado)
+        Me.gbRegistroMostrado.Location = New System.Drawing.Point(12, 103)
+        Me.gbRegistroMostrado.Name = "gbRegistroMostrado"
+        Me.gbRegistroMostrado.Size = New System.Drawing.Size(1020, 381)
+        Me.gbRegistroMostrado.TabIndex = 6
+        Me.gbRegistroMostrado.TabStop = False
+        Me.gbRegistroMostrado.Text = "Registro Mostrados:"
+        '
+        'DgvVerificacionEmpleado
+        '
+        Me.DgvVerificacionEmpleado.AllowUserToAddRows = False
+        Me.DgvVerificacionEmpleado.AllowUserToDeleteRows = False
+        Me.DgvVerificacionEmpleado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvVerificacionEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvVerificacionEmpleado.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvVerificacionEmpleado.Location = New System.Drawing.Point(3, 18)
+        Me.DgvVerificacionEmpleado.Name = "DgvVerificacionEmpleado"
+        Me.DgvVerificacionEmpleado.ReadOnly = True
+        Me.DgvVerificacionEmpleado.RowHeadersWidth = 51
+        Me.DgvVerificacionEmpleado.RowTemplate.Height = 24
+        Me.DgvVerificacionEmpleado.Size = New System.Drawing.Size(1014, 360)
+        Me.DgvVerificacionEmpleado.TabIndex = 0
         '
         'FrmVerificacionEyS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1044, 543)
+        Me.Controls.Add(Me.gbRegistroMostrado)
         Me.Controls.Add(Me.LblFecha)
         Me.Controls.Add(Me.lblHora)
         Me.Controls.Add(Me.Label2)
@@ -154,6 +184,8 @@ Partial Class FrmVerificacionEyS
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        Me.gbRegistroMostrado.ResumeLayout(False)
+        CType(Me.DgvVerificacionEmpleado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -169,4 +201,6 @@ Partial Class FrmVerificacionEyS
     Friend WithEvents LblFecha As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents btnCerrarSesion As Button
+    Friend WithEvents gbRegistroMostrado As GroupBox
+    Friend WithEvents DgvVerificacionEmpleado As DataGridView
 End Class

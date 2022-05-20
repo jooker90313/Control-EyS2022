@@ -33,8 +33,10 @@
 
                 If ConsultarTipoUsuario(user) = 1 Then 'TODO: Modificar inicia se sesión.
                     frmPass.ShowDialog()
+                    Me.Hide()
                 Else
                     Call TxId()
+                    Me.Hide()
                 End If
 
             Else

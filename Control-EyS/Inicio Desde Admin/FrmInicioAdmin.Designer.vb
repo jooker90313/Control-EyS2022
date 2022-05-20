@@ -46,13 +46,13 @@ Partial Class FrmInicioAdmin
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DgvhEyS = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvhEyS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -239,7 +239,7 @@ Partial Class FrmInicioAdmin
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.DgvhEyS)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 93)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(1139, 434)
@@ -247,19 +247,20 @@ Partial Class FrmInicioAdmin
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Control Entrada y Salida"
         '
-        'DataGridView1
+        'DgvhEyS
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 29)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(1133, 402)
-        Me.DataGridView1.TabIndex = 0
+        Me.DgvhEyS.AllowUserToAddRows = False
+        Me.DgvhEyS.AllowUserToDeleteRows = False
+        Me.DgvhEyS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvhEyS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvhEyS.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvhEyS.Location = New System.Drawing.Point(3, 29)
+        Me.DgvhEyS.Name = "DgvhEyS"
+        Me.DgvhEyS.ReadOnly = True
+        Me.DgvhEyS.RowHeadersWidth = 51
+        Me.DgvhEyS.RowTemplate.Height = 24
+        Me.DgvhEyS.Size = New System.Drawing.Size(1133, 402)
+        Me.DgvhEyS.TabIndex = 0
         '
         'FrmInicioAdmin
         '
@@ -285,7 +286,7 @@ Partial Class FrmInicioAdmin
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvhEyS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -313,5 +314,5 @@ Partial Class FrmInicioAdmin
     Friend WithEvents Label2 As Label
     Friend WithEvents lblFe As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DgvhEyS As DataGridView
 End Class

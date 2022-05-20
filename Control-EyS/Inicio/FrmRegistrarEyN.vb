@@ -73,4 +73,8 @@ Public Class FrmRegistrarEyN
         FrmVerificacionEyS.Show()
         Me.Hide()
     End Sub
+
+    Private Sub FrmRegistrarEyN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

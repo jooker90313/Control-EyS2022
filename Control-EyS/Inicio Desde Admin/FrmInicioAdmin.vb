@@ -1,4 +1,17 @@
 ﻿Public Class FrmInicioAdmin
+    Dim hEyS As New BDQUICKIEDataSetTableAdapters.Registro_de_asistenciaTableAdapter
+    Dim tblhEyS As New BDQUICKIEDataSet.Registro_de_asistenciaDataTable
+    Dim Emple As New BDQUICKIEDataSetTableAdapters.EmpleadoTableAdapter
+    Dim tblEmple As New BDQUICKIEDataSet.EmpleadoDataTable
+    Dim Depa As New BDQUICKIEDataSetTableAdapters.DepartamentoTableAdapter
+    Dim tblDepa As New BDQUICKIEDataSet.DepartamentoDataTable
+    Dim Cargo As New BDQUICKIEDataSetTableAdapters.CargoTableAdapter
+    Dim tblCargo As New BDQUICKIEDataSet.CargoDataTable
+
+    Dim taRegAsis As New BDQUICKIEDataSetTableAdapters.QRegistroAsistenciaTableAdapter
+    Dim dtRegAsis As New BDQUICKIEDataSet.QRegistroAsistenciaDataTable
+
+
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Dim response
         response = MsgBox("¿Desea cerrar sessión? ", vbOKCancel, "Notificacion")
@@ -59,26 +72,35 @@
     End Sub
 
     Private Sub EmpleadoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem1.Click
-        frmEmpleado.Show()
-        Me.Hide()
+        Emple.Fill(tblEmple)
+        VerReporte(tblEmple, "DsEmpleado", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\Empleado.rdlc")
     End Sub
 
     Private Sub DepartamentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DepartamentosToolStripMenuItem.Click
-        frmDepartamento.Show()
-        Me.Hide()
+        Depa.Fill(tblDepa)
+        VerReporte(tblDepa, "DsDepartamento", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\Departamento.rdlc")
     End Sub
 
     Private Sub CargoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CargoToolStripMenuItem1.Click
-        frmCargo.Show()
-        Me.Hide()
+        Cargo.Fill(tblCargo)
+        VerReporte(tblCargo, "DsCargo", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\Cargo.rdlc")
     End Sub
 
     Private Sub HorasDeEntradaYSalidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HorasDeEntradaYSalidaToolStripMenuItem.Click
-        frmHoraEyS.Show()
-        Me.Hide()
+        hEyS.FillBy(tblhEyS)
+        VerReporte(tblhEyS, "DshEyS", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\horaEyS.rdlc")
+
     End Sub
 
     Private Sub FrmInicioAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        llenarGrid()
+    End Sub
+
+    Sub llenarGrid()
+
+        taRegAsis.Fill(dtRegAsis)
+        DgvhEyS.DataSource = dtRegAsis
+        DgvhEyS.Refresh()
 
     End Sub
 End Class
