@@ -8,8 +8,8 @@
     Dim Cargo As New BDQUICKIEDataSetTableAdapters.CargoTableAdapter
     Dim tblCargo As New BDQUICKIEDataSet.CargoDataTable
 
-    Dim taRegAsis As New BDQUICKIEDataSetTableAdapters.QRegistroAsistenciaTableAdapter
-    Dim dtRegAsis As New BDQUICKIEDataSet.QRegistroAsistenciaDataTable
+    Dim taRegAsis As New BDQUICKIEDataSetTableAdapters.QAsistenciaTableAdapter
+    Dim dtRegAsis As New BDQUICKIEDataSet.QAsistenciaDataTable
 
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click

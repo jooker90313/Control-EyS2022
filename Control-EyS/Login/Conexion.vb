@@ -24,7 +24,7 @@ Module Conexion
     Function UsuarioRegistrado(ByVal nombreUsuario As String) As Boolean
         Try
 
-            Dim sql As String = $"select count(*) from Empleado where numCedula ='{nombreUsuario}'"
+            Dim sql As String = $"select count(*) from Empleado e join Usuario u on e.idEmp = u.idEmp where numCedula ='{nombreUsuario}'"
             Dim command As New SqlCommand(sql, connection)
 
             Return command.ExecuteScalar() >= 1
@@ -43,6 +43,24 @@ Module Conexion
         Try
 
             Dim sql As String = $"select idEmp from Empleado where numCedula = '{nombreUsuario}'"
+
+            Dim command As New SqlCommand(sql, connection)
+            Return command.ExecuteScalar()
+
+        Catch ex As Exception
+
+            MsgBox(ex.ToString)
+            Throw
+
+        End Try
+
+    End Function
+
+    Function GetEsAdministrador(ByVal idEmpleado As Integer) As Boolean
+
+        Try
+
+            Dim sql As String = $"select isnull(administrador, 0) from Usuario where idEmp = '{idEmpleado}'"
 
             Dim command As New SqlCommand(sql, connection)
             Return command.ExecuteScalar()
@@ -88,20 +106,20 @@ Module Conexion
         Return resultado
     End Function
 
-    Function Pass(ByVal passAdmin As String) As Boolean
-        Dim resultado As Boolean = False
-        Try
-            enunciado = New SqlCommand("Select * from Empleado where telefono ='" & passAdmin & "'", connection)
-            respuesta = enunciado.ExecuteReader
+    Function Autenticar(ByVal IdEmpleado As Integer, ByVal passAdmin As String) As Boolean
 
-            If respuesta.Read Then
-                resultado = True
-            End If
-            respuesta.Close()
+        Try
+            Dim sql As String = $"select count(*) from usuario where idEmp = {IdEmpleado} and clave = '{passAdmin}'"
+            Dim command As New SqlCommand(sql, connection)
+
+            Return command.ExecuteScalar()
+
         Catch ex As Exception
+
             MsgBox(ex.ToString)
+            Return False
         End Try
-        Return resultado
+
     End Function
 
 

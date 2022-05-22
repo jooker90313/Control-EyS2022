@@ -4,6 +4,8 @@
     Dim idCar As Integer
     Dim estado As Boolean
     Dim tblCarg As New BDQUICKIEDataSet.CargoDataTable
+    Dim taCarg As New BDQUICKIEDataSetTableAdapters.QCargoTableAdapter
+    Dim dtCarg As New BDQUICKIEDataSet.QCargoDataTable
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         Me.WindowState = FormWindowState.Minimized
@@ -41,7 +43,8 @@
     End Sub
 
     Sub llenarcargo()
-        DgvCargo.DataSource = carg.GetData
+        taCarg.Fill(dtCarg)
+        DgvCargo.DataSource = dtCarg
         DgvCargo.Refresh()
 
         DgvCargo.Text = "Registros guardados: " & DgvCargo.Rows.Count.ToString
@@ -62,11 +65,10 @@
     Private Sub DgvCargo_DoubleClick(sender As Object, e As EventArgs) Handles DgvCargo.DoubleClick
         Try
             Dim fila As Integer = DgvCargo.CurrentRow.Index
-            idCar = DgvCargo.Item(0, fila).Value
-            txtNombre.Text = DgvCargo.Item(1, fila).Value
-            txtDescripcion.Text = DgvCargo.Item(2, fila).Value
-            estado = DgvCargo.Item(3, fila).Value
-            cbDepartamento.Text = DgvCargo.Item(4, fila).Value
+            'idCar = DgvCargo.Item(0, fila).Value
+            txtNombre.Text = DgvCargo.Item(0, fila).Value
+            txtDescripcion.Text = DgvCargo.Item(1, fila).Value
+            cbDepartamento.Text = DgvCargo.Item(2, fila).Value
             btnGuar.Enabled = False
             btnEditar.Enabled = True
             btnEliminar.Enabled = True
@@ -77,11 +79,12 @@
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Dim nombre As String = txtNombre.Text.Trim
         Try
             Dim resp As VariantType
             resp = (MsgBox("Desea eliminar el registro?", vbQuestion + vbYesNo, "Eliminar"))
             If (resp = vbYes) Then
-                carg.EliminarCargo(idCar)
+                carg.EliminarCargo(nombre)
                 llenarcargo()
                 btnNuevo.PerformClick()
 
@@ -100,14 +103,14 @@
             txtNombre.Focus()
             Exit Sub
         End If
-        carg.ActualizarCargo(nombre, descripcion, iddep, True, idCar)
+        'carg.ActualizarCargo(nombre, descripcion, True, iddep)
         llenarcargo()
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Try
             Dim dato As String = txtDatos.Text & "%"
-            DgvCargo.DataSource = depa.BuscarPorNombre(dato)
+            DgvCargo.DataSource = taCarg.GetDataByNombre(dato)
             DgvCargo.Refresh()
 
             gbCargo.Text = "Registros encontrados: " & DgvCargo.Rows.Count.ToString

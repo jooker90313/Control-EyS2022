@@ -9,15 +9,21 @@
     End Sub
 
     Private Sub btnPass_Click(sender As Object, e As EventArgs) Handles btnPass.Click
-        If Pass(txtPass.Text) = True Then
+
+        Dim IdEmpleado As Integer = FrmLogin.IdEmpleado
+        Dim passAdmin As String = txtPass.Text
+
+        Dim autenticado = Autenticar(IdEmpleado, passAdmin)
+
+        If autenticado Then
+
             FrmInicioAdmin.ShowDialog()
             Me.Hide()
+
         Else
+
             MsgBox("Contraseña incorrecta putoHacker", MsgBoxStyle.Critical)
-
         End If
-
-
 
     End Sub
 End Class

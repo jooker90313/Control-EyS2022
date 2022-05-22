@@ -1,8 +1,10 @@
 ﻿Public Class FrmRDepartamento
     Dim depa As New BDQUICKIEDataSetTableAdapters.DepartamentoTableAdapter
-    Dim idDep As Integer
     Dim estado As Boolean
+    Dim idDepa As Integer
     Dim tblDepa As New BDQUICKIEDataSet.DepartamentoDataTable
+    Dim taDep As New BDQUICKIEDataSetTableAdapters.QDepartamentoTableAdapter
+    Dim dtDep As New BDQUICKIEDataSet.QDepartamentoDataTable
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         FrmInicioAdmin.Show()
@@ -31,7 +33,8 @@
     End Sub
 
     Sub llenardepa()
-        DgvDepartamento.DataSource = depa.GetData
+        taDep.Fill(dtDep)
+        DgvDepartamento.DataSource = dtDep
         DgvDepartamento.Refresh()
         gbDepartamento.Text = "Registros guardados: " & DgvDepartamento.Rows.Count.ToString
     End Sub
@@ -43,9 +46,7 @@
     Private Sub DgvDepartamento_DoubleClick(sender As Object, e As EventArgs) Handles DgvDepartamento.DoubleClick
         Try
             Dim fila As Integer = DgvDepartamento.CurrentRow.Index
-            idDep = DgvDepartamento.Item(0, fila).Value
-            txtNombre.Text = DgvDepartamento.Item(1, fila).Value
-            estado = DgvDepartamento.Item(2, fila).Value
+            txtNombre.Text = DgvDepartamento.Item(0, fila).Value
             btnGuar.Enabled = False
             btnEditar.Enabled = True
             btnEliminar.Enabled = True
@@ -57,22 +58,25 @@
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         Dim nombre As String = txtNombre.Text.Trim
+
         If (String.IsNullOrEmpty(txtNombre.Text)) Then
             MsgBox("No puede quedar vacío el nombre", MsgBoxStyle.Critical, "ERROR")
             txtNombre.Focus()
             Exit Sub
         End If
-        depa.ActualizarDepa(nombre, estado, idDep)
+        depa.ActualizarDepa(nombre, True, idDepa)
 
         llenardepa()
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Dim nombre As String = txtNombre.Text.Trim
+
         Try
             Dim resp As VariantType
             resp = (MsgBox("Desea eliminar el registro?", vbQuestion + vbYesNo, "Eliminar"))
             If (resp = vbYes) Then
-                depa.EliminarDepa(idDep)
+                depa.EliminarDepa(nombre)
                 llenardepa()
                 btnNuevo.PerformClick()
 
@@ -85,7 +89,7 @@
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Try
             Dim dato As String = txtDatos.Text & "%"
-            DgvDepartamento.DataSource = depa.BuscarPorNombre(dato)
+            DgvDepartamento.DataSource = taDep.GetDataByNombre(dato)
             DgvDepartamento.Refresh()
 
             gbDepartamento.Text = "Registros encontrados: " & DgvDepartamento.Rows.Count.ToString

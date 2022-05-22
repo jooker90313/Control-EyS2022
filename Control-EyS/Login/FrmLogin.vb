@@ -1,6 +1,6 @@
 ﻿Public Class FrmLogin
 
-    Public UserName As String
+    Public IdEmpleado As String
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Application.Exit()
@@ -27,17 +27,16 @@
 
             If UsuarioRegistrado(user) Then
 
-                UserName = GetIdEmpleado(user)
+                IdEmpleado = GetIdEmpleado(user)
+                Dim administrador As Boolean = GetEsAdministrador(IdEmpleado)
 
-                Me.Hide()
-
-                If ConsultarTipoUsuario(user) = 1 Then 'TODO: Modificar inicia se sesión.
+                If administrador Then
                     frmPass.ShowDialog()
-                    Me.Hide()
                 Else
                     Call TxId()
-                    Me.Hide()
                 End If
+
+                Me.Hide()
 
             Else
 

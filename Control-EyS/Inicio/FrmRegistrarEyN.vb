@@ -1,7 +1,7 @@
 ﻿
 Public Class FrmRegistrarEyN
     Dim regEmpl As New BDQUICKIEDataSetTableAdapters.EmpleadoTableAdapter
-    Dim HoraEyS As New BDQUICKIEDataSetTableAdapters.Registro_de_asistenciaTableAdapter
+    Dim horaEyS As New BDQUICKIEDataSetTableAdapters.Registro_de_asistenciaTableAdapter
     Dim Tiempo As DateTime
     Dim Tiempo2 As DateTime
     Dim Hora_Inicio As DateTime
@@ -47,26 +47,44 @@ Public Class FrmRegistrarEyN
         Hora_Inicio = Now.ToString("HH:mm:ss")
         lblInicio.Text = Hora_Inicio
 
-        Dim UserName = FrmLogin.UserName
-        Dim totalHoras As Double? = Nothing
+        Dim UserName = FrmLogin.IdEmpleado
+        Dim totalhoras As Date? = Nothing
         Dim horaEntrada As Date? = Now
         Dim horaSalida As Date? = Nothing
         Dim fecha As Date? = Now
         Dim idEmp As Integer = UserName
 
-        HoraEyS.InsertarHoraEyS(totalHoras, horaEntrada, horaSalida, fecha, idEmp)
+        HoraEyS.InsertarHoraEyS(totalhoras, horaEntrada, horaSalida, fecha, idEmp)
         idRegistro = HoraEyS.GetUltimoRegistro()
 
     End Sub
 
     Private Sub BtnSalida_Click(sender As Object, e As EventArgs) Handles btnSalida.Click
+
         btnEntrada.Enabled = True
         btnSalida.Enabled = False
         Timer1.Stop()
-        Tiempo2 = Now.ToString("HH:mm:ss")
-        lblSalida.Text = Tiempo2
-        Dim horaSalida As Date? = Now
-        HoraEyS.UpdateRegistroEntrada(horaSalida, idRegistro)
+
+        Dim registrosEntradaSalida = horaEyS.GetRegistroEntradaSalida(idRegistro)
+        If Not registrosEntradaSalida.Any() Then
+
+            MsgBox("No se encontro registros de entrada y salida", MsgBoxStyle.Critical)
+            Exit Sub
+
+        End If
+
+        Dim horaEntrada = registrosEntradaSalida.First.horaEntrada
+        Dim horaSalida As Date = Now
+
+        Dim diferenciaFecha = horaSalida - horaEntrada
+
+        Dim horas As String = diferenciaFecha.Hours.ToString().PadLeft(2, "0")
+        Dim minutos As String = diferenciaFecha.Minutes.ToString().PadLeft(2, "0")
+        Dim segundos As String = diferenciaFecha.Seconds.ToString().PadLeft(2, "0")
+
+        Dim totalHoras As String = $"{horas}:{minutos}:{segundos}"
+
+        horaEyS.UpdateRegistroEntrada(totalHoras, horaSalida, idRegistro)
     End Sub
 
     Private Sub BtnVerEyS_Click(sender As Object, e As EventArgs) Handles BtnVerEyS.Click
