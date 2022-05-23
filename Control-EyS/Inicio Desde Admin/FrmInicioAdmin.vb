@@ -1,15 +1,13 @@
 ﻿Public Class FrmInicioAdmin
-    Dim hEyS As New BDQUICKIEDataSetTableAdapters.Registro_de_asistenciaTableAdapter
-    Dim tblhEyS As New BDQUICKIEDataSet.Registro_de_asistenciaDataTable
-    Dim Emple As New BDQUICKIEDataSetTableAdapters.EmpleadoTableAdapter
-    Dim tblEmple As New BDQUICKIEDataSet.EmpleadoDataTable
-    Dim Depa As New BDQUICKIEDataSetTableAdapters.DepartamentoTableAdapter
-    Dim tblDepa As New BDQUICKIEDataSet.DepartamentoDataTable
-    Dim Cargo As New BDQUICKIEDataSetTableAdapters.CargoTableAdapter
-    Dim tblCargo As New BDQUICKIEDataSet.CargoDataTable
+    Dim Emple As New BDQUICKIEDataSetTableAdapters.QEmpleadoTableAdapter
+    Dim tblEmple As New BDQUICKIEDataSet.QEmpleadoDataTable
+    Dim Depa As New BDQUICKIEDataSetTableAdapters.QDepartamentoTableAdapter
+    Dim tblDepa As New BDQUICKIEDataSet.QDepartamentoDataTable
+    Dim Cargo As New BDQUICKIEDataSetTableAdapters.QCargoTableAdapter
+    Dim tblCargo As New BDQUICKIEDataSet.QCargoDataTable
 
-    Dim taRegAsis As New BDQUICKIEDataSetTableAdapters.QAsistenciaTableAdapter
-    Dim dtRegAsis As New BDQUICKIEDataSet.QAsistenciaDataTable
+    Dim taRegAsis As New BDQUICKIEDataSetTableAdapters.MAsistenciaTableAdapter
+    Dim dtRegAsis As New BDQUICKIEDataSet.MAsistenciaDataTable
 
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
@@ -20,7 +18,7 @@
             Me.Hide()
 
         End If
-
+        'TODO' VALIDACION PARA QUE NO SE CIERRE TODO
 
 
     End Sub
@@ -38,6 +36,7 @@
             Me.Hide()
 
         End If
+        'TODO' VALIDACION PARA QUE NO SE CIERRE TODO
 
     End Sub
 
@@ -73,27 +72,28 @@
 
     Private Sub EmpleadoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem1.Click
         Emple.Fill(tblEmple)
-        VerReporte(tblEmple, "DsEmpleado", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\Empleado.rdlc")
+        VerReporte(tblEmple, "DsEmpleado", "C:\Users\Norman Romero\Downloads\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\RptEmpleado.rdlc")
     End Sub
 
     Private Sub DepartamentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DepartamentosToolStripMenuItem.Click
         Depa.Fill(tblDepa)
-        VerReporte(tblDepa, "DsDepartamento", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\Departamento.rdlc")
+        VerReporte(tblDepa, "DsDepartamentos", "C:\Users\Norman Romero\Downloads\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\RptDepartamentos.rdlc")
     End Sub
 
     Private Sub CargoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CargoToolStripMenuItem1.Click
         Cargo.Fill(tblCargo)
-        VerReporte(tblCargo, "DsCargo", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\Cargo.rdlc")
+        VerReporte(tblCargo, "DsCargos", "C:\Users\Norman Romero\Downloads\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\RptCargos.rdlc")
     End Sub
 
     Private Sub HorasDeEntradaYSalidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HorasDeEntradaYSalidaToolStripMenuItem.Click
-        hEyS.FillBy(tblhEyS)
-        VerReporte(tblhEyS, "DshEyS", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\horaEyS.rdlc")
+        taRegAsis.Fill(dtRegAsis)
+        VerReporte(dtRegAsis, "DsAsistencia", "C:\Users\Norman Romero\Downloads\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\RptHoraEyS.rdlc")
 
     End Sub
 
     Private Sub FrmInicioAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         llenarGrid()
+
     End Sub
 
     Sub llenarGrid()
@@ -103,4 +103,6 @@
         DgvhEyS.Refresh()
 
     End Sub
+
+
 End Class

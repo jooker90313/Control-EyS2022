@@ -4,8 +4,9 @@
     End Sub
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-        FrmLogin.ShowDialog()
+        FrmLogin.Show()
         Me.Hide()
+        'TODO' Falta validacion 
     End Sub
 
     Private Sub btnPass_Click(sender As Object, e As EventArgs) Handles btnPass.Click
@@ -22,8 +23,12 @@
 
         Else
 
-            MsgBox("Contraseña incorrecta putoHacker", MsgBoxStyle.Critical)
+            MsgBox(" Contraseña incorrecta, intente de nuevo", MsgBoxStyle.Critical)
         End If
+
+    End Sub
+
+    Private Sub frmPass_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

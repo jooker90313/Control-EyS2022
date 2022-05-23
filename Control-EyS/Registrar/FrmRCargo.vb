@@ -33,6 +33,7 @@
         Dim nombre As String = txtNombre.Text.Trim
         Dim iddep As Integer = CInt(cbDepartamento.SelectedValue)
         Dim descripcion As String = txtDescripcion.Text.Trim
+
         If (String.IsNullOrEmpty(txtNombre.Text)) Then
             MsgBox("No puede quedar vacío el nombre", MsgBoxStyle.Critical, "ERROR")
             txtNombre.Focus()
@@ -48,6 +49,8 @@
         DgvCargo.Refresh()
 
         DgvCargo.Text = "Registros guardados: " & DgvCargo.Rows.Count.ToString
+
+        DgvCargo.Columns.Item("idCargo").Visible = False
     End Sub
 
     Sub llenarDep()
@@ -62,13 +65,19 @@
         llenarDep()
 
     End Sub
-    Private Sub DgvCargo_DoubleClick(sender As Object, e As EventArgs) Handles DgvCargo.DoubleClick
+    Private Sub DgvCargo_SelectionChanged(sender As Object, e As EventArgs) Handles DgvCargo.SelectionChanged
         Try
+            If IsNothing(DgvCargo.CurrentRow) Then
+                Exit Try
+            End If
+
             Dim fila As Integer = DgvCargo.CurrentRow.Index
-            'idCar = DgvCargo.Item(0, fila).Value
+
             txtNombre.Text = DgvCargo.Item(0, fila).Value
             txtDescripcion.Text = DgvCargo.Item(1, fila).Value
             cbDepartamento.Text = DgvCargo.Item(2, fila).Value
+            idCar = DgvCargo.Item(3, fila).Value
+
             btnGuar.Enabled = False
             btnEditar.Enabled = True
             btnEliminar.Enabled = True
@@ -79,12 +88,12 @@
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        Dim nombre As String = txtNombre.Text.Trim
+
         Try
             Dim resp As VariantType
             resp = (MsgBox("Desea eliminar el registro?", vbQuestion + vbYesNo, "Eliminar"))
             If (resp = vbYes) Then
-                carg.EliminarCargo(nombre)
+                carg.EliminarCargo(idCar)
                 llenarcargo()
                 btnNuevo.PerformClick()
 
@@ -98,12 +107,13 @@
         Dim nombre As String = txtNombre.Text.Trim
         Dim iddep As Integer = CInt(cbDepartamento.SelectedValue)
         Dim descripcion As String = txtDescripcion.Text.Trim
+
         If (String.IsNullOrEmpty(txtNombre.Text)) Then
             MsgBox("No puede quedar vacío el nombre", MsgBoxStyle.Critical, "ERROR")
             txtNombre.Focus()
             Exit Sub
         End If
-        'carg.ActualizarCargo(nombre, descripcion, True, iddep)
+        carg.ActualizarCargo(nombre, descripcion, True, iddep, idCar)
         llenarcargo()
     End Sub
 
@@ -120,7 +130,7 @@
     End Sub
 
     Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
-        carg.Fill(tblCarg)
-        VerReporte(tblCarg, "DsCargo", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\Cargo.rdlc")
+        taCarg.Fill(dtCarg)
+        VerReporte(dtCarg, "DsCargos", "C:\Users\Norman Romero\Downloads\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\RptCargos.rdlc")
     End Sub
 End Class

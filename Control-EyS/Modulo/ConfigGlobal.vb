@@ -5,7 +5,7 @@ Module ConfigGlobal
     Sub VerReporte(ByVal tbl As DataTable, ByVal nombreDs As String, ByVal nombreRpt As String)
         Try
             Dim rpt As New ReportDataSource(nombreDs, tbl)
-            With FrmVistaPrevia
+            With FrmReportes
                 .ReportViewer1.LocalReport.DataSources.Clear()
                 .ReportViewer1.LocalReport.DataSources.Add(rpt)
                 .ReportViewer1.LocalReport.ReportPath = nombreRpt

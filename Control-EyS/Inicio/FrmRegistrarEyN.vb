@@ -64,6 +64,10 @@ Public Class FrmRegistrarEyN
         btnEntrada.Enabled = True
         btnSalida.Enabled = False
         Timer1.Stop()
+        Tiempo2 = Now.ToString("HH:mm:ss")
+        lblSalida.Text = Tiempo2
+
+
 
         Dim registrosEntradaSalida = horaEyS.GetRegistroEntradaSalida(idRegistro)
         If Not registrosEntradaSalida.Any() Then

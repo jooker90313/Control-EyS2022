@@ -65,28 +65,22 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Compression.Base, Version=20.1460.0.55, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Compression.Base.20.1.0.55\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
@@ -213,10 +207,10 @@
     <Compile Include="Registrar\FrmREmple.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReportesAdmin\FrmVistaPrevia.Designer.vb">
-      <DependentUpon>FrmVistaPrevia.vb</DependentUpon>
+    <Compile Include="ReportesAdmin\FrmReportes.Designer.vb">
+      <DependentUpon>FrmReportes.vb</DependentUpon>
     </Compile>
-    <Compile Include="ReportesAdmin\FrmVistaPrevia.vb">
+    <Compile Include="ReportesAdmin\FrmReportes.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -254,13 +248,13 @@
     <EmbeddedResource Include="Registrar\FrmREmple.resx">
       <DependentUpon>FrmREmple.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportesAdmin\Cargo.rdlc" />
-    <EmbeddedResource Include="ReportesAdmin\Departamento.rdlc" />
-    <EmbeddedResource Include="ReportesAdmin\Empleado.rdlc" />
-    <EmbeddedResource Include="ReportesAdmin\horaEyS.rdlc" />
-    <EmbeddedResource Include="ReportesAdmin\FrmVistaPrevia.resx">
-      <DependentUpon>FrmVistaPrevia.vb</DependentUpon>
+    <EmbeddedResource Include="ReportesAdmin\FrmReportes.resx">
+      <DependentUpon>FrmReportes.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAdmin\RptCargos.rdlc" />
+    <EmbeddedResource Include="ReportesAdmin\RptDepartamentos.rdlc" />
+    <EmbeddedResource Include="ReportesAdmin\RptEmpleado.rdlc" />
+    <EmbeddedResource Include="ReportesAdmin\RptHoraEyS.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSet\BDQUICKIEDataSet.xsc">

@@ -1,6 +1,9 @@
 ﻿Public Class FrmVerificacionEyS
     Dim HoraEyS As New BDQUICKIEDataSetTableAdapters.Registro_de_asistenciaTableAdapter
 
+    Dim taRegAsis As New BDQUICKIEDataSetTableAdapters.QAsistenciaTableAdapter
+    Dim dtRegAsis As New BDQUICKIEDataSet.QAsistenciaDataTable
+
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         FrmLogin.Show()
         Me.Close()
@@ -36,10 +39,13 @@
     End Sub
 
     Sub llenarGrid()
-        DgvVerificacionEmpleado.DataSource = HoraEyS.MostrarData
+
+        taRegAsis.Fill(dtRegAsis)
+        DgvVerificacionEmpleado.DataSource = dtRegAsis
         DgvVerificacionEmpleado.Refresh()
+
         gbRegistroMostrado.Text = "Registros guardados: " & DgvVerificacionEmpleado.Rows.Count.ToString
-        DgvVerificacionEmpleado.Refresh()
+
     End Sub
 
 

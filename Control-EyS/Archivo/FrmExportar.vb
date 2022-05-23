@@ -7,7 +7,7 @@ Public Class FrmExportar
     Dim depa As New BDQUICKIEDataSetTableAdapters.DepartamentoTableAdapter
     Dim carg As New BDQUICKIEDataSetTableAdapters.CargoTableAdapter
     Dim regEmpl As New BDQUICKIEDataSetTableAdapters.EmpleadoTableAdapter
-
+    'TODO' ACTUALIZAR TABLAS PENDIENTES REFERENTE A ESTA HOJA 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.WindowState = FormWindowState.Minimized
 
@@ -112,6 +112,10 @@ Public Class FrmExportar
     End Sub
 
     Private Sub FrmExportar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem5.Click
 
     End Sub
 End Class

@@ -37,16 +37,25 @@
         DgvDepartamento.DataSource = dtDep
         DgvDepartamento.Refresh()
         gbDepartamento.Text = "Registros guardados: " & DgvDepartamento.Rows.Count.ToString
+
+        DgvDepartamento.Columns.Item("idDepartamento").Visible = False
     End Sub
 
     Private Sub FrmRDepartamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         llenardepa()
     End Sub
 
-    Private Sub DgvDepartamento_DoubleClick(sender As Object, e As EventArgs) Handles DgvDepartamento.DoubleClick
+    Private Sub DgvDepartamento_SelectionChanged(sender As Object, e As EventArgs) Handles DgvDepartamento.SelectionChanged
+
         Try
+            If IsNothing(DgvDepartamento.CurrentRow) Then
+                Exit Try
+            End If
+
             Dim fila As Integer = DgvDepartamento.CurrentRow.Index
             txtNombre.Text = DgvDepartamento.Item(0, fila).Value
+            idDepa = DgvDepartamento.Item(1, fila).Value
+
             btnGuar.Enabled = False
             btnEditar.Enabled = True
             btnEliminar.Enabled = True
@@ -65,18 +74,15 @@
             Exit Sub
         End If
         depa.ActualizarDepa(nombre, True, idDepa)
-
         llenardepa()
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        Dim nombre As String = txtNombre.Text.Trim
-
         Try
             Dim resp As VariantType
             resp = (MsgBox("Desea eliminar el registro?", vbQuestion + vbYesNo, "Eliminar"))
             If (resp = vbYes) Then
-                depa.EliminarDepa(nombre)
+                depa.EliminarDepa(idDepa)
                 llenardepa()
                 btnNuevo.PerformClick()
 
@@ -103,7 +109,7 @@
     End Sub
 
     Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
-        depa.Fill(tblDepa)
-        VerReporte(tblDepa, "DsDepartamento", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\Departamento.rdlc")
+        taDep.Fill(dtDep)
+        VerReporte(dtDep, "DsDepartamentos", "C:\Users\Norman Romero\Downloads\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\RptDepartamentos.rdlc")
     End Sub
 End Class

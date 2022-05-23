@@ -40,7 +40,6 @@ Partial Class FrmRegistrarEyN
         Me.lblInicio = New System.Windows.Forms.Label()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.lblTrabajadas = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,7 +91,6 @@ Partial Class FrmRegistrarEyN
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(43, Byte), Integer), CType(CType(73, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.BtnVerEyS)
         Me.Panel2.Location = New System.Drawing.Point(0, 357)
         Me.Panel2.Name = "Panel2"
@@ -210,15 +208,6 @@ Partial Class FrmRegistrarEyN
         Me.lblTrabajadas.Size = New System.Drawing.Size(0, 19)
         Me.lblTrabajadas.TabIndex = 9
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(33, 13)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 17)
-        Me.Label3.TabIndex = 1
-        Me.Label3.Text = "Label3"
-        '
         'FrmRegistrarEyN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -244,7 +233,6 @@ Partial Class FrmRegistrarEyN
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -266,5 +254,4 @@ Partial Class FrmRegistrarEyN
     Friend WithEvents Timer2 As Timer
     Friend WithEvents lblTrabajadas As Label
     Friend WithEvents BtnVerEyS As Button
-    Friend WithEvents Label3 As Label
 End Class

@@ -32,8 +32,10 @@
 
                 If administrador Then
                     frmPass.ShowDialog()
+
                 Else
                     Call TxId()
+
                 End If
 
                 Me.Hide()

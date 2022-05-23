@@ -3,9 +3,8 @@
     Dim carg As New BDQUICKIEDataSetTableAdapters.CargoTableAdapter
     Dim regEmpl As New BDQUICKIEDataSetTableAdapters.EmpleadoTableAdapter
     Dim admin As New BDQUICKIEDataSetTableAdapters.UsuarioTableAdapter
-    Dim estado As Boolean
     Dim idEmp As Integer
-    Dim tblemp As New BDQUICKIEDataSet.EmpleadoDataTable
+    Dim tblemp As New BDQUICKIEDataSet.QEmpleadoDataTable
     Dim taEmp As New BDQUICKIEDataSetTableAdapters.QEmpleadoTableAdapter
     Dim dtEmp As New BDQUICKIEDataSet.QEmpleadoDataTable
 
@@ -63,7 +62,6 @@
         Dim email As String = txtEmail.Text.Trim
         Dim direccion As String = txtDireccion.Text.Trim
         Dim fechaC As String = dtpFechaC.Text.Trim
-        Dim check As Boolean = cbAdmin.Checked
         Dim clave As String = txtClave.Text.Trim
 
         regEmpl.InsertarEmp(Cedula, nombre, apellido, telefono, email, direccion, idcarg, iddep, True, fechaC)
@@ -111,7 +109,7 @@
         Dim direccion As String = txtDireccion.Text.Trim
         Dim fechaC As String = dtpFechaC.Text.Trim
 
-        regEmpl.ActualizarEmp(Cedula, nombre, apellido, telefono, email, direccion, estado, idcarg, iddep, fechaC, idEmp)
+        regEmpl.ActualizarEmp(Cedula, nombre, apellido, telefono, email, direccion, True, idcarg, iddep, fechaC, idEmp)
         llenarGrid()
     End Sub
 
@@ -162,9 +160,10 @@
     End Sub
 
     Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
-        regEmpl.Fill(tblemp)
-        VerReporte(tblemp, "DsEmpleado", "C:\Users\Norman Romero\Pictures\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\Empleado.rdlc")
+        taEmp.Fill(tblemp)
+        VerReporte(tblemp, "DsEmpleado", "C:\Users\Norman Romero\Downloads\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\RptEmpleado.rdlc")
     End Sub
+
 
     Private Sub DgvEmpleado_SelectionChanged(sender As Object, e As EventArgs) Handles DgvEmpleado.SelectionChanged
 
