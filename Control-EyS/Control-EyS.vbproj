@@ -47,6 +47,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>QUICKIE.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
@@ -127,6 +130,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Archivo\FrmExportar.Designer.vb">
       <DependentUpon>FrmExportar.vb</DependentUpon>
     </Compile>
@@ -178,6 +182,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -207,6 +212,10 @@
     <Compile Include="Registrar\FrmREmple.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReportesAdmin\frmRCargos.Designer.vb">
+      <DependentUpon>frmRCargos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesAdmin\frmRCargos.vb" />
     <Compile Include="ReportesAdmin\FrmReportes.Designer.vb">
       <DependentUpon>FrmReportes.vb</DependentUpon>
     </Compile>
@@ -248,6 +257,9 @@
     <EmbeddedResource Include="Registrar\FrmREmple.resx">
       <DependentUpon>FrmREmple.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAdmin\frmRCargos.resx">
+      <DependentUpon>frmRCargos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesAdmin\FrmReportes.resx">
       <DependentUpon>FrmReportes.vb</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +296,7 @@
     <Folder Include="My Project\DataSources\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="QUICKIE.ico" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

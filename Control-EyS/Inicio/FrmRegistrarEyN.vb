@@ -48,14 +48,14 @@ Public Class FrmRegistrarEyN
         lblInicio.Text = Hora_Inicio
 
         Dim UserName = FrmLogin.IdEmpleado
-        Dim totalhoras As Date? = Nothing
         Dim horaEntrada As Date? = Now
-        Dim horaSalida As Date? = Nothing
-        Dim fecha As Date? = Now
+        Dim fecha As Date = Now
         Dim idEmp As Integer = UserName
 
-        HoraEyS.InsertarHoraEyS(totalhoras, horaEntrada, horaSalida, fecha, idEmp)
-        idRegistro = HoraEyS.GetUltimoRegistro()
+
+
+        Dim registro = horaEyS.InsertEntrada(horaEntrada, fecha, idEmp)
+        idRegistro = registro.First.idRegistro
 
     End Sub
 

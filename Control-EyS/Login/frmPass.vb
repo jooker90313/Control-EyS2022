@@ -6,7 +6,7 @@
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         FrmLogin.Show()
         Me.Hide()
-        'TODO' Falta validacion 
+
     End Sub
 
     Private Sub btnPass_Click(sender As Object, e As EventArgs) Handles btnPass.Click
@@ -17,18 +17,20 @@
         Dim autenticado = Autenticar(IdEmpleado, passAdmin)
 
         If autenticado Then
-
-            FrmInicioAdmin.ShowDialog()
+            LimpiarCampo()
+            FrmInicioAdmin.Show()
             Me.Hide()
 
         Else
 
             MsgBox(" Contraseña incorrecta, intente de nuevo", MsgBoxStyle.Critical)
+            LimpiarCampo()
         End If
 
     End Sub
 
-    Private Sub frmPass_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub LimpiarCampo()
+        txtPass.Text = ""
     End Sub
+
 End Class

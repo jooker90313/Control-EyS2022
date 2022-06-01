@@ -44,7 +44,6 @@ Partial Class FrmREmple
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txtDatos = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.gbEmpleado = New System.Windows.Forms.GroupBox()
@@ -57,12 +56,13 @@ Partial Class FrmREmple
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.txtApellido = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.lblFechaC = New System.Windows.Forms.Label()
         Me.dtpFechaC = New System.Windows.Forms.DateTimePicker()
         Me.cbAdmin = New System.Windows.Forms.CheckBox()
         Me.lblContra = New System.Windows.Forms.Label()
         Me.txtClave = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.dtpFechaNac = New System.Windows.Forms.DateTimePicker()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,13 +80,13 @@ Partial Class FrmREmple
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(817, 44)
+        Me.Panel1.Size = New System.Drawing.Size(924, 44)
         Me.Panel1.TabIndex = 6
         '
         'PictureBox3
         '
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(791, 12)
+        Me.PictureBox3.Location = New System.Drawing.Point(884, 11)
         Me.PictureBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(16, 16)
@@ -97,7 +97,7 @@ Partial Class FrmREmple
         'PictureBox4
         '
         Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(769, 12)
+        Me.PictureBox4.Location = New System.Drawing.Point(862, 11)
         Me.PictureBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(16, 16)
@@ -110,7 +110,7 @@ Partial Class FrmREmple
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Ebrima", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Silver
-        Me.Label2.Location = New System.Drawing.Point(179, 9)
+        Me.Label2.Location = New System.Drawing.Point(361, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(219, 28)
         Me.Label2.TabIndex = 3
@@ -124,7 +124,7 @@ Partial Class FrmREmple
         Me.btnGuardar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnNuevo, Me.btnGuar, Me.btnEditar, Me.btnEliminar, Me.BtnReporte})
         Me.btnGuardar.Location = New System.Drawing.Point(0, 0)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(30, 770)
+        Me.btnGuardar.Size = New System.Drawing.Size(30, 687)
         Me.btnGuardar.TabIndex = 31
         Me.btnGuardar.Text = "Guardar"
         '
@@ -179,14 +179,14 @@ Partial Class FrmREmple
         Me.Panel2.Location = New System.Drawing.Point(0, 732)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(817, 38)
+        Me.Panel2.Size = New System.Drawing.Size(924, 38)
         Me.Panel2.TabIndex = 32
         '
         'lblDepartamrnto
         '
         Me.lblDepartamrnto.AutoSize = True
         Me.lblDepartamrnto.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDepartamrnto.Location = New System.Drawing.Point(60, 204)
+        Me.lblDepartamrnto.Location = New System.Drawing.Point(66, 246)
         Me.lblDepartamrnto.Name = "lblDepartamrnto"
         Me.lblDepartamrnto.Size = New System.Drawing.Size(132, 23)
         Me.lblDepartamrnto.TabIndex = 57
@@ -196,7 +196,7 @@ Partial Class FrmREmple
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombre.Location = New System.Drawing.Point(99, 86)
+        Me.lblNombre.Location = New System.Drawing.Point(112, 110)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(88, 23)
         Me.lblNombre.TabIndex = 52
@@ -206,10 +206,10 @@ Partial Class FrmREmple
         '
         Me.ckbActivo.AutoSize = True
         Me.ckbActivo.Font = New System.Drawing.Font("Times New Roman", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ckbActivo.Location = New System.Drawing.Point(213, 383)
+        Me.ckbActivo.Location = New System.Drawing.Point(641, 64)
         Me.ckbActivo.Name = "ckbActivo"
         Me.ckbActivo.Size = New System.Drawing.Size(90, 23)
-        Me.ckbActivo.TabIndex = 59
+        Me.ckbActivo.TabIndex = 2
         Me.ckbActivo.Text = "ACTIVO"
         Me.ckbActivo.UseVisualStyleBackColor = True
         '
@@ -217,7 +217,7 @@ Partial Class FrmREmple
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(113, 161)
+        Me.Label3.Location = New System.Drawing.Point(128, 197)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 23)
         Me.Label3.TabIndex = 62
@@ -225,17 +225,17 @@ Partial Class FrmREmple
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(213, 242)
+        Me.txtEmail.Location = New System.Drawing.Point(641, 199)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(256, 22)
-        Me.txtEmail.TabIndex = 65
+        Me.txtEmail.TabIndex = 8
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(124, 242)
+        Me.Label4.Location = New System.Drawing.Point(567, 197)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(59, 23)
         Me.Label4.TabIndex = 64
@@ -243,17 +243,17 @@ Partial Class FrmREmple
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(213, 281)
+        Me.txtTelefono.Location = New System.Drawing.Point(641, 154)
         Me.txtTelefono.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(256, 22)
-        Me.txtTelefono.TabIndex = 67
+        Me.txtTelefono.TabIndex = 6
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(99, 279)
+        Me.Label5.Location = New System.Drawing.Point(542, 152)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(84, 23)
         Me.Label5.TabIndex = 66
@@ -261,37 +261,28 @@ Partial Class FrmREmple
         '
         'txtDireccion
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(213, 322)
+        Me.txtDireccion.Location = New System.Drawing.Point(229, 289)
         Me.txtDireccion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(256, 22)
-        Me.txtDireccion.TabIndex = 69
+        Me.txtDireccion.TabIndex = 10
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(93, 320)
+        Me.Label6.Location = New System.Drawing.Point(108, 289)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(90, 23)
         Me.Label6.TabIndex = 68
         Me.Label6.Text = "Dirección:"
         '
-        'btnBuscar
-        '
-        Me.btnBuscar.Image = CType(resources.GetObject("btnBuscar.Image"), System.Drawing.Image)
-        Me.btnBuscar.Location = New System.Drawing.Point(488, 396)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(92, 42)
-        Me.btnBuscar.TabIndex = 72
-        Me.btnBuscar.UseVisualStyleBackColor = True
-        '
         'txtDatos
         '
         Me.txtDatos.Location = New System.Drawing.Point(213, 418)
         Me.txtDatos.Name = "txtDatos"
-        Me.txtDatos.Size = New System.Drawing.Size(234, 22)
-        Me.txtDatos.TabIndex = 71
+        Me.txtDatos.Size = New System.Drawing.Size(696, 22)
+        Me.txtDatos.TabIndex = 14
         '
         'Label7
         '
@@ -306,9 +297,9 @@ Partial Class FrmREmple
         'gbEmpleado
         '
         Me.gbEmpleado.Controls.Add(Me.DgvEmpleado)
-        Me.gbEmpleado.Location = New System.Drawing.Point(33, 453)
+        Me.gbEmpleado.Location = New System.Drawing.Point(33, 446)
         Me.gbEmpleado.Name = "gbEmpleado"
-        Me.gbEmpleado.Size = New System.Drawing.Size(774, 278)
+        Me.gbEmpleado.Size = New System.Drawing.Size(879, 229)
         Me.gbEmpleado.TabIndex = 73
         Me.gbEmpleado.TabStop = False
         Me.gbEmpleado.Text = "Registro Guardado: 0"
@@ -325,22 +316,22 @@ Partial Class FrmREmple
         Me.DgvEmpleado.RowHeadersWidth = 51
         Me.DgvEmpleado.RowTemplate.Height = 24
         Me.DgvEmpleado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvEmpleado.Size = New System.Drawing.Size(768, 257)
+        Me.DgvEmpleado.Size = New System.Drawing.Size(873, 208)
         Me.DgvEmpleado.TabIndex = 0
         '
         'txtCedula
         '
-        Me.txtCedula.Location = New System.Drawing.Point(213, 53)
+        Me.txtCedula.Location = New System.Drawing.Point(229, 64)
         Me.txtCedula.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtCedula.Name = "txtCedula"
         Me.txtCedula.Size = New System.Drawing.Size(256, 22)
-        Me.txtCedula.TabIndex = 75
+        Me.txtCedula.TabIndex = 1
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(102, 51)
+        Me.Label8.Location = New System.Drawing.Point(128, 64)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(70, 23)
         Me.Label8.TabIndex = 74
@@ -350,7 +341,7 @@ Partial Class FrmREmple
         '
         Me.lblestado.AutoSize = True
         Me.lblestado.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblestado.Location = New System.Drawing.Point(108, 383)
+        Me.lblestado.Location = New System.Drawing.Point(563, 64)
         Me.lblestado.Name = "lblestado"
         Me.lblestado.Size = New System.Drawing.Size(68, 23)
         Me.lblestado.TabIndex = 55
@@ -359,78 +350,70 @@ Partial Class FrmREmple
         'cbCargo
         '
         Me.cbCargo.FormattingEnabled = True
-        Me.cbCargo.Location = New System.Drawing.Point(213, 163)
+        Me.cbCargo.Location = New System.Drawing.Point(229, 196)
         Me.cbCargo.Name = "cbCargo"
         Me.cbCargo.Size = New System.Drawing.Size(256, 24)
-        Me.cbCargo.TabIndex = 77
+        Me.cbCargo.TabIndex = 7
         '
         'cbDep
         '
         Me.cbDep.FormattingEnabled = True
-        Me.cbDep.Location = New System.Drawing.Point(213, 203)
+        Me.cbDep.Location = New System.Drawing.Point(229, 245)
         Me.cbDep.Name = "cbDep"
         Me.cbDep.Size = New System.Drawing.Size(256, 24)
-        Me.cbDep.TabIndex = 78
+        Me.cbDep.TabIndex = 9
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(102, 123)
+        Me.Label1.Location = New System.Drawing.Point(536, 111)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(85, 23)
+        Me.Label1.Size = New System.Drawing.Size(90, 23)
         Me.Label1.TabIndex = 79
-        Me.Label1.Text = "Apellidos"
+        Me.Label1.Text = "Apellidos:"
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(213, 88)
+        Me.txtNombre.Location = New System.Drawing.Point(229, 110)
         Me.txtNombre.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(256, 22)
-        Me.txtNombre.TabIndex = 80
+        Me.txtNombre.TabIndex = 3
         '
         'txtApellido
         '
-        Me.txtApellido.Location = New System.Drawing.Point(213, 125)
+        Me.txtApellido.Location = New System.Drawing.Point(641, 111)
         Me.txtApellido.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(256, 22)
-        Me.txtApellido.TabIndex = 81
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(506, 441)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(52, 17)
-        Me.Label9.TabIndex = 82
-        Me.Label9.Text = "Buscar"
+        Me.txtApellido.TabIndex = 4
         '
         'lblFechaC
         '
         Me.lblFechaC.AutoSize = True
-        Me.lblFechaC.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFechaC.Location = New System.Drawing.Point(42, 355)
+        Me.lblFechaC.Font = New System.Drawing.Font("Ebrima", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaC.Location = New System.Drawing.Point(35, 335)
         Me.lblFechaC.Name = "lblFechaC"
-        Me.lblFechaC.Size = New System.Drawing.Size(165, 23)
+        Me.lblFechaC.Size = New System.Drawing.Size(166, 20)
         Me.lblFechaC.TabIndex = 83
-        Me.lblFechaC.Text = "Fecha contratación:"
+        Me.lblFechaC.Text = "Fecha de contratación:"
         '
         'dtpFechaC
         '
-        Me.dtpFechaC.Location = New System.Drawing.Point(213, 357)
+        Me.dtpFechaC.Location = New System.Drawing.Point(229, 337)
         Me.dtpFechaC.Name = "dtpFechaC"
         Me.dtpFechaC.Size = New System.Drawing.Size(256, 22)
-        Me.dtpFechaC.TabIndex = 85
+        Me.dtpFechaC.TabIndex = 13
         '
         'cbAdmin
         '
         Me.cbAdmin.AutoSize = True
-        Me.cbAdmin.Location = New System.Drawing.Point(580, 123)
+        Me.cbAdmin.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbAdmin.Location = New System.Drawing.Point(641, 271)
         Me.cbAdmin.Name = "cbAdmin"
-        Me.cbAdmin.Size = New System.Drawing.Size(117, 21)
-        Me.cbAdmin.TabIndex = 86
+        Me.cbAdmin.Size = New System.Drawing.Size(149, 27)
+        Me.cbAdmin.TabIndex = 11
         Me.cbAdmin.Text = "Administrador"
         Me.cbAdmin.UseVisualStyleBackColor = True
         '
@@ -438,31 +421,52 @@ Partial Class FrmREmple
         '
         Me.lblContra.AutoSize = True
         Me.lblContra.Font = New System.Drawing.Font("Ebrima", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblContra.Location = New System.Drawing.Point(505, 201)
+        Me.lblContra.Location = New System.Drawing.Point(527, 333)
         Me.lblContra.Name = "lblContra"
         Me.lblContra.Size = New System.Drawing.Size(104, 23)
         Me.lblContra.TabIndex = 87
         Me.lblContra.Text = "Contraseña:"
+        Me.lblContra.Visible = False
         '
         'txtClave
         '
-        Me.txtClave.Location = New System.Drawing.Point(615, 203)
+        Me.txtClave.Location = New System.Drawing.Point(641, 335)
         Me.txtClave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtClave.Name = "txtClave"
-        Me.txtClave.Size = New System.Drawing.Size(102, 22)
-        Me.txtClave.TabIndex = 88
+        Me.txtClave.Size = New System.Drawing.Size(256, 22)
+        Me.txtClave.TabIndex = 12
+        Me.txtClave.Visible = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Ebrima", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(47, 152)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(150, 20)
+        Me.Label10.TabIndex = 88
+        Me.Label10.Text = "Fecha de Nacimieto:"
+        '
+        'dtpFechaNac
+        '
+        Me.dtpFechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpFechaNac.Location = New System.Drawing.Point(229, 152)
+        Me.dtpFechaNac.Name = "dtpFechaNac"
+        Me.dtpFechaNac.Size = New System.Drawing.Size(256, 22)
+        Me.dtpFechaNac.TabIndex = 5
         '
         'FrmREmple
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(819, 770)
+        Me.ClientSize = New System.Drawing.Size(924, 687)
+        Me.Controls.Add(Me.dtpFechaNac)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.txtClave)
         Me.Controls.Add(Me.lblContra)
         Me.Controls.Add(Me.cbAdmin)
         Me.Controls.Add(Me.dtpFechaC)
         Me.Controls.Add(Me.lblFechaC)
-        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtApellido)
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.Label1)
@@ -471,7 +475,6 @@ Partial Class FrmREmple
         Me.Controls.Add(Me.txtCedula)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.gbEmpleado)
-        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtDatos)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtDireccion)
@@ -489,6 +492,7 @@ Partial Class FrmREmple
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FrmREmple"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmREmple"
@@ -525,7 +529,6 @@ Partial Class FrmREmple
     Friend WithEvents Label5 As Label
     Friend WithEvents txtDireccion As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents btnBuscar As Button
     Friend WithEvents txtDatos As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents gbEmpleado As GroupBox
@@ -538,11 +541,12 @@ Partial Class FrmREmple
     Friend WithEvents Label1 As Label
     Friend WithEvents txtNombre As TextBox
     Friend WithEvents txtApellido As TextBox
-    Friend WithEvents Label9 As Label
     Friend WithEvents BtnReporte As ToolStripButton
     Friend WithEvents lblFechaC As Label
     Friend WithEvents dtpFechaC As DateTimePicker
     Friend WithEvents cbAdmin As CheckBox
     Friend WithEvents lblContra As Label
     Friend WithEvents txtClave As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents dtpFechaNac As DateTimePicker
 End Class

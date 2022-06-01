@@ -5,7 +5,6 @@
     Dim tblDepa As New BDQUICKIEDataSet.QDepartamentoDataTable
     Dim Cargo As New BDQUICKIEDataSetTableAdapters.QCargoTableAdapter
     Dim tblCargo As New BDQUICKIEDataSet.QCargoDataTable
-
     Dim taRegAsis As New BDQUICKIEDataSetTableAdapters.MAsistenciaTableAdapter
     Dim dtRegAsis As New BDQUICKIEDataSet.MAsistenciaDataTable
 
@@ -18,7 +17,7 @@
             Me.Hide()
 
         End If
-        'TODO' VALIDACION PARA QUE NO SE CIERRE TODO
+
 
 
     End Sub
@@ -36,13 +35,13 @@
             Me.Hide()
 
         End If
-        'TODO' VALIDACION PARA QUE NO SE CIERRE TODO
+
 
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         lblHora.Text = DateTime.Now.ToString("hh:mm:ss")
-        lblFe.Text = DateTime.Now.ToShortDateString
+        'lblFe.Text = DateTime.Now.ToShortDateString
 
     End Sub
     Private Sub ExportarReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportarReportesToolStripMenuItem.Click
@@ -72,37 +71,48 @@
 
     Private Sub EmpleadoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem1.Click
         Emple.Fill(tblEmple)
-        VerReporte(tblEmple, "DsEmpleado", "C:\Users\Norman Romero\Downloads\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\RptEmpleado.rdlc")
+        VerReporte(tblEmple, "DsEmpleado", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptEmpleado.rdlc")
     End Sub
 
     Private Sub DepartamentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DepartamentosToolStripMenuItem.Click
         Depa.Fill(tblDepa)
-        VerReporte(tblDepa, "DsDepartamentos", "C:\Users\Norman Romero\Downloads\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\RptDepartamentos.rdlc")
+        VerReporte(tblDepa, "DsDepartamentos", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptDepartamentos.rdlc")
     End Sub
 
     Private Sub CargoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CargoToolStripMenuItem1.Click
         Cargo.Fill(tblCargo)
-        VerReporte(tblCargo, "DsCargos", "C:\Users\Norman Romero\Downloads\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\RptCargos.rdlc")
+        VerReporte(tblCargo, "DsCargos", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptCargos.rdlc")
     End Sub
-
     Private Sub HorasDeEntradaYSalidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HorasDeEntradaYSalidaToolStripMenuItem.Click
-        taRegAsis.Fill(dtRegAsis)
-        VerReporte(dtRegAsis, "DsAsistencia", "C:\Users\Norman Romero\Downloads\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\RptHoraEyS.rdlc")
+
+        Dim fecha As DateTime = DateTimePicker1.Value
+        taRegAsis.Fill(dtRegAsis, fecha)
+        VerReporte(dtRegAsis, "DsAsistencia", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptHoraEyS.rdlc")
 
     End Sub
 
     Private Sub FrmInicioAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        llenarGrid()
+
+        Dim fecha As DateTime = Now
+
+        LlenarGrid(fecha)
+        DateTimePicker1.Value = fecha
 
     End Sub
 
-    Sub llenarGrid()
+    Sub LlenarGrid(ByVal fecha As DateTime)
 
-        taRegAsis.Fill(dtRegAsis)
+        taRegAsis.Fill(dtRegAsis, fecha)
         DgvhEyS.DataSource = dtRegAsis
+
         DgvhEyS.Refresh()
 
     End Sub
 
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
 
+        Dim fecha As DateTime = DateTimePicker1.Value
+        LlenarGrid(fecha)
+
+    End Sub
 End Class

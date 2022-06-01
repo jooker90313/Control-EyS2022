@@ -46,6 +46,7 @@ Partial Class FrmInicioAdmin
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.DgvhEyS = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -240,12 +241,21 @@ Partial Class FrmInicioAdmin
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.DgvhEyS)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 93)
+        Me.GroupBox1.Font = New System.Drawing.Font("Ebrima", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 118)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1139, 434)
+        Me.GroupBox1.Size = New System.Drawing.Size(1139, 429)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Control Entrada y Salida"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Ebrima", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Location = New System.Drawing.Point(787, 65)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(358, 33)
+        Me.DateTimePicker1.TabIndex = 8
         '
         'DgvhEyS
         '
@@ -254,19 +264,20 @@ Partial Class FrmInicioAdmin
         Me.DgvhEyS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvhEyS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvhEyS.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DgvhEyS.Location = New System.Drawing.Point(3, 29)
+        Me.DgvhEyS.Location = New System.Drawing.Point(3, 31)
         Me.DgvhEyS.Name = "DgvhEyS"
         Me.DgvhEyS.ReadOnly = True
         Me.DgvhEyS.RowHeadersWidth = 51
         Me.DgvhEyS.RowTemplate.Height = 24
-        Me.DgvhEyS.Size = New System.Drawing.Size(1133, 402)
+        Me.DgvhEyS.Size = New System.Drawing.Size(1133, 395)
         Me.DgvhEyS.TabIndex = 0
         '
         'FrmInicioAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 28.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1163, 539)
+        Me.ClientSize = New System.Drawing.Size(1163, 559)
+        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel2)
@@ -314,5 +325,6 @@ Partial Class FrmInicioAdmin
     Friend WithEvents Label2 As Label
     Friend WithEvents lblFe As Label
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents DgvhEyS As DataGridView
 End Class

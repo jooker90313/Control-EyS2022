@@ -6,7 +6,7 @@
     Dim idEmp As Integer
     Dim tblemp As New BDQUICKIEDataSet.QEmpleadoDataTable
     Dim taEmp As New BDQUICKIEDataSetTableAdapters.QEmpleadoTableAdapter
-    Dim dtEmp As New BDQUICKIEDataSet.QEmpleadoDataTable
+
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         Me.WindowState = FormWindowState.Minimized
@@ -33,18 +33,7 @@
         cbDep.Refresh()
     End Sub
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        txtNombre.Text = ""
-        txtApellido.Text = ""
-        cbCargo.Text = ""
-        cbDep.Text = ""
-        txtEmail.Text = ""
-        txtTelefono.Text = ""
-        txtDireccion.Text = ""
-        txtCedula.Text = ""
-        dtpFechaC.Text = ""
-        btnGuar.Enabled = True
-        btnEliminar.Enabled = False
-        btnEditar.Enabled = False
+        limpiarCampos()
     End Sub
 
     Private Sub btnGuar_Click(sender As Object, e As EventArgs) Handles btnGuar.Click
@@ -62,36 +51,32 @@
         Dim email As String = txtEmail.Text.Trim
         Dim direccion As String = txtDireccion.Text.Trim
         Dim fechaC As String = dtpFechaC.Text.Trim
+        Dim fechaNac As String = dtpFechaNac.Text.Trim
         Dim clave As String = txtClave.Text.Trim
+        Dim Estado As Boolean = ckbActivo.Checked
 
-        regEmpl.InsertarEmp(Cedula, nombre, apellido, telefono, email, direccion, idcarg, iddep, True, fechaC)
-        Dim idEmpleado As Integer = regEmpl.GetUltimoIdEmpleado()
+        Dim Duplicado As String = valiUser(txtCedula.Text)
+        If Duplicado.Equals(txtCedula.Text) = True Then
+
+            MsgBox("Cedula ya existente", MsgBoxStyle.Critical, "ERROR")
+            Return
+        End If
+        regEmpl.InsertarEmp(Cedula, nombre, apellido, telefono, email, direccion, idcarg, iddep, Estado, fechaC, fechaNac)
+            Dim idEmpleado As Integer = regEmpl.GetUltimoIdEmpleado()
 
         If (cbAdmin.Checked) Then
             admin.InsertarUsuarioAdministrador(idEmpleado, clave)
+
         Else
             admin.InsertarUsuarioNoAdmistrador(idEmpleado)
         End If
-
+        MsgBox("Datos Guardados Correctamente", MsgBoxStyle.Information, "NOTIFICACION")
         llenarGrid()
+        limpiarCampos()
+
+
 
     End Sub
-
-
-    Private Function ValidaDatosEmpleado() As Boolean
-
-        If (String.IsNullOrEmpty(txtNombre.Text)) Then
-
-            MsgBox("No puede quedar vacío el nombre", MsgBoxStyle.Critical, "ERROR")
-            txtNombre.Focus()
-
-            Return False
-
-        End If
-
-        Return True
-
-    End Function
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
 
@@ -108,38 +93,49 @@
         Dim email As String = txtEmail.Text.Trim
         Dim direccion As String = txtDireccion.Text.Trim
         Dim fechaC As String = dtpFechaC.Text.Trim
+        Dim fechaNac As String = dtpFechaNac.Text.Trim
+        Dim Estado As Boolean = ckbActivo.Checked
 
-        regEmpl.ActualizarEmp(Cedula, nombre, apellido, telefono, email, direccion, True, idcarg, iddep, fechaC, idEmp)
+        regEmpl.ActualizarEmp(Cedula, nombre, apellido, telefono, email, direccion, Estado, idcarg, iddep, fechaC, fechaNac, idEmp)
+
+        MsgBox("Datos Editados Correctamente", MsgBoxStyle.Information, "NOTIFICACION")
         llenarGrid()
+
+
+
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Try
 
             Dim resp As VariantType
-            resp = (MsgBox("Desea eliminar el registro?", vbQuestion + vbYesNo, "Eliminar"))
+            resp = (MsgBox("¿Desea eliminar el registro?", vbQuestion + vbYesNo, "Eliminar"))
 
             If (resp = vbYes) Then
 
                 regEmpl.EliminarEmp(idEmp)
                 llenarGrid()
+                MsgBox("Datos Eliminados Correctamente", MsgBoxStyle.Information, "NOTIFICACION")
                 btnNuevo.PerformClick()
 
             End If
         Catch ex As Exception
-
+            MsgBox($"Error al Eliminar: {ex}")
         End Try
     End Sub
 
     Sub llenarGrid()
-        taEmp.Fill(dtEmp)
-        DgvEmpleado.DataSource = dtEmp
+        taEmp.Fill(tblemp)
+        DgvEmpleado.DataSource = tblemp
         DgvEmpleado.Refresh()
         gbEmpleado.Text = "Registros guardados: " & DgvEmpleado.Rows.Count.ToString
 
         DgvEmpleado.Columns.Item("idEmp").Visible = False
-    End Sub
+        DgvEmpleado.Columns.Item("Direccion").Visible = False
+        DgvEmpleado.Columns.Item("fechaNacimiento").Visible = False
+        DgvEmpleado.Columns.Item("estadoEmpleado").Visible = False
 
+    End Sub
     Private Sub FrmREmple_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         llenarCarg()
         llenarDep()
@@ -147,21 +143,10 @@
 
     End Sub
 
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        Try
-            Dim dato As String = txtDatos.Text & "%"
-            DgvEmpleado.DataSource = taEmp.GetDataByNombre(dato)
-            DgvEmpleado.Refresh()
-
-            gbEmpleado.Text = "Registros encontrados: " & DgvEmpleado.Rows.Count.ToString
-        Catch ex As Exception
-
-        End Try
-    End Sub
 
     Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
         taEmp.Fill(tblemp)
-        VerReporte(tblemp, "DsEmpleado", "C:\Users\Norman Romero\Downloads\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\RptEmpleado.rdlc")
+        VerReporte(tblemp, "DsEmpleado", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptEmpleado.rdlc")
     End Sub
 
 
@@ -183,14 +168,128 @@
             cbDep.Text = DgvEmpleado.Item(6, fila).Value
             dtpFechaC.Text = DgvEmpleado.Item(7, fila).Value
             idEmp = DgvEmpleado.Item(8, fila).Value
+            txtDireccion.Text = DgvEmpleado.Item(9, fila).Value
+            dtpFechaNac.Text = DgvEmpleado.Item(10, fila).Value
+            ckbActivo.Checked = DgvEmpleado.Item(11, fila).Value
 
             btnGuar.Enabled = False
             btnEditar.Enabled = True
             btnEliminar.Enabled = True
 
         Catch ex As Exception
+            MsgBox($"Error de seleccion: {ex}")
 
         End Try
 
+    End Sub
+
+    Private Sub cbAdmin_CheckedChanged(sender As Object, e As EventArgs) Handles cbAdmin.CheckedChanged
+        If (cbAdmin.Checked) Then
+            txtClave.Visible = True
+            lblContra.Visible = True
+        Else
+            txtClave.Visible = False
+            lblContra.Visible = False
+        End If
+    End Sub
+
+    Private Function ValidaDatosEmpleado() As Boolean
+
+        If (String.IsNullOrEmpty(txtNombre.Text)) Then
+            MsgBox("No puede quedar vacío el Nombre vacio", MsgBoxStyle.Critical, "ERROR")
+            txtNombre.Focus()
+            Return False
+
+        End If
+
+
+        If (String.IsNullOrEmpty(txtApellido.Text)) Then
+            MsgBox("No puede dejar el campo Apellido vacio", MsgBoxStyle.Critical, "ERROR")
+            txtApellido.Focus()
+            Return False
+
+        End If
+
+
+        If (String.IsNullOrEmpty(cbCargo.Text)) Then
+            MsgBox("No puede dejar el campo Cargo vacio", MsgBoxStyle.Critical, "ADVERTENCIA")
+            cbCargo.Focus()
+            Return False
+
+        End If
+
+        If (String.IsNullOrEmpty(cbDep.Text)) Then
+            MsgBox("No puede dejar el campo Departamento vacio", MsgBoxStyle.Critical, "ADVERTENCIA")
+            cbDep.Focus()
+            Return False
+
+        End If
+
+        If (String.IsNullOrEmpty(txtEmail.Text)) Then
+            MsgBox("No puede dejar el campo Email vacio", MsgBoxStyle.Critical, "ADVERTENCIA")
+            txtEmail.Focus()
+            Return False
+
+        End If
+
+        If (String.IsNullOrEmpty(txtTelefono.Text)) Then
+            MsgBox("No puede dejar el campo Teléfono vacio", MsgBoxStyle.Critical, "ADVERTENCIA")
+            txtTelefono.Focus()
+            Return False
+
+        End If
+
+        If (String.IsNullOrEmpty(txtDireccion.Text)) Then
+            MsgBox("No puede dejar el campo Dirección vacio", MsgBoxStyle.Critical, "ADVERTENCIA")
+            txtDireccion.Focus()
+            Return False
+
+        End If
+
+        If (String.IsNullOrEmpty(txtCedula.Text)) Then
+            MsgBox("No puede dejar el campo Cédula vacio", MsgBoxStyle.Critical, "ADVERTENCIA")
+            txtCedula.Focus()
+            Return False
+
+        End If
+
+        If (String.IsNullOrEmpty(dtpFechaC.Checked)) Then
+            MsgBox("No puede dejar el campo Fecha Contratación vacio", MsgBoxStyle.Critical, "ADVERTENCIA")
+            dtpFechaC.Focus()
+            Return False
+
+        End If
+        Return True
+
+    End Function
+
+    Private Sub txtDatos_TextChanged(sender As Object, e As EventArgs) Handles txtDatos.TextChanged
+        Try
+            Dim dato As String = txtDatos.Text & "%"
+            DgvEmpleado.DataSource = taEmp.BuscarEmpleado(dato)
+            DgvEmpleado.Refresh()
+
+            gbEmpleado.Text = "Registros encontrados: " & DgvEmpleado.Rows.Count.ToString
+        Catch ex As Exception
+            MsgBox($"Error al buscar: {ex}")
+        End Try
+    End Sub
+
+    Private Sub limpiarCampos()
+        txtNombre.Text = ""
+        txtApellido.Text = ""
+        cbCargo.Text = ""
+        cbDep.Text = ""
+        txtEmail.Text = ""
+        txtTelefono.Text = ""
+        txtDireccion.Text = ""
+        txtCedula.Text = ""
+        dtpFechaC.Text = ""
+        dtpFechaNac.Text = ""
+        ckbActivo.Checked = False
+        btnGuar.Enabled = True
+        btnEliminar.Enabled = False
+        btnEditar.Enabled = False
+        MsgBox("Campos limpios", MsgBoxStyle.Information, "NOTIFICACION")
     End Sub
 End Class

@@ -29,30 +29,29 @@
 
                 IdEmpleado = GetIdEmpleado(user)
                 Dim administrador As Boolean = GetEsAdministrador(IdEmpleado)
-
+                LimpiarCampos()
                 If administrador Then
-                    frmPass.ShowDialog()
-
+                    frmPass.Show()
+                    Me.Hide()
                 Else
-                    Call TxId()
+                    FrmRegistrarEyN.Show()
+                    Me.Hide()
 
                 End If
-
-                Me.Hide()
 
             Else
 
                 MsgBox("El Usuario: " + txtId.Text + "No se encuentra registrado")
+                LimpiarCampos()
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
     End Sub
 
-    Private Sub TxId()
+    Private Sub LimpiarCampos()
 
-        FrmRegistrarEyN.ShowDialog()
-        Me.Hide()
+        txtId.Text = ""
 
     End Sub
 

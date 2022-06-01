@@ -74,21 +74,21 @@ Module Conexion
 
     End Function
 
-    'Function Admin(ByVal nombreUsuario As String) As String
-    '    Dim resultado As String = ""
-    '    Try
-    '        enunciado = New SqlCommand("Select * from Empleado where numCedula ='" & nombreUsuario & "'", conexion)
-    '        respuesta = enunciado.ExecuteReader
+    Function valiUser(ByVal nombreUsuario As String) As String
+        Dim resultado As String = ""
+        Try
+            enunciado = New SqlCommand("Select * from Empleado where numCedula ='" & nombreUsuario & "'", connection)
+            respuesta = enunciado.ExecuteReader
 
-    '        If respuesta.Read Then
-    '            resultado = respuesta.Item("numCedula")
-    '        End If
-    '        respuesta.Close()
-    '    Catch ex As Exception
-    '        MsgBox(ex.ToString)
-    '    End Try
-    '    Return resultado
-    'End Function
+            If respuesta.Read Then
+                resultado = respuesta.Item("numCedula")
+            End If
+            respuesta.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return resultado
+    End Function
 
     Function ConsultarTipoUsuario(ByVal nombreUsuario As String) As Integer
         Dim resultado As Integer
@@ -122,6 +122,34 @@ Module Conexion
 
     End Function
 
+    Function valicionDepartamento(ByVal Departamento As String) As String
+        Dim resultado As String = ""
+        Try
+            enunciado = New SqlCommand("Select * from Departamento where nombreDepartamento ='" & Departamento & "'", connection)
+            respuesta = enunciado.ExecuteReader
 
+            If respuesta.Read Then
+                resultado = respuesta.Item("nombreDepartamento")
+            End If
+            respuesta.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return resultado
+    End Function
+    Function valicionCargo(ByVal cargo As String) As String
+        Dim resultado As String = ""
+        Try
+            enunciado = New SqlCommand("Select * from Cargo where nombreCargo ='" & cargo & "'", connection)
+            respuesta = enunciado.ExecuteReader
 
+            If respuesta.Read Then
+                resultado = respuesta.Item("nombreCargo")
+            End If
+            respuesta.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return resultado
+    End Function
 End Module

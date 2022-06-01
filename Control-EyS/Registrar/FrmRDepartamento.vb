@@ -1,8 +1,6 @@
 ﻿Public Class FrmRDepartamento
     Dim depa As New BDQUICKIEDataSetTableAdapters.DepartamentoTableAdapter
-    Dim estado As Boolean
     Dim idDepa As Integer
-    Dim tblDepa As New BDQUICKIEDataSet.DepartamentoDataTable
     Dim taDep As New BDQUICKIEDataSetTableAdapters.QDepartamentoTableAdapter
     Dim dtDep As New BDQUICKIEDataSet.QDepartamentoDataTable
 
@@ -10,26 +8,31 @@
         FrmInicioAdmin.Show()
         Me.Hide()
 
-
     End Sub
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
-        txtNombre.Text = ""
-        btnGuar.Enabled = True
-        btnEliminar.Enabled = False
-        btnEditar.Enabled = False
-        txtNombre.Focus()
+        limpiarCampos()
     End Sub
 
     Private Sub btnGuar_Click(sender As Object, e As EventArgs) Handles btnGuar.Click
-        Dim nombre As String = txtNombre.Text.Trim
         If (String.IsNullOrEmpty(txtNombre.Text)) Then
             MsgBox("No puede quedar vacío el nombre", MsgBoxStyle.Critical, "ERROR")
             txtNombre.Focus()
             Exit Sub
         End If
-        depa.InsertarDepa(nombre, True)
+        Dim nombre As String = txtNombre.Text.Trim
+        Dim Estado As Boolean = ckbActivo.Checked
+        Dim Duplicado As String = valicionDepartamento(txtNombre.Text)
+        If Duplicado.Equals(txtNombre.Text) = True Then
+
+            MsgBox("Departamento ya existente", MsgBoxStyle.Critical, "ERROR")
+            Return
+        End If
+        depa.InsertarDepa(nombre, Estado)
         llenardepa()
+        MsgBox("Datos Guardados Correctamente", MsgBoxStyle.Information, "NOTIFICACION")
+
+        limpiarCampos()
     End Sub
 
     Sub llenardepa()
@@ -55,6 +58,8 @@
             Dim fila As Integer = DgvDepartamento.CurrentRow.Index
             txtNombre.Text = DgvDepartamento.Item(0, fila).Value
             idDepa = DgvDepartamento.Item(1, fila).Value
+            ckbActivo.Checked = DgvDepartamento.Item(2, fila).Value
+
 
             btnGuar.Enabled = False
             btnEditar.Enabled = True
@@ -66,14 +71,19 @@
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        Dim nombre As String = txtNombre.Text.Trim
 
         If (String.IsNullOrEmpty(txtNombre.Text)) Then
             MsgBox("No puede quedar vacío el nombre", MsgBoxStyle.Critical, "ERROR")
             txtNombre.Focus()
             Exit Sub
         End If
-        depa.ActualizarDepa(nombre, True, idDepa)
+
+        Dim nombre As String = txtNombre.Text.Trim
+        Dim Estado As Boolean = ckbActivo.Checked
+
+        depa.ActualizarDepa(nombre, Estado, idDepa)
+        MsgBox("Datos Editados Correctamente", MsgBoxStyle.Information, "NOTIFICACION")
+
         llenardepa()
     End Sub
 
@@ -88,19 +98,7 @@
 
             End If
         Catch ex As Exception
-
-        End Try
-    End Sub
-
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        Try
-            Dim dato As String = txtDatos.Text & "%"
-            DgvDepartamento.DataSource = taDep.GetDataByNombre(dato)
-            DgvDepartamento.Refresh()
-
-            gbDepartamento.Text = "Registros encontrados: " & DgvDepartamento.Rows.Count.ToString
-        Catch ex As Exception
-
+            MsgBox($"Error al Eliminar: {ex}")
         End Try
     End Sub
 
@@ -110,6 +108,28 @@
 
     Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
         taDep.Fill(dtDep)
-        VerReporte(dtDep, "DsDepartamentos", "C:\Users\Norman Romero\Downloads\Control-EyS2022\Control-EyS2022\Control-EyS\ReportesAdmin\RptDepartamentos.rdlc")
+        VerReporte(dtDep, "DsDepartamentos", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptDepartamentos.rdlc")
+    End Sub
+
+    Private Sub txtDatos_TextChanged(sender As Object, e As EventArgs) Handles txtDatos.TextChanged
+        Try
+            Dim dato As String = txtDatos.Text & "%"
+            DgvDepartamento.DataSource = taDep.GetDataByNombre(dato)
+            DgvDepartamento.Refresh()
+
+            gbDepartamento.Text = "Registros encontrados: " & DgvDepartamento.Rows.Count.ToString
+        Catch ex As Exception
+            MsgBox($"Error al Buscar: {ex}")
+        End Try
+    End Sub
+    Private Sub limpiarCampos()
+        txtNombre.Text = ""
+        ckbActivo.Checked = False
+        btnGuar.Enabled = True
+        btnEliminar.Enabled = False
+        btnEditar.Enabled = False
+        txtNombre.Focus()
+        MsgBox("Campos limpios!", MsgBoxStyle.Information, "INFORMACIÓN")
+
     End Sub
 End Class

@@ -1,8 +1,13 @@
 ﻿Public Class FrmVerificacionEyS
-    Dim HoraEyS As New BDQUICKIEDataSetTableAdapters.Registro_de_asistenciaTableAdapter
 
     Dim taRegAsis As New BDQUICKIEDataSetTableAdapters.QAsistenciaTableAdapter
     Dim dtRegAsis As New BDQUICKIEDataSet.QAsistenciaDataTable
+
+    Public ReadOnly Property GetIdEmpleado() As String
+        Get
+            Return FrmLogin.IdEmpleado
+        End Get
+    End Property
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         FrmLogin.Show()
@@ -40,7 +45,7 @@
 
     Sub llenarGrid()
 
-        taRegAsis.Fill(dtRegAsis)
+        taRegAsis.Fill(dtRegAsis, GetIdEmpleado)
         DgvVerificacionEmpleado.DataSource = dtRegAsis
         DgvVerificacionEmpleado.Refresh()
 
