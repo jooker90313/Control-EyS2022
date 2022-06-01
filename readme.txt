@@ -1,11 +1,11 @@
 *DATOS IMPORTANTES*
 
 Administrador:
-ADMIN (En mayúsculas)
+001-201000-0000K
 12345 (Contraseña)
 
 Empleado:
-00011778266 (Cédula)
+001-060402-1026L
 [Sin contraseña, pasa directo al registro]
 
 [Recordatorio siempre cambiar la dirección donde están ubicados los repotes]
