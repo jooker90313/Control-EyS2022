@@ -63,6 +63,7 @@ Public Class FrmRDepartamento
             ckbActivo.Checked = DgvDepartamento.Item(2, fila).Value
 
 
+
             btnGuar.Enabled = False
             btnEditar.Enabled = True
             btnEliminar.Enabled = True

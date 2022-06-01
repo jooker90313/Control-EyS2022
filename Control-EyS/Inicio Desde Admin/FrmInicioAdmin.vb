@@ -124,7 +124,6 @@ Public Class FrmInicioAdmin
 
         taRegAsis.Fill(dtRegAsis, fecha)
         DgvhEyS.DataSource = dtRegAsis
-
         DgvhEyS.Refresh()
 
     End Sub

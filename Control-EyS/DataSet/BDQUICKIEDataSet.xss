@@ -8,15 +8,15 @@
   <Shapes>
     <Shape ID="DesignTable:Cargo" ZOrder="15" X="397" Y="66" Height="296" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
     <Shape ID="DesignTable:Departamento" ZOrder="16" X="785" Y="169" Height="250" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
-    <Shape ID="DesignTable:Empleado" ZOrder="9" X="42" Y="43" Height="457" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
-    <Shape ID="DesignTable:Registro_de_asistencia" ZOrder="6" X="404" Y="449" Height="342" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
-    <Shape ID="DesignTable:ConsultaEMP" ZOrder="8" X="1227" Y="6" Height="158" Width="326" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
-    <Shape ID="DesignTable:QEmpleado" ZOrder="3" X="1247" Y="194" Height="411" Width="274" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="28" OldDataTableHeight="306" SplitterPosition="306" />
-    <Shape ID="DesignTable:QDepartamento" ZOrder="2" X="1147" Y="834" Height="204" Width="291" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
+    <Shape ID="DesignTable:Empleado" ZOrder="10" X="42" Y="43" Height="457" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
+    <Shape ID="DesignTable:Registro_de_asistencia" ZOrder="3" X="404" Y="449" Height="342" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
+    <Shape ID="DesignTable:ConsultaEMP" ZOrder="9" X="1227" Y="6" Height="158" Width="326" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
+    <Shape ID="DesignTable:QEmpleado" ZOrder="5" X="1247" Y="194" Height="411" Width="274" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="28" OldDataTableHeight="306" SplitterPosition="306" />
+    <Shape ID="DesignTable:QDepartamento" ZOrder="1" X="1147" Y="834" Height="181" Width="282" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:QCargo" ZOrder="17" X="787" Y="833" Height="181" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
-    <Shape ID="DesignTable:Usuario" ZOrder="1" X="366" Y="822" Height="273" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
-    <Shape ID="DesignTable:QAsistencia" ZOrder="4" X="779" Y="489" Height="273" Width="350" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
-    <Shape ID="DesignTable:MAsistencia" ZOrder="7" X="1249" Y="627" Height="110" Width="252" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="191" SplitterPosition="28" />
+    <Shape ID="DesignTable:Usuario" ZOrder="4" X="366" Y="822" Height="273" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
+    <Shape ID="DesignTable:QAsistencia" ZOrder="6" X="779" Y="489" Height="273" Width="350" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
+    <Shape ID="DesignTable:MAsistencia" ZOrder="8" X="1249" Y="627" Height="110" Width="252" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="191" SplitterPosition="28" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:RefCargo13" ZOrder="19" LineWidth="11">
@@ -43,7 +43,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:RefEmpleado15" ZOrder="12" LineWidth="11">
+    <Connector ID="DesignRelation:RefEmpleado15" ZOrder="13" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>262</X>
@@ -75,7 +75,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Usuario_Empleado" ZOrder="11" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Usuario_Empleado" ZOrder="12" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>313</X>
@@ -91,7 +91,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Usuario_Empleado1" ZOrder="13" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Usuario_Empleado1" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>1249</X>
@@ -107,7 +107,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:RefDepartamento141" ZOrder="5" LineWidth="11">
+    <Connector ID="DesignRelation:RefDepartamento141" ZOrder="7" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>1147</X>
@@ -123,7 +123,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:RefCargo131" ZOrder="10" LineWidth="11">
+    <Connector ID="DesignRelation:RefCargo131" ZOrder="11" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>787</X>

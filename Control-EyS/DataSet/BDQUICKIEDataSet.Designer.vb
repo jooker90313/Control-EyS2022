@@ -9532,8 +9532,9 @@ Namespace BDQUICKIEDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT idDepartamento, nombreDepartamento AS Departamento, estadoDepartamento"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FR"& _ 
-                "OM     Departamento"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (nombreDepartamento LIKE '%' + @cadena + '%')"
+            Me._commandCollection(1).CommandText = "SELECT idDepartamento, nombreDepartamento AS Departamento, estadoDepartamento AS "& _ 
+                "Estado"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Departamento"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (nombreDepartamento LIKE '%' + @cadena + '"& _ 
+                "%')"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@cadena", Global.System.Data.SqlDbType.NVarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "Departamento", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub

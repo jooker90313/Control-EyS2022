@@ -142,6 +142,7 @@ Public Class FrmREmple
         DgvEmpleado.Columns.Item("Direccion").Visible = False
         DgvEmpleado.Columns.Item("fechaNacimiento").Visible = False
         DgvEmpleado.Columns.Item("estadoEmpleado").Visible = False
+        DgvEmpleado.Columns.Item("clave").Visible = False
 
     End Sub
     Private Sub FrmREmple_Load(sender As Object, e As EventArgs) Handles MyBase.Load
