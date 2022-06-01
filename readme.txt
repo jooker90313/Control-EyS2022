@@ -13,3 +13,6 @@ Empleado:
 La base de datos es el BACK, agregar el .bak a la extensión. Por alguna razón no nos generó el .bak 🤔🤔🤔
 
 Todo está en la carpeta del GIT
+
+OJO
+En dado caso el programa tire error en cuanto a SqlServerTypes u otro referente a rdlc/reportes, recuerde siempre reinstalar los nuggets de ReportingServices y SqlServerTypes.
