@@ -1,4 +1,6 @@
-﻿Public Class FrmInicioAdmin
+﻿Imports System.IO
+
+Public Class FrmInicioAdmin
     Dim Emple As New BDQUICKIEDataSetTableAdapters.QEmpleadoTableAdapter
     Dim tblEmple As New BDQUICKIEDataSet.QEmpleadoDataTable
     Dim Depa As New BDQUICKIEDataSetTableAdapters.QDepartamentoTableAdapter
@@ -71,23 +73,41 @@
 
     Private Sub EmpleadoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem1.Click
         Emple.Fill(tblEmple)
-        VerReporte(tblEmple, "DsEmpleado", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptEmpleado.rdlc")
+        Dim directorioBase = AppDomain.CurrentDomain.BaseDirectory
+        Dim directorioReporte = Path.Combine(directorioBase, "ReportesAdmin\RptEmpleado.rdlc")
+
+        VerReporte(tblEmple, "DsEmpleado", directorioReporte)
+
     End Sub
 
     Private Sub DepartamentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DepartamentosToolStripMenuItem.Click
         Depa.Fill(tblDepa)
-        VerReporte(tblDepa, "DsDepartamentos", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptDepartamentos.rdlc")
+        Dim directorioBase = AppDomain.CurrentDomain.BaseDirectory
+        Dim directorioReporte = Path.Combine(directorioBase, "ReportesAdmin\RptDepartamentos.rdlc")
+
+        VerReporte(tblDepa, "DsDepartamentos", directorioReporte)
+
+
     End Sub
 
     Private Sub CargoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles CargoToolStripMenuItem1.Click
         Cargo.Fill(tblCargo)
-        VerReporte(tblCargo, "DsCargos", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptCargos.rdlc")
+        Dim directorioBase = AppDomain.CurrentDomain.BaseDirectory
+        Dim directorioReporte = Path.Combine(directorioBase, "ReportesAdmin\RptCargos.rdlc")
+
+        VerReporte(tblCargo, "DsCargos", directorioReporte)
+
+
+
+
     End Sub
     Private Sub HorasDeEntradaYSalidaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HorasDeEntradaYSalidaToolStripMenuItem.Click
 
         Dim fecha As DateTime = DateTimePicker1.Value
         taRegAsis.Fill(dtRegAsis, fecha)
         VerReporte(dtRegAsis, "DsAsistencia", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptHoraEyS.rdlc")
+
+        'TODO' Error al asignar como AppDomain
 
     End Sub
 

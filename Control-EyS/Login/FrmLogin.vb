@@ -41,7 +41,7 @@
 
             Else
 
-                MsgBox("El Usuario: " + txtId.Text + "No se encuentra registrado")
+                MsgBox("El Usuario: " + txtId.Text + " No se encuentra registrado")
                 LimpiarCampos()
             End If
         Catch ex As Exception

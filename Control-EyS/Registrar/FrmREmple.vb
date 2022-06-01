@@ -1,4 +1,6 @@
-﻿Public Class FrmREmple
+﻿Imports System.IO
+
+Public Class FrmREmple
     Dim depa As New BDQUICKIEDataSetTableAdapters.DepartamentoTableAdapter
     Dim carg As New BDQUICKIEDataSetTableAdapters.CargoTableAdapter
     Dim regEmpl As New BDQUICKIEDataSetTableAdapters.EmpleadoTableAdapter
@@ -62,7 +64,7 @@
             Return
         End If
         regEmpl.InsertarEmp(Cedula, nombre, apellido, telefono, email, direccion, idcarg, iddep, Estado, fechaC, fechaNac)
-            Dim idEmpleado As Integer = regEmpl.GetUltimoIdEmpleado()
+        Dim idEmpleado As Integer = regEmpl.GetUltimoIdEmpleado()
 
         If (cbAdmin.Checked) Then
             admin.InsertarUsuarioAdministrador(idEmpleado, clave)
@@ -95,13 +97,19 @@
         Dim fechaC As String = dtpFechaC.Text.Trim
         Dim fechaNac As String = dtpFechaNac.Text.Trim
         Dim Estado As Boolean = ckbActivo.Checked
+        Dim clave As String = txtClave.Text.Trim
 
         regEmpl.ActualizarEmp(Cedula, nombre, apellido, telefono, email, direccion, Estado, idcarg, iddep, fechaC, fechaNac, idEmp)
 
+        If (cbAdmin.Checked) Then
+            admin.ActualizaAdmin(clave, idEmp)
+        Else
+            admin.ActulizarNoAdmin(idEmp)
+        End If
+
         MsgBox("Datos Editados Correctamente", MsgBoxStyle.Information, "NOTIFICACION")
+
         llenarGrid()
-
-
 
     End Sub
 
@@ -145,8 +153,14 @@
 
 
     Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
+
         taEmp.Fill(tblemp)
-        VerReporte(tblemp, "DsEmpleado", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptEmpleado.rdlc")
+
+        Dim directorioBase = AppDomain.CurrentDomain.BaseDirectory
+        Dim directorioReporte = Path.Combine(directorioBase, "ReportesAdmin\RptEmpleado.rdlc")
+
+        VerReporte(tblemp, "DsEmpleado", directorioReporte)
+
     End Sub
 
 
@@ -154,7 +168,7 @@
 
         Try
             If IsNothing(DgvEmpleado.CurrentRow) Then
-                Exit Try
+                Exit Sub
             End If
 
             Dim fila As Integer = DgvEmpleado.CurrentRow.Index
@@ -171,6 +185,13 @@
             txtDireccion.Text = DgvEmpleado.Item(9, fila).Value
             dtpFechaNac.Text = DgvEmpleado.Item(10, fila).Value
             ckbActivo.Checked = DgvEmpleado.Item(11, fila).Value
+            cbAdmin.Checked = DgvEmpleado.Item(12, fila).Value
+
+            If (IsDBNull(DgvEmpleado.Item(13, fila).Value)) Then
+                txtClave.Text = ""
+            Else
+                txtClave.Text = DgvEmpleado.Item(13, fila).Value
+            End If
 
             btnGuar.Enabled = False
             btnEditar.Enabled = True
@@ -281,11 +302,13 @@
         cbCargo.Text = ""
         cbDep.Text = ""
         txtEmail.Text = ""
+        cbAdmin.Checked = False
         txtTelefono.Text = ""
         txtDireccion.Text = ""
         txtCedula.Text = ""
         dtpFechaC.Text = ""
         dtpFechaNac.Text = ""
+        txtClave.Text = ""
         ckbActivo.Checked = False
         btnGuar.Enabled = True
         btnEliminar.Enabled = False

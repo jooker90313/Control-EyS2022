@@ -2349,6 +2349,10 @@ Partial Public Class BDQUICKIEDataSet
         
         Private columnestadoEmpleado As Global.System.Data.DataColumn
         
+        Private columnadministrador As Global.System.Data.DataColumn
+        
+        Private columnclave As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -2481,6 +2485,22 @@ Partial Public Class BDQUICKIEDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property administradorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnadministrador
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property claveColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnclave
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2517,9 +2537,9 @@ Partial Public Class BDQUICKIEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddQEmpleadoRow(ByVal Cédula As String, ByVal Nombre As String, ByVal Apellido As String, ByVal Teléfono As String, ByVal Email As String, ByVal Cargo As String, ByVal Departamento As String, ByVal fechaContratacion As Date, ByVal direccion As String, ByVal fechaNacimiento As Date, ByVal estadoEmpleado As Boolean) As QEmpleadoRow
+        Public Overloads Function AddQEmpleadoRow(ByVal Cédula As String, ByVal Nombre As String, ByVal Apellido As String, ByVal Teléfono As String, ByVal Email As String, ByVal Cargo As String, ByVal Departamento As String, ByVal fechaContratacion As Date, ByVal direccion As String, ByVal fechaNacimiento As Date, ByVal estadoEmpleado As Boolean, ByVal administrador As Boolean, ByVal clave As String) As QEmpleadoRow
             Dim rowQEmpleadoRow As QEmpleadoRow = CType(Me.NewRow,QEmpleadoRow)
-            Dim columnValuesArray() As Object = New Object() {Cédula, Nombre, Apellido, Teléfono, Email, Cargo, Departamento, fechaContratacion, Nothing, direccion, fechaNacimiento, estadoEmpleado}
+            Dim columnValuesArray() As Object = New Object() {Cédula, Nombre, Apellido, Teléfono, Email, Cargo, Departamento, fechaContratacion, Nothing, direccion, fechaNacimiento, estadoEmpleado, administrador, clave}
             rowQEmpleadoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowQEmpleadoRow)
             Return rowQEmpleadoRow
@@ -2560,6 +2580,8 @@ Partial Public Class BDQUICKIEDataSet
             Me.columndireccion = MyBase.Columns("direccion")
             Me.columnfechaNacimiento = MyBase.Columns("fechaNacimiento")
             Me.columnestadoEmpleado = MyBase.Columns("estadoEmpleado")
+            Me.columnadministrador = MyBase.Columns("administrador")
+            Me.columnclave = MyBase.Columns("clave")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2589,6 +2611,10 @@ Partial Public Class BDQUICKIEDataSet
             MyBase.Columns.Add(Me.columnfechaNacimiento)
             Me.columnestadoEmpleado = New Global.System.Data.DataColumn("estadoEmpleado", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnestadoEmpleado)
+            Me.columnadministrador = New Global.System.Data.DataColumn("administrador", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnadministrador)
+            Me.columnclave = New Global.System.Data.DataColumn("clave", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnclave)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnidEmp}, true))
             Me.columnCédula.AllowDBNull = false
             Me.columnCédula.MaxLength = 16
@@ -2609,6 +2635,8 @@ Partial Public Class BDQUICKIEDataSet
             Me.columnidEmp.Unique = true
             Me.columndireccion.MaxLength = 100
             Me.columnestadoEmpleado.AllowDBNull = false
+            Me.columnadministrador.AllowDBNull = false
+            Me.columnclave.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5211,6 +5239,32 @@ Partial Public Class BDQUICKIEDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property administrador() As Boolean
+            Get
+                Return CType(Me(Me.tableQEmpleado.administradorColumn),Boolean)
+            End Get
+            Set
+                Me(Me.tableQEmpleado.administradorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property clave() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableQEmpleado.claveColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'clave' de la tabla 'QEmpleado' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableQEmpleado.claveColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsApellidoNull() As Boolean
             Return Me.IsNull(Me.tableQEmpleado.ApellidoColumn)
         End Function
@@ -5279,6 +5333,18 @@ Partial Public Class BDQUICKIEDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetfechaNacimientoNull()
             Me(Me.tableQEmpleado.fechaNacimientoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsclaveNull() As Boolean
+            Return Me.IsNull(Me.tableQEmpleado.claveColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetclaveNull()
+            Me(Me.tableQEmpleado.claveColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -9137,6 +9203,8 @@ Namespace BDQUICKIEDataSetTableAdapters
             tableMapping.ColumnMappings.Add("direccion", "direccion")
             tableMapping.ColumnMappings.Add("fechaNacimiento", "fechaNacimiento")
             tableMapping.ColumnMappings.Add("estadoEmpleado", "estadoEmpleado")
+            tableMapping.ColumnMappings.Add("administrador", "administrador")
+            tableMapping.ColumnMappings.Add("clave", "clave")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -9157,10 +9225,11 @@ Namespace BDQUICKIEDataSetTableAdapters
                 "mpleado.apellido AS Apellido, Empleado.telefono AS Teléfono, Empleado.emailCorpo"& _ 
                 "rativo AS Email, Cargo.nombreCargo AS Cargo, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Departamento.no"& _ 
                 "mbreDepartamento AS Departamento, Empleado.fechaContratacion, Empleado.direccion"& _ 
-                ", Empleado.fechaNacimiento, Empleado.estadoEmpleado"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Empleado INNER JOI"& _ 
-                "N"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Cargo ON Empleado.idCargo = Cargo.idCargo INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
-                "             Departamento ON Empleado.idDepartamento = Departamento.idDepartamen"& _ 
-                "to"
+                ", Empleado.fechaNacimiento, Empleado.estadoEmpleado, Usuario.administrador, Usua"& _ 
+                "rio.clave"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Empleado INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Cargo ON Empleado.idC"& _ 
+                "argo = Cargo.idCargo INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Departamento ON Empleado.idDe"& _ 
+                "partamento = Departamento.idDepartamento INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Usuario O"& _ 
+                "N Empleado.idEmp = Usuario.idEmp"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -9180,12 +9249,13 @@ Namespace BDQUICKIEDataSetTableAdapters
                 "mpleado.apellido AS Apellido, Empleado.telefono AS Teléfono, Empleado.emailCorpo"& _ 
                 "rativo AS Email, Cargo.nombreCargo AS Cargo, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Departamento.no"& _ 
                 "mbreDepartamento AS Departamento, Empleado.fechaContratacion, Empleado.direccion"& _ 
-                ", Empleado.fechaNacimiento, Empleado.estadoEmpleado"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Empleado INNER JOI"& _ 
-                "N"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Cargo ON Empleado.idCargo = Cargo.idCargo INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
-                "             Departamento ON Empleado.idDepartamento = Departamento.idDepartamen"& _ 
-                "to"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (Empleado.numCedula LIKE '%' + @cadena + '%') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  ("& _ 
-                "Empleado.nombre LIKE '%' + @cadena + '%') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  (Empleado.apelli"& _ 
-                "do LIKE '%' + @cadena + '%')"
+                ", Empleado.fechaNacimiento, Empleado.estadoEmpleado, Usuario.administrador, Usua"& _ 
+                "rio.clave"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Empleado INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Cargo ON Empleado.idC"& _ 
+                "argo = Cargo.idCargo INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Departamento ON Empleado.idDe"& _ 
+                "partamento = Departamento.idDepartamento INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  Usuario O"& _ 
+                "N Empleado.idEmp = Usuario.idEmp"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (Empleado.numCedula LIKE '%' + @cadena "& _ 
+                "+ '%') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  (Empleado.nombre LIKE '%' + @cadena + '%') OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    "& _ 
+                "              (Empleado.apellido LIKE '%' + @cadena + '%')"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@cadena", Global.System.Data.SqlDbType.NVarChar, 16, Global.System.Data.ParameterDirection.Input, 0, 0, "Cédula", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -9462,8 +9532,8 @@ Namespace BDQUICKIEDataSetTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT idDepartamento, nombreDepartamento AS Departamento FROM Departamento WHERE"& _ 
-                " (nombreDepartamento LIKE '%' + @cadena + '%')"
+            Me._commandCollection(1).CommandText = "SELECT idDepartamento, nombreDepartamento AS Departamento, estadoDepartamento"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FR"& _ 
+                "OM     Departamento"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE  (nombreDepartamento LIKE '%' + @cadena + '%')"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@cadena", Global.System.Data.SqlDbType.NVarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "Departamento", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -10011,22 +10081,35 @@ Namespace BDQUICKIEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Usuario.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM     Usuario"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "insert into usuario(idemp, administrador, clave)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"values (@idemp, 1, @clave)"
+            Me._commandCollection(1).CommandText = "UPDATE Usuario"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET          administrador = 1, clave = @clave"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where idEmp = @id"& _ 
+                "Emp"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idemp", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idEmp", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@clave", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "clave", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idEmp", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idEmp", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "insert into usuario(idemp, administrador)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"values (@idemp, 0)"
+            Me._commandCollection(2).CommandText = "UPDATE Usuario"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET          administrador = 0, clave =null"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"where  idEmp = @idEm"& _ 
+                "p"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idemp", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idEmp", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idEmp", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idEmp", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "insert into usuario(idemp, administrador, clave)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"values (@idemp, 1, @clave)"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idemp", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idEmp", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@clave", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "clave", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "insert into usuario(idemp, administrador)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"values (@idemp, 0)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@idemp", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "idEmp", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10111,9 +10194,60 @@ Namespace BDQUICKIEDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function ActualizaAdmin(ByVal clave As String, ByVal idEmp As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            If (clave Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(clave,String)
+            End If
+            command.Parameters(1).Value = CType(idEmp,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
+        Public Overloads Overridable Function ActulizarNoAdmin(ByVal idEmp As Integer) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            command.Parameters(0).Value = CType(idEmp,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
         Public Overloads Overridable Function InsertarUsuarioAdministrador(ByVal idemp As Integer, ByVal clave As String) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(3)
             command.Parameters(0).Value = CType(idemp,Integer)
             If (clave Is Nothing) Then
                 command.Parameters(1).Value = Global.System.DBNull.Value
@@ -10141,7 +10275,7 @@ Namespace BDQUICKIEDataSetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
         Public Overloads Overridable Function InsertarUsuarioNoAdmistrador(ByVal idemp As Integer) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(4)
             command.Parameters(0).Value = CType(idemp,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _

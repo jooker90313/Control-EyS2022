@@ -1,4 +1,6 @@
-﻿Public Class FrmRCargo
+﻿Imports System.IO
+
+Public Class FrmRCargo
     Dim carg As New BDQUICKIEDataSetTableAdapters.CargoTableAdapter
     Dim idCar As Integer
     Dim tblCarg As New BDQUICKIEDataSet.CargoDataTable
@@ -136,7 +138,11 @@
 
     Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
         taCarg.Fill(dtCarg)
-        VerReporte(dtCarg, "DsCargos", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptCargos.rdlc")
+        Dim directorioBase = AppDomain.CurrentDomain.BaseDirectory
+        Dim directorioReporte = Path.Combine(directorioBase, "ReportesAdmin\RptCargos.rdlc")
+
+        VerReporte(dtCarg, "DsCargos", directorioReporte)
+        'VerReporte(dtCarg, "DsCargos", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptCargos.rdlc")
     End Sub
 
     Private Sub txtDatos_TextChanged(sender As Object, e As EventArgs) Handles txtDatos.TextChanged

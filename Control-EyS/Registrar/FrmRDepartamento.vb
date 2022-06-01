@@ -1,4 +1,6 @@
-﻿Public Class FrmRDepartamento
+﻿Imports System.IO
+
+Public Class FrmRDepartamento
     Dim depa As New BDQUICKIEDataSetTableAdapters.DepartamentoTableAdapter
     Dim idDepa As Integer
     Dim taDep As New BDQUICKIEDataSetTableAdapters.QDepartamentoTableAdapter
@@ -107,8 +109,13 @@
     End Sub
 
     Private Sub BtnReporte_Click(sender As Object, e As EventArgs) Handles BtnReporte.Click
+
         taDep.Fill(dtDep)
-        VerReporte(dtDep, "DsDepartamentos", "C:\Users\Norman Romero\source\repos\Control-EyS2022\Control-EyS\ReportesAdmin\RptDepartamentos.rdlc")
+        Dim directorioBase = AppDomain.CurrentDomain.BaseDirectory
+        Dim directorioReporte = Path.Combine(directorioBase, "ReportesAdmin\RptDepartamentos.rdlc")
+
+        VerReporte(dtDep, "DsDepartamentos", directorioReporte)
+
     End Sub
 
     Private Sub txtDatos_TextChanged(sender As Object, e As EventArgs) Handles txtDatos.TextChanged

@@ -263,10 +263,18 @@
     <EmbeddedResource Include="ReportesAdmin\FrmReportes.resx">
       <DependentUpon>FrmReportes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportesAdmin\RptCargos.rdlc" />
-    <EmbeddedResource Include="ReportesAdmin\RptDepartamentos.rdlc" />
-    <EmbeddedResource Include="ReportesAdmin\RptEmpleado.rdlc" />
-    <EmbeddedResource Include="ReportesAdmin\RptHoraEyS.rdlc" />
+    <EmbeddedResource Include="ReportesAdmin\RptCargos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAdmin\RptDepartamentos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAdmin\RptEmpleado.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesAdmin\RptHoraEyS.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSet\BDQUICKIEDataSet.xsc">
