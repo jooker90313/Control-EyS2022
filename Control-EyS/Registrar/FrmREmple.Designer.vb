@@ -265,7 +265,7 @@ Partial Class FrmREmple
         Me.txtDireccion.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(256, 22)
-        Me.txtDireccion.TabIndex = 10
+        Me.txtDireccion.TabIndex = 11
         '
         'Label6
         '
@@ -413,7 +413,7 @@ Partial Class FrmREmple
         Me.cbAdmin.Location = New System.Drawing.Point(641, 271)
         Me.cbAdmin.Name = "cbAdmin"
         Me.cbAdmin.Size = New System.Drawing.Size(149, 27)
-        Me.cbAdmin.TabIndex = 11
+        Me.cbAdmin.TabIndex = 10
         Me.cbAdmin.Text = "Administrador"
         Me.cbAdmin.UseVisualStyleBackColor = True
         '

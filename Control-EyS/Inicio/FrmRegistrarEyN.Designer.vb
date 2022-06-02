@@ -99,11 +99,11 @@ Partial Class FrmRegistrarEyN
         '
         'BtnVerEyS
         '
-        Me.BtnVerEyS.Location = New System.Drawing.Point(510, 6)
+        Me.BtnVerEyS.Location = New System.Drawing.Point(494, 6)
         Me.BtnVerEyS.Name = "BtnVerEyS"
-        Me.BtnVerEyS.Size = New System.Drawing.Size(120, 24)
+        Me.BtnVerEyS.Size = New System.Drawing.Size(136, 24)
         Me.BtnVerEyS.TabIndex = 0
-        Me.BtnVerEyS.Text = "Mostrar marca "
+        Me.BtnVerEyS.Text = "Mostrar marcada "
         Me.BtnVerEyS.UseVisualStyleBackColor = True
         '
         'Label1
